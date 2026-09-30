@@ -203,8 +203,12 @@ section{padding:82px 0}
 .day-head b{font-family:'Bodoni Moda',serif;font-weight:400;font-size:30px;line-height:1;font-variant-numeric:tabular-nums}
 .day-head span{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--neon-soft);font-weight:700}
 .night{display:flex;flex-direction:column;gap:4px}
-.night .v{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700}
-.night .t{font-family:'Bodoni Moda',serif;font-size:21px;line-height:1.15;color:var(--cream)}
+.night .v{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--neon-soft);font-weight:700;line-height:1.35}
+.night .t{font-family:'Bodoni Moda',serif;font-size:27px;line-height:1.05;color:var(--cream)}
+.wk-actions{display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.btn-wa{border-color:rgba(76,224,255,.45);color:var(--cream)}
+.btn-wa:hover{border-color:var(--cyan)}
+.btn-wa svg{width:16px;height:16px;flex:0 0 auto}
 .night .i{font-size:13.5px;color:var(--body)}
 .night .btn{align-self:flex-start;margin-top:6px}
 .coming{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-top:18px;padding:16px 18px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.02)}
@@ -448,6 +452,30 @@ body.lb-open{overflow:hidden}
   .venue{padding:22px 20px 18px}
   .venue h3{font-size:28px}
 }
+@media (max-width:760px){
+  .hero{padding-top:44px}
+  .hero-inner{padding-bottom:36px}
+  .phone{display:none}
+  .lede{margin-top:18px}
+  .hero-actions{margin-top:24px}
+  .hero-actions .btn{flex:1 1 auto}
+  .wk-actions{align-items:stretch;width:100%}
+  .wk-actions .btn{width:100%}
+  .weekend .sec-head{margin-bottom:24px}
+  .day{padding:18px 16px 16px;gap:0}
+  .day-head{padding-bottom:10px;margin-bottom:4px}
+  .day-head b{font-size:26px}
+  .night{display:grid;grid-template-columns:1fr auto;grid-template-areas:"v b" "t b" "i b";column-gap:14px;row-gap:3px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
+  .day-head + .night{border-top:0}
+  .night .v{grid-area:v}
+  .night .t{grid-area:t;font-size:25px}
+  .night .i{grid-area:i}
+  .night .btn{grid-area:b;margin-top:0;align-self:center;min-height:44px;padding:10px 16px}
+  .coming{padding:14px 16px}
+  .coming .btn{min-height:44px;width:100%}
+  .btn-small{min-height:40px}
+  .reel-hint{display:none}
+}
 @media (max-width:480px){
   :root{--gutter:16px}
   .rescue{padding:16px}
@@ -485,12 +513,6 @@ body.lb-open{overflow:hidden}
   </div>
 </header>
 
-<div class="strip">
-  <div><strong id="venuecount">8</strong><p>Locali seguiti in tutta Roma</p></div>
-  <div><strong>Ven / Sab</strong><p>Le serate principali, più aperture infrasettimanali</p></div>
-  <div><strong>&lt; 10 min</strong><p>Tempo medio di risposta su WhatsApp</p></div>
-</div>
-
 <section class="weekend" id="weekend">
   <div class="wrap">
     <div class="sec-head">
@@ -498,9 +520,12 @@ body.lb-open{overflow:hidden}
         <div>
           <span class="eyebrow">Il programma</span>
           <h2>Questo weekend.</h2>
-          <p>Le serate confermate dai locali. Tocca Prenota e il modulo si compila con locale e data.</p>
+          <p>Le serate confermate dai locali. Tocca Prenota e il modulo si compila con locale e data, oppure gira il programma a chi viene con te.</p>
         </div>
-        <span class="stamp" id="weekendstamp" hidden></span>
+        <div class="wk-actions">
+          <span class="stamp" id="weekendstamp" hidden></span>
+          <a class="btn btn-ghost btn-small btn-wa" id="sharewa" href="https://wa.me/?text=https%3A%2F%2Fpier21q.github.io%2Flista-pier-roma%2F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4 5.2 5.2 0 0 0 3.2.7 2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>Condividi su WhatsApp</a>
+        </div>
       </div>
     </div>
     <div class="days" id="days" hidden></div>
@@ -508,6 +533,12 @@ body.lb-open{overflow:hidden}
     <div id="coming"></div>
   </div>
 </section>
+
+<div class="strip">
+  <div><strong id="venuecount">8</strong><p>Locali seguiti in tutta Roma</p></div>
+  <div><strong>Ven / Sab</strong><p>Le serate principali, più aperture infrasettimanali</p></div>
+  <div><strong>&lt; 10 min</strong><p>Tempo medio di risposta su WhatsApp</p></div>
+</div>
 
 <section id="spot" style="padding-bottom:56px">
   <div class="wrap">
@@ -784,6 +815,20 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
   var $ = function(id){ return document.getElementById(id); };
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* ---- statistiche anonime con GoatCounter (senza cookie) ---- */
+  var GC_CODE = "listapierroma";
+  if(GC_CODE && !/^(localhost|127\.|\[::1\])/.test(location.hostname)){
+    var gc = document.createElement("script");
+    gc.async = true;
+    gc.src = "https://gc.zgo.at/count.js";
+    gc.setAttribute("data-goatcounter", "https://" + GC_CODE + ".goatcounter.com/count");
+    document.head.appendChild(gc);
+  }
+  function slug(s){ return String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
+  function track(name){
+    try { if(window.goatcounter && window.goatcounter.count){ window.goatcounter.count({path: name, title: name, event: true}); } } catch(e){}
+  }
+
   /* ---- ora di Roma, per nascondere le serate passate ---- */
   function romeNow(){
     try {
@@ -831,8 +876,8 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
     });
   }
   function nightHtml(s){
-    return '<div class="night" data-venue="' + esc(s.locale) + '"><span class="v">' + esc(s.locale) + '</span>' +
-      '<span class="t">' + esc(s.titolo) + '</span>' + (s.info ? '<span class="i">' + esc(s.info) + '</span>' : '') +
+    return '<div class="night" data-venue="' + esc(s.locale) + '"><span class="v">' + esc(s.titolo) + '</span>' +
+      '<span class="t">' + esc(s.locale) + '</span>' + (s.info ? '<span class="i">' + esc(s.info) + '</span>' : '') +
       '<button type="button" class="btn btn-ghost btn-small book-it">Prenota</button></div>';
   }
   function renderWeekend(p){
@@ -858,12 +903,32 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
         '<span class="t">' + esc(c.titolo) + '</span>' + (c.info ? '<span class="i">' + esc(c.info) + '</span>' : '') +
         '<button type="button" class="btn btn-ghost btn-small book-it">Prenota</button></div>';
     }).join("");
+    setShare(order, byDay);
     if(p.aggiornato){
       var up = new Date(p.aggiornato + "T12:00:00");
       $("weekendstamp").textContent = "Aggiornato il " + up.getDate() + " " + MESI[up.getMonth()];
       $("weekendstamp").hidden = false;
     }
   }
+  var SITE_URL = (document.querySelector('link[rel="canonical"]') || {}).href || (location.origin + location.pathname);
+  var GIORNI_BREVI = ["Dom","Lun","Mar","Mer","Gio","Ven","Sab"];
+  function setShare(order, byDay){
+    var l = [];
+    if(order && order.length){
+      l.push("Il programma del weekend a Roma 🎟️", "");
+      order.forEach(function(d){
+        var dt = new Date(d + "T12:00:00");
+        l.push(GIORNI_BREVI[dt.getDay()] + " " + dt.getDate() + "/" + (dt.getMonth()+1));
+        byDay[d].forEach(function(s){ l.push("• " + s.locale + (s.titolo ? " – " + s.titolo : "")); });
+      });
+      l.push("", "Liste e tavoli con Pier: " + SITE_URL);
+    } else {
+      l.push("Serate, liste e tavoli nei club di Roma con Pier: " + SITE_URL);
+    }
+    $("sharewa").href = "https://wa.me/?text=" + encodeURIComponent(l.join("\n"));
+  }
+  setShare(null, null);
+
   applyStatus(null);
   fetch("programma.json?v=" + Date.now(), {cache:"no-store"})
     .then(function(r){ if(!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
@@ -892,6 +957,7 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
   });
   cards.forEach(function(card){
     card.addEventListener("click", function(){
+      track("scheda-" + slug(card.dataset.venue));
       pickVenue(card.dataset.venue);
       goToForm();
     });
@@ -902,6 +968,7 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
     if(!b) return;
     var night = b.closest("[data-venue]");
     var holder = b.closest("[data-date]");
+    if(night) track("prenota-programma-" + slug(night.dataset.venue));
     if(night) pickVenue(night.dataset.venue);
     if(holder){ $("data").value = holder.dataset.date; }
     update();
@@ -1076,7 +1143,11 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
       navigator.clipboard.writeText(txt).then(function(){ flashStatus(okMsg); }, legacy);
     } else { legacy(); }
   }
-  $("copy").addEventListener("click", function(){ copyText(build(), "Testo copiato.", $("preview")); });
+  $("copy").addEventListener("click", function(){ track("copia-testo"); copyText(build(), "Testo copiato.", $("preview")); });
+  $("sharewa").addEventListener("click", function(){ track("condividi-programma-whatsapp"); });
+  [$("send"), $("stickysend"), $("fallback"), $("footerwa")].forEach(function(a){
+    a.addEventListener("click", function(){ track("apri-whatsapp-" + a.id + "-" + (slug($("locale").value) || "nessun-locale")); });
+  });
   $("copynum").addEventListener("click", function(){ copyText(PHONE_LABEL, "Numero copiato.", document.querySelector(".rescue .num")); });
 
   /* ---- data proposta: il prossimo sabato (oggi, se è sabato) ---- */
