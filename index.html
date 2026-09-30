@@ -1,0 +1,1093 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Liste, ingressi e tavoli nei club di Roma con Pier. Il programma del weekend, aggiornato ogni mercoledì.">
+<meta name="theme-color" content="#0A0710">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Lista Pier Roma · il programma del weekend">
+<meta property="og:description" content="Le serate confermate di questo weekend nei club di Roma. Prenota lista o tavolo su WhatsApp.">
+<meta property="og:url" content="https://pier21q.github.io/lista-pier-roma/">
+<meta property="og:image" content="https://pier21q.github.io/lista-pier-roma/media/anteprima.jpg">
+<meta property="og:image:width" content="773">
+<meta property="og:image:height" content="406">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://pier21q.github.io/lista-pier-roma/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0710'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-size='40' fill='%23FF2E88'%3EP%3C/text%3E%3C/svg%3E">
+<title>Lista Pier Roma</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,800;1,6..96,400&family=Archivo:wght@400;500;600;700&display=swap">
+
+<style>
+:root{
+  color-scheme:dark;
+  --ground:#0A0710;
+  --ground-2:#0E0A17;
+  --surface:#151022;
+  --surface-2:#1D1631;
+  --line:#2C2242;
+  --line-strong:#493768;
+  --cream:#EFE6D9;
+  --soft:#CFC3D8;
+  --body:#C2B7CE;
+  --muted:#9A8DAE;
+  --faint:#7F7196;
+  --neon:#FF2E88;
+  --neon-soft:#FF7AB6;
+  --cyan:#4CE0FF;
+  --amber:#F2C572;
+  --radius:2px;
+  --maxw:1120px;
+  --gutter:24px;
+}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--cream);
+  font-family:'Archivo','Helvetica Neue',Arial,sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+h1,h2,h3{font-family:'Bodoni Moda','Didot','Times New Roman',serif;font-weight:400;text-wrap:balance;margin:0}
+
+a{color:inherit}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter)}
+
+.eyebrow{
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--muted);font-weight:600;
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;
+  padding:88px 0 0;
+  border-bottom:1px solid var(--line);
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;inset:-40% -20% auto -20%;height:120%;
+  background:
+    radial-gradient(46% 42% at 22% 8%, rgba(255,46,136,.30), transparent 68%),
+    radial-gradient(40% 38% at 82% 18%, rgba(76,224,255,.16), transparent 70%);
+  filter:blur(18px);
+  pointer-events:none;
+  animation:breathe 11s ease-in-out infinite;
+}
+@keyframes breathe{0%,100%{opacity:.85;transform:translateY(0)}50%{opacity:1;transform:translateY(-14px)}}
+
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center;padding-bottom:56px}
+
+.badge{
+  display:inline-flex;align-items:center;gap:9px;
+  border:1px solid var(--line);background:rgba(255,255,255,.03);
+  padding:7px 14px;border-radius:100px;
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;
+  color:var(--cream);
+}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--neon);box-shadow:0 0 10px var(--neon)}
+
+h1.title{
+  margin:26px 0 0;
+  font-size:clamp(48px,8.4vw,104px);
+  line-height:.9;
+  letter-spacing:-.015em;
+}
+h1.title em{font-style:italic;color:var(--neon-soft)}
+
+.lede{
+  margin:24px 0 0;
+  max-width:48ch;
+  font-size:clamp(16px,1.7vw,18px);
+  color:var(--soft);
+}
+
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0 0}
+
+.phone{
+  position:relative;
+  aspect-ratio:9/16;
+  width:100%;
+  max-width:280px;
+  margin-left:auto;
+  border:1px solid var(--line);
+  border-radius:4px;
+  overflow:hidden;
+  background:var(--surface);
+  box-shadow:0 26px 70px rgba(0,0,0,.65), 0 0 0 1px rgba(255,46,136,.18);
+}
+.phone video{width:100%;height:100%;object-fit:cover;display:block}
+.phone .tag{
+  position:absolute;left:10px;bottom:10px;z-index:2;
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;
+  background:rgba(10,7,16,.72);border:1px solid rgba(255,255,255,.16);
+  padding:5px 10px;border-radius:100px;backdrop-filter:blur(6px);
+}
+.phone::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(10,7,16,.35),transparent 34%,transparent 62%,rgba(10,7,16,.55));
+}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:'Archivo',sans-serif;font-size:13px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+  padding:15px 26px;border-radius:100px;border:1px solid transparent;
+  cursor:pointer;text-decoration:none;
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+}
+.btn-primary{background:var(--neon);color:#12000A}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 34px rgba(255,46,136,.45)}
+.btn-ghost{border-color:var(--line);color:var(--cream);background:rgba(255,255,255,.02)}
+.btn-ghost:hover{border-color:var(--neon);color:#fff;transform:translateY(-2px)}
+.btn-small{padding:9px 16px;font-size:11px}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,.clip:focus-visible{
+  outline:2px solid var(--cyan);outline-offset:3px;
+}
+
+/* marquee */
+.marquee{
+  position:relative;z-index:1;
+  border-top:1px solid var(--line);
+  padding:16px 0;
+  overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+}
+.marquee-track{display:flex;width:max-content;animation:slide 40s linear infinite}
+.marquee span{
+  font-family:'Bodoni Moda',serif;font-size:22px;letter-spacing:.04em;
+  padding:0 26px;color:var(--faint);white-space:nowrap;
+}
+.marquee span b{color:var(--cream);font-weight:400}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- STRIP ---------- */
+.strip{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-bottom:1px solid var(--line);
+}
+.strip div{padding:26px var(--gutter);border-right:1px solid var(--line)}
+.strip div:last-child{border-right:0}
+.strip strong{
+  display:block;font-family:'Bodoni Moda',serif;font-size:30px;font-weight:400;
+  font-variant-numeric:tabular-nums;line-height:1.1;
+}
+.strip p{margin:4px 0 0;font-size:13px;color:var(--muted)}
+
+/* ---------- SECTIONS ---------- */
+section{padding:82px 0}
+.sec-head{margin-bottom:40px}
+.sec-head h2{font-size:clamp(32px,5.4vw,54px);line-height:1.02;margin-top:12px}
+.sec-head p{color:var(--muted);max-width:56ch;margin:14px 0 0}
+.sec-head .row{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:flex-end}
+.stamp{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+/* ---------- WEEKEND ---------- */
+.weekend{border-bottom:1px solid var(--line);padding:64px 0}
+.days{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:0;border:1px solid var(--line)}
+.day{padding:22px 22px 24px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:14px}
+.day:last-child{border-right:0}
+.day-head{display:flex;align-items:baseline;gap:10px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.day-head b{font-family:'Bodoni Moda',serif;font-weight:400;font-size:30px;line-height:1;font-variant-numeric:tabular-nums}
+.day-head span{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--neon-soft);font-weight:700}
+.night{display:flex;flex-direction:column;gap:4px}
+.night .v{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.night .t{font-family:'Bodoni Moda',serif;font-size:21px;line-height:1.15;color:var(--cream)}
+.night .i{font-size:13.5px;color:var(--body)}
+.night .btn{align-self:flex-start;margin-top:6px}
+.coming{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-top:18px;padding:16px 18px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.02)}
+.coming .t{font-family:'Bodoni Moda',serif;font-size:20px}
+.coming .i{font-size:13.5px;color:var(--body)}
+.coming .when{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--neon-soft);font-weight:700}
+.empty{border:1px dashed var(--line);padding:22px;color:var(--body);max-width:62ch}
+
+/* ---------- REEL ---------- */
+.reel{
+  display:flex;gap:14px;
+  overflow-x:auto;
+  padding-top:4px;padding-bottom:22px;
+  padding-inline:max(var(--gutter), calc((100% - var(--maxw)) / 2 + var(--gutter)));
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+}
+.reel::-webkit-scrollbar{height:6px}
+.reel::-webkit-scrollbar-track{background:var(--surface)}
+.reel::-webkit-scrollbar-thumb{background:#3A2C56;border-radius:100px}
+.reel{scrollbar-width:thin;scrollbar-color:#3A2C56 var(--surface)}
+
+.clip{
+  position:relative;flex:0 0 218px;aspect-ratio:9/16;max-width:100%;
+  scroll-snap-align:center;
+  border:1px solid var(--line);border-radius:3px;overflow:hidden;
+  background:var(--surface);cursor:pointer;
+  transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;
+}
+.clip:hover{transform:translateY(-5px);border-color:var(--neon);box-shadow:0 20px 46px rgba(0,0,0,.55)}
+.clip video{width:100%;height:100%;object-fit:cover;display:block}
+.clip .veil{
+  position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(10,7,16,.5),transparent 30%,transparent 52%,rgba(10,7,16,.86));
+}
+.clip .meta{position:absolute;left:12px;right:12px;bottom:12px;z-index:2}
+.clip .place{
+  display:inline-block;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;
+  color:var(--neon-soft);margin-bottom:5px;
+}
+.clip .cap{display:block;font-family:'Bodoni Moda',serif;font-size:19px;line-height:1.12;color:#fff}
+
+.reel-hint{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+/* ---------- BANNER ---------- */
+.banner{
+  position:relative;margin:0;overflow:hidden;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  min-height:300px;display:flex;align-items:center;
+}
+.banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 62%;opacity:.55}
+.banner::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,7,16,.92),rgba(10,7,16,.55) 60%,rgba(10,7,16,.8))}
+.banner .wrap{position:relative;z-index:2;width:100%;padding-block:56px}
+.banner h2{font-size:clamp(30px,5vw,52px);line-height:1.02;max-width:18ch}
+.banner p{color:var(--soft);max-width:46ch;margin:14px 0 0}
+
+/* ---------- VENUES ---------- */
+.venues{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(310px,100%),1fr));gap:18px}
+
+.venue{
+  position:relative;
+  background:linear-gradient(180deg,var(--surface),var(--ground-2));
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:26px 26px 22px;
+  display:flex;flex-direction:column;gap:14px;
+  cursor:pointer;
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.venue:hover{transform:translateY(-4px);border-color:var(--line-strong);box-shadow:0 18px 44px rgba(0,0,0,.5)}
+.venue.is-picked{border-color:var(--neon);box-shadow:0 0 0 1px var(--neon),0 18px 44px rgba(255,46,136,.18)}
+
+.status{
+  align-self:flex-start;display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+  padding:5px 11px;border-radius:100px;border:1px solid var(--line);color:var(--muted);
+}
+.status::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.status[data-state="open"]{color:var(--cyan);border-color:rgba(76,224,255,.4)}
+.status[data-state="open"]::before{box-shadow:0 0 8px var(--cyan)}
+.status[data-state="closing"]{color:var(--neon-soft);border-color:rgba(255,46,136,.45)}
+.status[data-state="soon"]{color:var(--amber);border-color:rgba(242,197,114,.4)}
+.status[data-state="ask"]{color:var(--soft)}
+.status[data-state="off"]{color:var(--faint)}
+
+.venue-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.venue h3{font-size:32px;line-height:1}
+.venue .zone{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--neon-soft);font-weight:600}
+.venue p{margin:0;font-size:14.5px;color:var(--body);line-height:1.62}
+
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:6px}
+.chip{
+  font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;
+  border:1px solid var(--line);border-radius:100px;padding:5px 11px;color:var(--muted);
+}
+.pick{
+  align-self:flex-start;margin-top:4px;padding:6px 0;
+  background:none;border:0;cursor:pointer;
+  font:inherit;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--neon);
+}
+.pick[aria-pressed="true"]::before{content:"✓ "}
+
+/* ---------- GALLERY ---------- */
+.gal-top{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gal-top .shot{aspect-ratio:4/5}
+.gal-top figcaption{font-size:22px;left:18px;right:18px;bottom:16px}
+
+.gal-more{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px}
+.gal-more .shot{aspect-ratio:1/1;opacity:.72;filter:saturate(.85)}
+.gal-more .shot:hover{opacity:1;filter:none}
+.gal-more figcaption{font-size:14px}
+
+.shot{
+  margin:0;max-width:100%;
+  position:relative;overflow:hidden;
+  border:1px solid var(--line);border-radius:3px;background:var(--surface);
+  transition:opacity .3s ease,filter .3s ease;
+}
+.shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.shot:hover img{transform:scale(1.05)}
+.shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,7,16,.9));pointer-events:none}
+.shot figcaption{
+  position:absolute;left:14px;right:14px;bottom:12px;z-index:2;
+  font-family:'Bodoni Moda',serif;font-size:17px;line-height:1.16;color:#fff;
+}
+
+/* ---------- STEPS ---------- */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:0;border:1px solid var(--line)}
+.step{padding:32px 26px;border-right:1px solid var(--line)}
+.step:last-child{border-right:0}
+.step .num{
+  font-family:'Bodoni Moda',serif;font-size:14px;color:var(--neon);
+  font-variant-numeric:tabular-nums;letter-spacing:.1em;
+}
+.step h3{font-size:22px;margin:10px 0 8px}
+.step p{margin:0;font-size:14px;color:var(--muted)}
+
+/* ---------- FORM ---------- */
+.book{border-top:1px solid var(--line);background:var(--ground-2)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:8px;min-width:0}
+.field.full{grid-column:1/-1}
+label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600}
+input,select,textarea{
+  font-family:'Archivo',sans-serif;font-size:16px;color:var(--cream);
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:14px 15px;width:100%;min-width:0;
+}
+input::placeholder,textarea::placeholder{color:var(--faint)}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:40px}
+textarea{resize:vertical;min-height:88px}
+input:hover,select:hover,textarea:hover{border-color:var(--line-strong)}
+
+.preview{
+  margin-top:22px;border:1px dashed var(--line);border-radius:var(--radius);
+  padding:18px 20px;background:rgba(255,255,255,.02);
+}
+.preview .eyebrow{display:block;margin-bottom:10px}
+.preview p{margin:0;font-size:14.5px;color:var(--body);white-space:pre-line;line-height:1.7;overflow-wrap:anywhere}
+
+.send-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:22px}
+.send-note{font-size:13px;color:var(--muted)}
+.send-note strong{color:var(--cream);user-select:all}
+
+.rescue{
+  display:flex;gap:20px;align-items:center;flex-wrap:wrap;
+  margin-top:24px;padding:20px;
+  border:1px solid var(--line);border-radius:var(--radius);
+  background:rgba(255,255,255,.02);
+  transition:border-color .3s ease, box-shadow .3s ease;
+}
+.rescue .qr{
+  flex:0 0 116px;width:116px;height:116px;padding:8px;
+  background:var(--cream);border-radius:3px;
+}
+.rescue .qr svg{width:100%;height:100%;display:block;shape-rendering:crispEdges}
+.rescue p{margin:8px 0 0;font-size:14px;color:var(--body);max-width:44ch}
+.rescue .num{font-family:'Bodoni Moda',serif;font-size:22px;color:var(--cream);user-select:all;font-variant-numeric:tabular-nums}
+.rescue-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.rescue-actions .btn{padding:11px 18px;font-size:12px}
+.rescue.flash{border-color:var(--neon);box-shadow:0 0 0 1px var(--neon),0 0 44px rgba(255,46,136,.25)}
+
+/* ---------- FOOTER ---------- */
+footer{border-top:1px solid var(--line);padding:44px 0 60px;font-size:13px;color:var(--muted)}
+footer .frow{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+footer a{color:var(--cream);text-decoration:none;border-bottom:1px solid var(--line)}
+footer a:hover{border-color:var(--neon)}
+.brand{font-family:'Bodoni Moda',serif;font-size:22px;font-weight:400;color:var(--cream)}
+.disclaimer{margin-top:22px;font-size:12.5px;color:var(--muted);max-width:70ch}
+
+/* sticky mobile cta */
+.sticky{
+  position:fixed;left:0;right:0;bottom:0;z-index:20;display:none;
+  padding:12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+  background:rgba(10,7,16,.94);border-top:1px solid var(--line);
+  backdrop-filter:blur(10px);
+}
+.sticky .btn{width:100%}
+
+/* lightbox */
+.lb{
+  position:fixed;inset:0;z-index:60;display:none;
+  align-items:center;justify-content:center;
+  background:rgba(6,4,10,.94);backdrop-filter:blur(8px);padding:24px;
+}
+.lb.open{display:flex}
+.lb video{max-width:min(94vw,420px);max-height:88vh;border-radius:4px;border:1px solid var(--line)}
+.lb button{
+  position:absolute;top:calc(18px + env(safe-area-inset-top, 0px));right:18px;
+  background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--cream);
+  width:42px;height:42px;border-radius:50%;cursor:pointer;font-size:18px;line-height:1;
+}
+body.lb-open{overflow:hidden}
+
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:34px}
+  .phone{margin:0 auto;max-width:240px}
+  .gal-more{grid-template-columns:repeat(2,1fr)}
+  .day{border-right:0;border-bottom:1px solid var(--line)}
+  .day:last-child{border-bottom:0}
+}
+@media (max-width:760px){
+  .strip{grid-template-columns:1fr}
+  .strip div{border-right:0;border-bottom:1px solid var(--line)}
+  .strip div:last-child{border-bottom:0}
+  .step{border-right:0;border-bottom:1px solid var(--line)}
+  .step:last-child{border-bottom:0}
+  .form-grid{grid-template-columns:1fr}
+  section{padding:60px 0}
+  .weekend{padding:52px 0}
+  .hero{padding-top:64px}
+  .sticky{display:block}
+  body{padding-bottom:calc(76px + env(safe-area-inset-bottom, 0px))}
+  .clip{flex:0 0 168px}
+  .gal-top{grid-template-columns:1fr;gap:10px}
+  .gal-top .shot{aspect-ratio:3/4}
+  .gal-top figcaption{font-size:20px;left:14px;right:14px;bottom:12px}
+  .gal-more{gap:10px;margin-top:10px}
+  .gal-more .shot{opacity:.85;filter:none}
+  .shot figcaption{font-size:14px;left:10px;right:10px}
+  .venue{padding:22px 20px 18px}
+  .venue h3{font-size:28px}
+}
+@media (max-width:480px){
+  :root{--gutter:16px}
+  .rescue{padding:16px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="badge"><span class="dot"></span> Liste &amp; tavoli — Roma</span>
+      <h1 class="title">Pier<br><em>PR Roma</em></h1>
+      <p class="lede">Liste, ingressi ridotti e tavoli nei club di Roma. Scegli il locale, dimmi quante persone siete e ti confermo su WhatsApp, di solito in pochi minuti.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#weekend">Questo weekend</a>
+        <a class="btn btn-ghost" href="#prenota">Prenota</a>
+      </div>
+    </div>
+    <div class="phone">
+      <video data-v="3" poster="media/v3.jpg" muted loop playsinline preload="none" aria-label="Video di una serata all'Opus Club"></video>
+      <span class="tag">Una serata all'Opus Club</span>
+    </div>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span><b>Nice</b> — Saxa Rubra</span><span><b>Teatro Centrale</b> — Centro</span><span><b>Nimbus</b> — Valle Giulia</span><span><b>Opus Club</b> — Flaminio</span><span><b>Art Café</b> — Villa Borghese</span><span><b>Room 26</b> — EUR</span><span><b>Villa Sublime</b> — Fleming</span><span><b>Gus</b> — Prati</span>
+      <span><b>Nice</b> — Saxa Rubra</span><span><b>Teatro Centrale</b> — Centro</span><span><b>Nimbus</b> — Valle Giulia</span><span><b>Opus Club</b> — Flaminio</span><span><b>Art Café</b> — Villa Borghese</span><span><b>Room 26</b> — EUR</span><span><b>Villa Sublime</b> — Fleming</span><span><b>Gus</b> — Prati</span>
+    </div>
+  </div>
+</header>
+
+<div class="strip">
+  <div><strong id="venuecount">8</strong><p>Locali seguiti in tutta Roma</p></div>
+  <div><strong>Ven / Sab</strong><p>Le serate principali, più aperture infrasettimanali</p></div>
+  <div><strong>&lt; 10 min</strong><p>Tempo medio di risposta su WhatsApp</p></div>
+</div>
+
+<section class="weekend" id="weekend">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="row">
+        <div>
+          <span class="eyebrow">Il programma</span>
+          <h2>Questo weekend.</h2>
+          <p>Le serate confermate dai locali. Tocca Prenota e il modulo si compila con locale e data.</p>
+        </div>
+        <span class="stamp" id="weekendstamp" hidden></span>
+      </div>
+    </div>
+    <div class="days" id="days" hidden></div>
+    <p class="empty" id="weekendempty" hidden>Il programma del prossimo weekend esce il mercoledì sera. Intanto scrivimi su WhatsApp: ti dico chi è aperto e dove c'è posto.</p>
+    <div id="coming"></div>
+  </div>
+</section>
+
+<section id="spot" style="padding-bottom:56px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="row">
+        <div>
+          <span class="eyebrow">Gli spot</span>
+          <h2>Com'è una serata<br>con me.</h2>
+        </div>
+        <span class="reel-hint">Scorri →</span>
+      </div>
+    </div>
+  </div>
+  <div class="reel" id="reel">
+    <div class="clip" data-v="7" role="button" tabindex="0" aria-label="Guarda il video: il brindisi"><video data-v="7" poster="media/v7.jpg" muted loop playsinline preload="none"></video><span class="veil"></span><div class="meta"><span class="place">Il brindisi</span><span class="cap">Buona la prima.</span></div></div>
+    <div class="clip" data-v="1" role="button" tabindex="0" aria-label="Guarda il video: Opus Club"><video data-v="1" poster="media/v1.jpg" muted loop playsinline preload="none"></video><span class="veil"></span><div class="meta"><span class="place">Opus Club</span><span class="cap">Il tavolo arriva già pronto.</span></div></div>
+    <div class="clip" data-v="5" role="button" tabindex="0" aria-label="Guarda il video: servizio al tavolo"><video data-v="5" poster="media/v5.jpg" muted loop playsinline preload="none"></video><span class="veil"></span><div class="meta"><span class="place">Servizio al tavolo</span><span class="cap">Entrata in scena.</span></div></div>
+    <div class="clip" data-v="4" role="button" tabindex="0" aria-label="Guarda il video: Art Café"><video data-v="4" poster="media/v4.jpg" muted loop playsinline preload="none"></video><span class="veil"></span><div class="meta"><span class="place">Art Café</span><span class="cap">La sala all'una.</span></div></div>
+    <div class="clip" data-v="2" role="button" tabindex="0" aria-label="Guarda il video: primo giro"><video data-v="2" poster="media/v2.jpg" muted loop playsinline preload="none"></video><span class="veil"></span><div class="meta"><span class="place">Primo giro</span><span class="cap">Si comincia.</span></div></div>
+    <div class="clip" data-v="6" role="button" tabindex="0" aria-label="Guarda il video: Art Café"><video data-v="6" poster="media/v6.jpg" muted loop playsinline preload="none"></video><span class="veil"></span><div class="meta"><span class="place">Art Café</span><span class="cap">Ghiaccio, sempre.</span></div></div>
+    <div class="clip" data-v="3" role="button" tabindex="0" aria-label="Guarda il video: Opus Club"><video data-v="3" poster="media/v3.jpg" muted loop playsinline preload="none"></video><span class="veil"></span><div class="meta"><span class="place">Opus Club</span><span class="cap">Malati di gin.</span></div></div>
+  </div>
+</section>
+
+<div class="banner">
+  <img src="media/banner.jpg" alt="Insegna al neon in discoteca: Fate loves the fearless">
+  <div class="wrap">
+    <span class="eyebrow">Fate loves the fearless</span>
+    <h2>La lista si chiude presto.</h2>
+    <p>Il venerdì e il sabato i posti migliori vanno via nel pomeriggio. Scrivimi prima, non all'ingresso.</p>
+    <div style="margin-top:26px"><a class="btn btn-primary" href="#prenota">Mettimi in lista</a></div>
+  </div>
+</div>
+
+<section id="locali">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="row">
+        <div>
+          <span class="eyebrow">I locali</span>
+          <h2>Scegli dove passi<br>la serata.</h2>
+          <p>Tocca una card per selezionarla: il locale finisce direttamente nel messaggio di prenotazione.</p>
+        </div>
+        <span class="stamp">Stato verificato il 30 settembre</span>
+      </div>
+    </div>
+
+    <div class="venues" id="venues">
+
+      <article class="venue" data-venue="Nice">
+        <span class="status" data-state="open">Aperto ven e sab</span>
+        <div class="venue-top"><h3>Nice</h3><span class="zone">Saxa Rubra</span></div>
+        <p>Il club all'aperto di Roma Nord, a pochi minuti da Ponte Milvio. Il venerdì c'è Vibra con il reggaeton, il sabato commerciale, afro house e reggaeton. Dress code curato e selezione all'ingresso.</p>
+        <div class="chips"><span class="chip">Reggaeton</span><span class="chip">Commerciale / afro house</span><span class="chip">19+ ragazze · 21+ ragazzi</span></div>
+        <button type="button" class="pick" aria-pressed="false">Seleziona</button>
+      </article>
+
+      <article class="venue" data-venue="Teatro Centrale">
+        <span class="status" data-state="open">Aperto · nuova stagione</span>
+        <div class="venue-top"><h3>Teatro Centrale</h3><span class="zone">Centro storico</span></div>
+        <p>Un teatro d'epoca dietro Piazza del Gesù trasformato in club: affreschi, velluti e la pista dove c'era la platea. La stagione è ripartita il 26 settembre, con serate anche il lunedì e il mercoledì.</p>
+        <div class="chips"><span class="chip">Commerciale / reggaeton</span><span class="chip">Location storica</span><span class="chip">Anche lun e mer</span></div>
+        <button type="button" class="pick" aria-pressed="false">Seleziona</button>
+      </article>
+
+      <article class="venue" data-venue="Nimbus">
+        <span class="status" data-state="closing">Ultimo weekend</span>
+        <div class="venue-top"><h3>Nimbus</h3><span class="zone">Valle Giulia</span></div>
+        <p>Il club tra le nuvole nel Giardino del Diamante: aperitivo, cena e pista all'aperto sotto un cielo di nuvole al neon. È un locale estivo e chiude la stagione sabato 3 ottobre.</p>
+        <div class="chips"><span class="chip">Aperitivo &amp; cena</span><span class="chip">All'aperto</span><span class="chip">Stagione estiva</span></div>
+        <button type="button" class="pick" aria-pressed="false">Seleziona</button>
+      </article>
+
+      <article class="venue" data-venue="Opus Club">
+        <span class="status" data-state="soon">Riapre a ottobre</span>
+        <div class="venue-top"><h3>Opus Club</h3><span class="zone">Flaminio</span></div>
+        <p>L'ex cinema Capitol a Piazza Mancini, con i palchi affacciati sulla pista. Impianto pesante e privé lungo il perimetro. È la casa invernale del Nice e riapre a ottobre: scrivimi per l'opening.</p>
+        <div class="chips"><span class="chip">Hip hop / reggaeton</span><span class="chip">Tavoli &amp; privé</span><span class="chip">19+ ragazze · 21+ ragazzi</span></div>
+        <button type="button" class="pick" aria-pressed="false">Seleziona</button>
+      </article>
+
+      <article class="venue" data-venue="Art Café">
+        <span class="status" data-state="soon">Riapre a ottobre</span>
+        <div class="venue-top"><h3>Art Café</h3><span class="zone">Villa Borghese</span></div>
+        <p>A Villa Borghese dal 2001: il classico del centro che non delude mai. Pubblico misto e look richiesto. Riapre a ottobre e per l'opening i tavoli vanno via in anticipo.</p>
+        <div class="chips"><span class="chip">Commerciale</span><span class="chip">House</span><span class="chip">Prenota in anticipo</span></div>
+        <button type="button" class="pick" aria-pressed="false">Seleziona</button>
+      </article>
+
+      <article class="venue" data-venue="Room 26">
+        <span class="status" data-state="soon">Nuova stagione in arrivo</span>
+        <div class="venue-top"><h3>Room 26</h3><span class="zone">EUR · Piazza Marconi</span></div>
+        <p>Il club dell'EUR, sotto Spazio 900. Nella scorsa stagione: giovedì hip hop e dancehall, venerdì urban, sabato tech house con ospiti internazionali. Le date della nuova stagione non sono ancora uscite.</p>
+        <div class="chips"><span class="chip">Tech house</span><span class="chip">Urban / hip hop</span><span class="chip">Guest internazionali</span></div>
+        <button type="button" class="pick" aria-pressed="false">Seleziona</button>
+      </article>
+
+      <article class="venue" data-venue="Villa Sublime">
+        <span class="status" data-state="ask">Chiedi disponibilità</span>
+        <div class="venue-top"><h3>Villa Sublime</h3><span class="zone">Fleming · Ponte Milvio</span></div>
+        <p>Una villa vera sulla collina Fleming, con giardino e sale interne: si parte con aperitivo o cena e si passa in discoteca senza cambiare posto. Ambiente raccolto, ideale per gruppi che vogliono parlare prima di ballare.</p>
+        <div class="chips"><span class="chip">Cena + disco</span><span class="chip">Giardino</span><span class="chip">Gruppi &amp; feste</span></div>
+        <button type="button" class="pick" aria-pressed="false">Seleziona</button>
+      </article>
+
+      <article class="venue" data-venue="Gus">
+        <span class="status" data-state="ask">Chiedi disponibilità</span>
+        <div class="venue-top"><h3>Gus</h3><span class="zone">Prati</span></div>
+        <p>Cocktail bar, cucina e dj set nella stessa serata, a un passo da Castel Sant'Angelo. Formato intimo e curato: si beve bene, si mangia e verso mezzanotte diventa club.</p>
+        <div class="chips"><span class="chip">Cocktail &amp; cena</span><span class="chip">Dj set</span><span class="chip">Formato intimo</span></div>
+        <button type="button" class="pick" aria-pressed="false">Seleziona</button>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="gallery" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Dai tavoli</span>
+      <h2>Quello che trovi<br>quando arrivi.</h2>
+      <p>Foto delle ultime serate. Nessun render, nessuno stock: sono i tavoli che ho seguito io.</p>
+    </div>
+
+    <div class="gal-top">
+      <figure class="shot"><img src="media/foto-1.jpg" alt="Bottiglia di gin illuminata di blu al tavolo"><figcaption>Mezzanotte, luce blu, primo giro.</figcaption></figure>
+      <figure class="shot"><img src="media/foto-2.jpg" alt="Sala di una discoteca illuminata di rosso" style="object-position:center 35%"><figcaption>Arrivi e il posto è già acceso.</figcaption></figure>
+      <figure class="shot"><img src="media/foto-3.jpg" alt="Interno dell'Art Café con divani e luci blu" style="object-position:center 70%"><figcaption>Art Café, quando chiama il centro.</figcaption></figure>
+    </div>
+
+    <div class="gal-more">
+      <figure class="shot"><img src="media/foto-4.jpg" alt="Tavolo riservato in discoteca con cartellino nominativo" style="object-position:center 30%" loading="lazy"><figcaption>Il tavolo col tuo nome sopra.</figcaption></figure>
+      <figure class="shot"><img src="media/foto-5.jpg" alt="Secchiello del ghiaccio illuminato con bottiglie e mixer" loading="lazy"><figcaption>Ghiaccio e mixer, inclusi.</figcaption></figure>
+      <figure class="shot"><img src="media/foto-6.jpg" alt="Champagne, whisky e vodka in un secchiello" loading="lazy"><figcaption>Tre bottiglie, dodici persone.</figcaption></figure>
+      <figure class="shot"><img src="media/foto-7.jpg" alt="Bottiglie di champagne e vodka nel ghiaccio" loading="lazy"><figcaption>Bollicine o vodka, scegli tu.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Come funziona</span>
+      <h2>Tre passaggi, niente file.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">01</span>
+        <h3>Mi scrivi</h3>
+        <p>Compili il modulo qui sotto: locale, data e quante persone siete. Il messaggio si apre già pronto su WhatsApp.</p>
+      </div>
+      <div class="step">
+        <span class="num">02</span>
+        <h3>Ti confermo</h3>
+        <p>Ti mando disponibilità, condizioni d'ingresso e, se serve il tavolo, il preventivo con la consumazione inclusa.</p>
+      </div>
+      <div class="step">
+        <span class="num">03</span>
+        <h3>Entri con il mio nome</h3>
+        <p>All'ingresso dici che sei in lista Pier. Se è la prima volta che venite, vi aspetto all'entrata.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="prenota">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Prenotazione</span>
+      <h2>Mandami i dettagli.</h2>
+      <p>Compila e apri la chat: il messaggio è già scritto, devi solo premere invio.</p>
+    </div>
+
+    <form id="form" novalidate>
+      <div class="form-grid">
+        <div class="field">
+          <label for="nome">Nome e cognome</label>
+          <input id="nome" type="text" placeholder="Es. Marco Rossi" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="locale">Locale</label>
+          <select id="locale">
+            <option value="">Scegli il locale…</option>
+            <option value="Nice">Nice</option>
+            <option value="Teatro Centrale">Teatro Centrale</option>
+            <option value="Nimbus">Nimbus</option>
+            <option value="Opus Club">Opus Club</option>
+            <option value="Art Café">Art Café</option>
+            <option value="Room 26">Room 26</option>
+            <option value="Villa Sublime">Villa Sublime</option>
+            <option value="Gus">Gus</option>
+            <option value="consiglio">Non ho ancora deciso, consigliami tu</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="data">Data della serata</label>
+          <input id="data" type="date">
+        </div>
+        <div class="field">
+          <label for="persone">Quante persone</label>
+          <input id="persone" type="number" inputmode="numeric" min="1" max="60" value="4">
+        </div>
+        <div class="field">
+          <label for="tipo">Tipo di prenotazione</label>
+          <select id="tipo">
+            <option>Lista ingresso</option>
+            <option>Tavolo</option>
+            <option>Privé</option>
+            <option>Compleanno / evento privato</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="ora">Orario di arrivo indicativo</label>
+          <input id="ora" type="time" value="23:30">
+        </div>
+        <div class="field full">
+          <label for="note">Note (facoltativo)</label>
+          <textarea id="note" placeholder="Es. siamo 6 ragazzi e 4 ragazze, festeggiamo un compleanno, budget indicativo per il tavolo…"></textarea>
+        </div>
+      </div>
+
+      <div class="preview">
+        <span class="eyebrow">Anteprima del messaggio</span>
+        <p id="preview">Compila i campi per vedere il messaggio.</p>
+      </div>
+
+      <div class="send-row">
+        <a class="btn btn-primary" id="send" href="https://wa.me/393204226887" target="_blank" rel="noopener">Apri WhatsApp</a>
+        <button class="btn btn-ghost" id="copy" type="button">Copia il testo</button>
+        <span class="send-note" id="status" aria-live="polite">Scrivo a <strong>+39 320 422 6887</strong></span>
+      </div>
+      <div class="rescue" id="rescue">
+        <div class="qr"><svg viewBox="0 0 29 29" role="img" aria-label="QR code per aprire la chat WhatsApp con Pier"><path fill="#efe6d9" d="M0 0h29v29h-29z"/><path stroke="#0a0710" d="M2 2.5h7m1 0h4m1 0h1m2 0h1m1 0h7m-25 1h1m5 0h1m1 0h1m2 0h2m1 0h1m1 0h1m1 0h1m5 0h1m-25 1h1m1 0h3m1 0h1m1 0h2m3 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m2 0h3m1 0h2m3 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m1 0h2m2 0h1m5 0h1m1 0h3m1 0h1m-25 1h1m5 0h1m2 0h2m1 0h1m5 0h1m5 0h1m-25 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-16 1h1m1 0h1m1 0h2m-15 1h1m2 0h6m1 0h1m6 0h1m2 0h1m1 0h3m-25 1h1m2 0h3m1 0h3m5 0h2m2 0h5m-24 1h2m1 0h1m1 0h2m2 0h4m2 0h5m1 0h1m2 0h1m-24 1h5m4 0h2m3 0h2m1 0h2m1 0h4m-24 1h1m1 0h1m2 0h1m2 0h4m1 0h2m1 0h2m5 0h1m-25 1h1m7 0h1m1 0h1m1 0h2m1 0h1m4 0h1m2 0h1m-24 1h2m3 0h4m1 0h1m4 0h1m1 0h1m2 0h5m-25 1h1m1 0h2m1 0h1m1 0h2m1 0h2m2 0h2m3 0h1m1 0h2m1 0h1m-25 1h1m2 0h2m1 0h1m1 0h1m1 0h2m1 0h2m1 0h5m1 0h2m-16 1h1m3 0h1m1 0h1m1 0h1m3 0h1m1 0h2m-24 1h7m1 0h2m1 0h2m1 0h1m1 0h1m1 0h1m1 0h1m3 0h1m-25 1h1m5 0h1m1 0h3m1 0h3m1 0h1m3 0h1m-21 1h1m1 0h3m1 0h1m1 0h4m3 0h6m-21 1h1m1 0h3m1 0h1m1 0h1m2 0h2m2 0h4m4 0h2m-25 1h1m1 0h3m1 0h1m4 0h3m3 0h1m2 0h5m-25 1h1m5 0h1m2 0h1m1 0h2m6 0h2m1 0h3m-25 1h7m1 0h1m5 0h1m1 0h1m1 0h1m2 0h1m2 0h1"/></svg></div>
+        <div>
+          <span class="eyebrow">Non si apre WhatsApp?</span>
+          <div class="num">+39 320 422 6887</div>
+          <p>Dal computer inquadra il QR col telefono. Dal telefono copia il numero, aprilo in WhatsApp e incolla il messaggio con "Copia il testo".</p>
+          <div class="rescue-actions">
+            <a class="btn btn-ghost" id="fallback" href="https://wa.me/393204226887" target="_blank" rel="noopener">Link diretto</a>
+            <button class="btn btn-ghost" id="copynum" type="button">Copia il numero</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="frow">
+      <div>
+        <strong class="brand">Pier — PR Roma</strong>
+        <div style="margin-top:6px">Liste, tavoli e privé nei club di Roma.</div>
+      </div>
+      <div><a id="footerwa" href="https://wa.me/393204226887" target="_blank" rel="noopener">WhatsApp +39 320 422 6887</a></div>
+    </div>
+    <p class="disclaimer">Foto e video sono di serate reali seguite da me. Serate, generi musicali e condizioni d'ingresso cambiano di settimana in settimana: le descrizioni sono indicative e la conferma definitiva arriva sempre in chat. L'ingresso è riservato ai maggiorenni e ogni club ha le sue regole: al Nice e all'Opus, per esempio, servono 19 anni per le ragazze e 21 per i ragazzi, con documento originale. La selezione all'ingresso spetta alla direzione. Bevi responsabilmente.</p>
+  </div>
+</footer>
+
+<div class="sticky"><a class="btn btn-primary" id="stickysend" href="https://wa.me/393204226887" target="_blank" rel="noopener">Scrivimi su WhatsApp</a></div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Video a schermo intero">
+  <button id="lbclose" type="button" aria-label="Chiudi il video">✕</button>
+  <video id="lbvideo" controls loop playsinline></video>
+</div>
+
+<script>
+var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"media/v4.mp4","v5":"media/v5.mp4","v6":"media/v6.mp4","v7":"media/v7.mp4"};
+(function(){
+  var PHONE = "393204226887";
+  var PHONE_LABEL = "+39 320 422 6887";
+  var $ = function(id){ return document.getElementById(id); };
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- ora di Roma, per nascondere le serate passate ---- */
+  function romeNow(){
+    try {
+      return new Date().toLocaleString("sv-SE", {timeZone:"Europe/Rome"}).replace(" ", "T").slice(0,16);
+    } catch(e){
+      var d = new Date(), p = function(n){ return (n<10?"0":"")+n; };
+      return d.getFullYear()+"-"+p(d.getMonth()+1)+"-"+p(d.getDate())+"T"+p(d.getHours())+":"+p(d.getMinutes());
+    }
+  }
+  function isoDate(d){
+    var p = function(n){ return (n<10?"0":"")+n; };
+    return d.getFullYear()+"-"+p(d.getMonth()+1)+"-"+p(d.getDate());
+  }
+  // Una serata resta visibile fino alle 6 del mattino dopo.
+  function nightOver(date, now){
+    var d = new Date(date + "T12:00:00");
+    d.setDate(d.getDate() + 1);
+    return now >= isoDate(d) + "T06:00";
+  }
+  var NOW = romeNow();
+
+  /* ---- stato dei locali e programma del weekend: arrivano da programma.json ---- */
+  var cards = Array.prototype.slice.call(document.querySelectorAll(".venue"));
+  $("venuecount").textContent = String(cards.length);
+  var RANK = {open:0, closing:1, ask:2, soon:3, off:4};
+  var MESI = ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"];
+  var GIORNI = ["Domenica","Lunedì","Martedì","Mercoledì","Giovedì","Venerdì","Sabato"];
+
+  function esc(s){
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
+    });
+  }
+  function applyStatus(locali){
+    cards.forEach(function(card, i){
+      var pill = card.querySelector(".status");
+      var list = locali && locali[card.dataset.venue];
+      if(list && list.length){
+        var s = list[list.length-1];
+        for(var k=0;k<list.length;k++){ if(!list[k].fino || NOW < list[k].fino){ s = list[k]; break; } }
+        pill.dataset.state = s.stato;
+        pill.textContent = s.etichetta;
+      }
+      card.style.order = String((RANK[pill.dataset.state] || 0) * 20 + i);
+    });
+  }
+  function nightHtml(s){
+    return '<div class="night" data-venue="' + esc(s.locale) + '"><span class="v">' + esc(s.locale) + '</span>' +
+      '<span class="t">' + esc(s.titolo) + '</span>' + (s.info ? '<span class="i">' + esc(s.info) + '</span>' : '') +
+      '<button type="button" class="btn btn-ghost btn-small book-it">Prenota</button></div>';
+  }
+  function renderWeekend(p){
+    var byDay = {}, order = [];
+    (p.serate || []).forEach(function(s){
+      if(!s || !s.data || nightOver(s.data, NOW)) return;
+      if(!byDay[s.data]){ byDay[s.data] = []; order.push(s.data); }
+      byDay[s.data].push(s);
+    });
+    order.sort();
+    $("days").innerHTML = order.map(function(d){
+      var dt = new Date(d + "T12:00:00");
+      return '<div class="day" data-date="' + esc(d) + '"><div class="day-head"><b>' + dt.getDate() + '</b><span>' +
+        GIORNI[dt.getDay()] + ' · ' + MESI[dt.getMonth()] + '</span></div>' + byDay[d].map(nightHtml).join("") + '</div>';
+    }).join("");
+    $("days").hidden = !order.length;
+    $("weekendempty").hidden = !!order.length;
+    var coming = (p.inArrivo || []).filter(function(c){ return c && c.data && !nightOver(c.data, NOW); });
+    $("coming").innerHTML = coming.map(function(c){
+      var dt = new Date(c.data + "T12:00:00");
+      return '<div class="coming" data-date="' + esc(c.data) + '" data-venue="' + esc(c.locale) + '">' +
+        '<span class="when">In arrivo · ' + GIORNI[dt.getDay()].toLowerCase() + ' ' + dt.getDate() + ' ' + MESI[dt.getMonth()] + '</span>' +
+        '<span class="t">' + esc(c.titolo) + '</span>' + (c.info ? '<span class="i">' + esc(c.info) + '</span>' : '') +
+        '<button type="button" class="btn btn-ghost btn-small book-it">Prenota</button></div>';
+    }).join("");
+    if(p.aggiornato){
+      var up = new Date(p.aggiornato + "T12:00:00");
+      $("weekendstamp").textContent = "Aggiornato il " + up.getDate() + " " + MESI[up.getMonth()];
+      $("weekendstamp").hidden = false;
+    }
+  }
+  applyStatus(null);
+  fetch("programma.json?v=" + Date.now(), {cache:"no-store"})
+    .then(function(r){ if(!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+    .then(function(p){ applyStatus(p.locali); renderWeekend(p); })
+    .catch(function(){ $("days").hidden = true; $("weekendempty").hidden = false; });
+
+  /* ---- selezione del locale ---- */
+  function pickVenue(name){
+    $("locale").value = name;
+    update();
+  }
+  // Scorrimento morbido verso le sezioni della pagina.
+  function scrollToEl(el, offset){
+    if(!el) return;
+    var y = Math.max(0, el.getBoundingClientRect().top + (window.pageYOffset || 0) - (offset || 12));
+    try { window.scrollTo({top:y, behavior: reduceMotion ? "auto" : "smooth"}); } catch(e){ window.scrollTo(0, y); }
+  }
+  function goToForm(){ scrollToEl($("prenota")); }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener("click", function(e){
+      var target = document.getElementById(a.getAttribute("href").slice(1));
+      if(!target) return;
+      e.preventDefault();
+      scrollToEl(target);
+    });
+  });
+  cards.forEach(function(card){
+    card.addEventListener("click", function(){
+      pickVenue(card.dataset.venue);
+      goToForm();
+    });
+  });
+  // I pulsanti Prenota del programma vengono creati dopo: un solo ascoltatore per tutti.
+  document.addEventListener("click", function(e){
+    var b = e.target && e.target.closest ? e.target.closest(".book-it") : null;
+    if(!b) return;
+    var night = b.closest("[data-venue]");
+    var holder = b.closest("[data-date]");
+    if(night) pickVenue(night.dataset.venue);
+    if(holder){ $("data").value = holder.dataset.date; }
+    update();
+    goToForm();
+  });
+
+  /* ---- video: caricati e avviati solo quando sono sullo schermo ---- */
+  var vids = Array.prototype.slice.call(document.querySelectorAll("video[data-v]"));
+  function ensureSrc(v){
+    if(!v.getAttribute("src")){ v.setAttribute("src", MEDIA["v"+v.dataset.v]); }
+  }
+  function tryPlay(v){
+    if(reduceMotion) return;
+    var p = v.play(); if(p && p.catch) p.catch(function(){});
+  }
+  if("IntersectionObserver" in window){
+    var loader = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ ensureSrc(e.target); loader.unobserve(e.target); }
+      });
+    }, {rootMargin:"300px"});
+    var player = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ ensureSrc(e.target); tryPlay(e.target); }
+        else { e.target.pause(); }
+      });
+    }, {threshold:0.25});
+    vids.forEach(function(v){ loader.observe(v); player.observe(v); });
+  } else {
+    vids.forEach(function(v){ ensureSrc(v); tryPlay(v); });
+  }
+
+  /* ---- lightbox ---- */
+  var lb = $("lb"), lbv = $("lbvideo"), lastFocus = null;
+  function openLb(n){
+    lastFocus = document.activeElement;
+    lbv.src = MEDIA["v"+n];
+    lb.classList.add("open");
+    document.body.classList.add("lb-open");
+    $("lbclose").focus();
+    var p = lbv.play(); if(p && p.catch) p.catch(function(){});
+  }
+  function closeLb(){
+    lb.classList.remove("open");
+    document.body.classList.remove("lb-open");
+    lbv.pause(); lbv.removeAttribute("src"); lbv.load();
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  document.querySelectorAll(".clip").forEach(function(c){
+    c.addEventListener("click", function(){ openLb(c.dataset.v); });
+    c.addEventListener("keydown", function(e){
+      if(e.key === "Enter" || e.key === " "){ e.preventDefault(); openLb(c.dataset.v); }
+    });
+  });
+  $("lbclose").addEventListener("click", closeLb);
+  lb.addEventListener("click", function(e){ if(e.target === lb) closeLb(); });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape" && lb.classList.contains("open")) closeLb(); });
+
+  /* ---- messaggio di prenotazione ---- */
+  function itDate(v){
+    if(!v) return "";
+    var p = v.split("-");
+    var giorni = ["domenica","lunedì","martedì","mercoledì","giovedì","venerdì","sabato"];
+    var d = new Date(v + "T12:00:00");
+    return giorni[d.getDay()] + " " + p[2] + "/" + p[1] + "/" + p[0];
+  }
+  function people(){
+    var n = parseInt($("persone").value, 10);
+    if(isNaN(n)) return "";
+    return String(Math.min(60, Math.max(1, n)));
+  }
+
+  function build(){
+    var nome = $("nome").value.trim();
+    var locale = $("locale").value;
+    var data = itDate($("data").value);
+    var persone = people();
+    var tipo = $("tipo").value;
+    var ora = $("ora").value;
+    var note = $("note").value.trim();
+
+    var l = [];
+    l.push("Ciao Pier! Vorrei prenotare tramite la tua lista.");
+    l.push("");
+    if(nome) l.push("Nome: " + nome);
+    l.push("Locale: " + (locale && locale !== "consiglio" ? locale : "da decidere, consigliami tu"));
+    if(data) l.push("Data: " + data);
+    if(persone) l.push("Persone: " + persone);
+    l.push("Tipo: " + tipo);
+    if(ora) l.push("Arrivo indicativo: " + ora);
+    if(note) l.push("Note: " + note);
+    l.push("");
+    l.push("Fammi sapere disponibilità e condizioni, grazie!");
+    return l.join("\n");
+  }
+
+  function update(){
+    var msg = build();
+    $("preview").textContent = msg;
+    var href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(msg);
+    $("send").href = href;
+    $("fallback").href = href;
+    $("stickysend").href = href;
+    var sel = $("locale").value;
+    cards.forEach(function(card){
+      var on = card.dataset.venue === sel;
+      card.classList.toggle("is-picked", on);
+      var b = card.querySelector(".pick");
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      b.textContent = on ? "Selezionato" : "Seleziona";
+    });
+  }
+
+  ["nome","locale","data","persone","tipo","ora","note"].forEach(function(id){
+    $(id).addEventListener("input", update);
+    $(id).addEventListener("change", update);
+  });
+  $("persone").addEventListener("blur", function(){
+    var n = people(); if(n) $("persone").value = n; update();
+  });
+  $("form").addEventListener("submit", function(e){ e.preventDefault(); });
+
+  // I link WhatsApp sono link normali: si aprono in una nuova scheda o nell'app.
+  // Se dopo il tocco la pagina resta in primo piano, evidenziamo il riquadro con QR e numero.
+  [$("send"), $("stickysend")].forEach(function(a){
+    a.addEventListener("click", function(){
+      var left = false;
+      var mark = function(){ left = true; };
+      window.addEventListener("blur", mark, {once:true});
+      document.addEventListener("visibilitychange", mark, {once:true});
+      setTimeout(function(){
+        window.removeEventListener("blur", mark);
+        document.removeEventListener("visibilitychange", mark);
+        if(left || document.hidden) return;
+        var r = $("rescue");
+        r.classList.add("flash");
+        scrollToEl(r, Math.max(12, (window.innerHeight - r.offsetHeight) / 2));
+        setTimeout(function(){ r.classList.remove("flash"); }, 2600);
+      }, 1600);
+    });
+  });
+
+  var statusDefault = $("status").innerHTML, statusTimer = null;
+  function flashStatus(msg){
+    var s = $("status");
+    s.textContent = msg;
+    clearTimeout(statusTimer);
+    statusTimer = setTimeout(function(){ s.innerHTML = statusDefault; }, 2400);
+  }
+  function selectText(el){
+    try {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    } catch(e){}
+  }
+  function copyText(txt, okMsg, fallbackEl){
+    var fail = function(){
+      selectText(fallbackEl);
+      flashStatus("Copia non riuscita: il testo è selezionato, copialo a mano.");
+    };
+    var legacy = function(){
+      var t = document.createElement("textarea");
+      t.value = txt; t.setAttribute("readonly", "");
+      t.style.position = "fixed"; t.style.opacity = "0";
+      document.body.appendChild(t); t.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch(e){}
+      document.body.removeChild(t);
+      if(ok) flashStatus(okMsg); else fail();
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(function(){ flashStatus(okMsg); }, legacy);
+    } else { legacy(); }
+  }
+  $("copy").addEventListener("click", function(){ copyText(build(), "Testo copiato.", $("preview")); });
+  $("copynum").addEventListener("click", function(){ copyText(PHONE_LABEL, "Numero copiato.", document.querySelector(".rescue .num")); });
+
+  /* ---- data proposta: il prossimo sabato (oggi, se è sabato) ---- */
+  var today = new Date(NOW.slice(0,10) + "T12:00:00");
+  var sat = new Date(today);
+  sat.setDate(sat.getDate() + ((6 - sat.getDay() + 7) % 7));
+  $("data").min = isoDate(today);
+  if(!$("data").value) $("data").value = isoDate(sat);
+
+  update();
+})();
+</script>
+</body>
+</html>

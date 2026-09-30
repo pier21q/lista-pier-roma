@@ -1,0 +1,47 @@
+{
+  "aggiornato": "2026-09-30",
+  "serate": [
+    {"data": "2026-10-01", "locale": "Nimbus", "titolo": "Il cielo in una stanza", "info": "Dinner show e club, dalle 19"},
+    {"data": "2026-10-02", "locale": "Nice", "titolo": "Vibra", "info": "Reggaeton · omaggio donna"},
+    {"data": "2026-10-02", "locale": "Nimbus", "titolo": "Closing party Al Settimo Cielo", "info": "Ingresso libero · cena a 35€"},
+    {"data": "2026-10-02", "locale": "Teatro Centrale", "titolo": "18eSto! Welcome University Night", "info": "Dalle 23:30"},
+    {"data": "2026-10-03", "locale": "Nice", "titolo": "Saturday Night", "info": "Commerciale, afro house, reggaeton · omaggio donna"},
+    {"data": "2026-10-03", "locale": "Nimbus", "titolo": "The Last Dance", "info": "L'ultima serata della stagione"},
+    {"data": "2026-10-03", "locale": "Teatro Centrale", "titolo": "Don't Tell Mama", "info": "Dalle 23:30"},
+    {"data": "2026-10-04", "locale": "Teatro Centrale", "titolo": "Roots", "info": "Dalle 23:30"}
+  ],
+  "inArrivo": [
+    {"data": "2026-10-09", "locale": "Nice", "titolo": "Bresh al Nice", "info": "Biglietti già in vendita, i tavoli vanno prenotati prima."}
+  ],
+  "locali": {
+    "Nice": [
+      {"fino": "2026-10-12T06:00", "stato": "open", "etichetta": "Aperto ven e sab"},
+      {"stato": "ask", "etichetta": "Chiedi disponibilità"}
+    ],
+    "Teatro Centrale": [
+      {"stato": "open", "etichetta": "Aperto · nuova stagione"}
+    ],
+    "Nimbus": [
+      {"fino": "2026-10-04T06:00", "stato": "closing", "etichetta": "Ultimo weekend"},
+      {"stato": "off", "etichetta": "Stagione estiva conclusa"}
+    ],
+    "Opus Club": [
+      {"fino": "2026-11-01T00:00", "stato": "soon", "etichetta": "Riapre a ottobre"},
+      {"stato": "ask", "etichetta": "Chiedi disponibilità"}
+    ],
+    "Art Café": [
+      {"fino": "2026-11-01T00:00", "stato": "soon", "etichetta": "Riapre a ottobre"},
+      {"stato": "ask", "etichetta": "Chiedi disponibilità"}
+    ],
+    "Room 26": [
+      {"fino": "2026-11-01T00:00", "stato": "soon", "etichetta": "Nuova stagione in arrivo"},
+      {"stato": "ask", "etichetta": "Chiedi disponibilità"}
+    ],
+    "Villa Sublime": [
+      {"stato": "ask", "etichetta": "Chiedi disponibilità"}
+    ],
+    "Gus": [
+      {"stato": "ask", "etichetta": "Chiedi disponibilità"}
+    ]
+  }
+}
