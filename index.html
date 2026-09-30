@@ -203,8 +203,8 @@ section{padding:82px 0}
 .day-head b{font-family:'Bodoni Moda',serif;font-weight:400;font-size:30px;line-height:1;font-variant-numeric:tabular-nums}
 .day-head span{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--neon-soft);font-weight:700}
 .night{display:flex;flex-direction:column;gap:4px}
-.night .v{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--neon-soft);font-weight:700;line-height:1.35}
-.night .t{font-family:'Bodoni Moda',serif;font-size:27px;line-height:1.05;color:var(--cream)}
+.night .t{font-family:'Bodoni Moda',serif;font-weight:600;font-size:30px;line-height:1.05;color:var(--neon-soft);text-shadow:0 0 18px rgba(255,46,136,.35)}
+.night .v{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream);font-weight:600;line-height:1.35}
 .wk-actions{display:flex;flex-direction:column;align-items:flex-end;gap:12px}
 .btn-wa{border-color:rgba(76,224,255,.45);color:var(--cream)}
 .btn-wa:hover{border-color:var(--cyan)}
@@ -465,10 +465,10 @@ body.lb-open{overflow:hidden}
   .day{padding:18px 16px 16px;gap:0}
   .day-head{padding-bottom:10px;margin-bottom:4px}
   .day-head b{font-size:26px}
-  .night{display:grid;grid-template-columns:1fr auto;grid-template-areas:"v b" "t b" "i b";column-gap:14px;row-gap:3px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
+  .night{display:grid;grid-template-columns:1fr auto;grid-template-areas:"t b" "v b" "i b";column-gap:14px;row-gap:3px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
   .day-head + .night{border-top:0}
   .night .v{grid-area:v}
-  .night .t{grid-area:t;font-size:25px}
+  .night .t{grid-area:t;font-size:28px}
   .night .i{grid-area:i}
   .night .btn{grid-area:b;margin-top:0;align-self:center;min-height:44px;padding:10px 16px}
   .coming{padding:14px 16px}
@@ -876,8 +876,8 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
     });
   }
   function nightHtml(s){
-    return '<div class="night" data-venue="' + esc(s.locale) + '"><span class="v">' + esc(s.titolo) + '</span>' +
-      '<span class="t">' + esc(s.locale) + '</span>' + (s.info ? '<span class="i">' + esc(s.info) + '</span>' : '') +
+    return '<div class="night" data-venue="' + esc(s.locale) + '"><span class="t">' + esc(s.locale) + '</span>' +
+      '<span class="v">' + esc(s.titolo) + '</span>' + (s.info ? '<span class="i">' + esc(s.info) + '</span>' : '') +
       '<button type="button" class="btn btn-ghost btn-small book-it">Prenota</button></div>';
   }
   function renderWeekend(p){
