@@ -313,9 +313,12 @@ section{padding:82px 0}
 .pick[aria-pressed="true"]::before{content:"✓ "}
 
 /* ---------- GALLERY ---------- */
-.gal-top{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gal-top{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .gal-top .shot{aspect-ratio:4/5}
-.gal-top figcaption{font-size:22px;left:18px;right:18px;bottom:16px}
+.gal-top .shot.big{grid-column:span 2;grid-row:span 2;aspect-ratio:auto;border-color:rgba(255,122,182,.45)}
+.gal-top .shot.big img{position:absolute;inset:0}
+.gal-top .shot figcaption{font-size:18px;left:16px;right:16px;bottom:14px}
+.gal-top .shot.big figcaption{font-size:30px;left:24px;right:24px;bottom:22px}
 
 .gal-more{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px}
 .gal-more .shot{aspect-ratio:1/1;opacity:.72;filter:saturate(.85)}
@@ -444,9 +447,10 @@ body.lb-open{overflow:hidden}
   .sticky{display:block}
   body{padding-bottom:calc(76px + env(safe-area-inset-bottom, 0px))}
   .clip{flex:0 0 168px}
-  .gal-top{grid-template-columns:1fr;gap:10px}
-  .gal-top .shot{aspect-ratio:3/4}
-  .gal-top figcaption{font-size:20px;left:14px;right:14px;bottom:12px}
+  .gal-top{grid-template-columns:repeat(2,1fr);gap:10px}
+  .gal-top .shot.big{grid-column:1 / -1;grid-row:auto;aspect-ratio:4/5}
+  .gal-top .shot figcaption{font-size:15px;left:10px;right:10px;bottom:10px}
+  .gal-top .shot.big figcaption{font-size:23px;left:14px;right:14px;bottom:14px}
   .gal-more{gap:10px;margin-top:10px}
   .gal-more .shot{opacity:.85;filter:none}
   .shot figcaption{font-size:14px;left:10px;right:10px}
@@ -554,6 +558,7 @@ body.lb-open{overflow:hidden}
     </div>
   </div>
   <div class="reel" id="reel">
+    <div class="clip" data-v="8" role="button" tabindex="0" aria-label="Guarda il video: bottiglia con le fontanelle all'Art Café"><video data-v="8" poster="media/v8.jpg" muted loop playsinline preload="none"></video><span class="veil"></span><div class="meta"><span class="place">Art Café</span><span class="cap">Arriva la bottiglia.</span></div></div>
     <div class="clip" data-v="7" role="button" tabindex="0" aria-label="Guarda il video: il brindisi"><video data-v="7" poster="media/v7.jpg" muted loop playsinline preload="none"></video><span class="veil"></span><div class="meta"><span class="place">Il brindisi</span><span class="cap">Buona la prima.</span></div></div>
     <div class="clip" data-v="1" role="button" tabindex="0" aria-label="Guarda il video: Opus Club"><video data-v="1" poster="media/v1.jpg" muted loop playsinline preload="none"></video><span class="veil"></span><div class="meta"><span class="place">Opus Club</span><span class="cap">Il tavolo arriva già pronto.</span></div></div>
     <div class="clip" data-v="5" role="button" tabindex="0" aria-label="Guarda il video: servizio al tavolo"><video data-v="5" poster="media/v5.jpg" muted loop playsinline preload="none"></video><span class="veil"></span><div class="meta"><span class="place">Servizio al tavolo</span><span class="cap">Entrata in scena.</span></div></div>
@@ -666,16 +671,18 @@ body.lb-open{overflow:hidden}
     </div>
 
     <div class="gal-top">
-      <figure class="shot"><img src="media/foto-1.jpg" alt="Bottiglia di gin illuminata di blu al tavolo"><figcaption>Mezzanotte, luce blu, primo giro.</figcaption></figure>
-      <figure class="shot"><img src="media/foto-2.jpg" alt="Sala di una discoteca illuminata di rosso" style="object-position:center 35%"><figcaption>Arrivi e il posto è già acceso.</figcaption></figure>
-      <figure class="shot"><img src="media/foto-3.jpg" alt="Interno dell'Art Café con divani e luci blu" style="object-position:center 70%"><figcaption>Art Café, quando chiama il centro.</figcaption></figure>
+      <figure class="shot big"><img src="media/foto-7.jpg" alt="Tre bottiglie di Moët &amp; Chandon e due di Beluga nel ghiaccio" loading="lazy"><figcaption>Bollicine o vodka, scegli tu.</figcaption></figure>
+      <figure class="shot"><img src="media/foto-6.jpg" alt="Moët &amp; Chandon, Johnnie Walker Red Label e Grey Goose da 1,5 litri in un secchiello" loading="lazy"><figcaption>Tre bottiglie, dodici persone.</figcaption></figure>
+      <figure class="shot"><img src="media/foto-8.jpg" alt="Grey Goose da 1,5 litri e Bombay Sapphire da 1,75 litri nel ghiaccio con i mixer" style="object-position:center 12%" loading="lazy"><figcaption>Vodka e gin, formato grande.</figcaption></figure>
+      <figure class="shot"><img src="media/foto-2.jpg" alt="Sala di una discoteca illuminata di rosso" style="object-position:center 35%" loading="lazy"><figcaption>Arrivi e il posto è già acceso.</figcaption></figure>
+      <figure class="shot"><img src="media/foto-5.jpg" alt="Secchiello del ghiaccio illuminato con bottiglie e mixer" loading="lazy"><figcaption>Ghiaccio e mixer, inclusi.</figcaption></figure>
     </div>
 
     <div class="gal-more">
+      <figure class="shot"><img src="media/foto-1.jpg" alt="Bottiglie di Bombay Sapphire illuminate di blu al tavolo" loading="lazy"><figcaption>Mezzanotte, luce blu, primo giro.</figcaption></figure>
+      <figure class="shot"><img src="media/foto-3.jpg" alt="Interno dell'Art Café con divani e luci blu" loading="lazy"><figcaption>Art Café, quando chiama il centro.</figcaption></figure>
+      <figure class="shot"><img src="media/foto-9.jpg" alt="Il lampadario rosso dell'Opus Club" loading="lazy"><figcaption>Opus Club, sotto il lampadario.</figcaption></figure>
       <figure class="shot"><img src="media/foto-4.jpg" alt="Tavolo riservato in discoteca con cartellino nominativo" style="object-position:center 30%" loading="lazy"><figcaption>Il tavolo col tuo nome sopra.</figcaption></figure>
-      <figure class="shot"><img src="media/foto-5.jpg" alt="Secchiello del ghiaccio illuminato con bottiglie e mixer" loading="lazy"><figcaption>Ghiaccio e mixer, inclusi.</figcaption></figure>
-      <figure class="shot"><img src="media/foto-6.jpg" alt="Champagne, whisky e vodka in un secchiello" loading="lazy"><figcaption>Tre bottiglie, dodici persone.</figcaption></figure>
-      <figure class="shot"><img src="media/foto-7.jpg" alt="Bottiglie di champagne e vodka nel ghiaccio" loading="lazy"><figcaption>Bollicine o vodka, scegli tu.</figcaption></figure>
     </div>
   </div>
 </section>
@@ -809,7 +816,7 @@ body.lb-open{overflow:hidden}
 </div>
 
 <script>
-var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"media/v4.mp4","v5":"media/v5.mp4","v6":"media/v6.mp4","v7":"media/v7.mp4"};
+var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"media/v4.mp4","v5":"media/v5.mp4","v6":"media/v6.mp4","v7":"media/v7.mp4","v8":"media/v8.mp4"};
 (function(){
   var PHONE = "393204226887";
   var PHONE_LABEL = "+39 320 422 6887";
