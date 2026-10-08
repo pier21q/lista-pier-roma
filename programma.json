@@ -11,9 +11,9 @@
     {"data": "2026-10-10", "locale": "Teatro Centrale", "titolo": "Don't Tell Mama", "info": "Dalle 23:30"}
   ],
   "inArrivo": [
-    {"data": "2026-10-17", "locale": "Room 26", "titolo": "Special guest Lovra", "info": "Dalle 22"},
-    {"data": "2026-10-24", "locale": "Room 26", "titolo": "Special guest Henri Bergmann", "info": "Dalle 22"},
-    {"data": "2026-10-31", "locale": "Room 26", "titolo": "Halloween Night", "info": "Dalle 22"}
+    {"data": "2026-10-17", "locale": "Room 26", "titolo": "Room 26 · special guest Lovra", "info": "Dalle 22"},
+    {"data": "2026-10-24", "locale": "Room 26", "titolo": "Room 26 · special guest Henri Bergmann", "info": "Dalle 22"},
+    {"data": "2026-10-31", "locale": "Room 26", "titolo": "Room 26 · Halloween Night", "info": "Dalle 22"}
   ],
   "locali": {
     "Opus Club": [
