@@ -151,12 +151,6 @@
         "stato": "ask",
         "etichetta": "Chiedi disponibilità"
       }
-    ],
-    "Nimbus": [
-      {
-        "stato": "off",
-        "etichetta": "Stagione estiva conclusa"
-      }
     ]
   }
 }
