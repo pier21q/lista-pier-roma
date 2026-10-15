@@ -38,6 +38,12 @@
       "info": "Apertura confermata"
     },
     {
+      "data": "2026-10-16",
+      "locale": "Gus",
+      "titolo": "Serata del venerdì",
+      "info": "Apertura confermata"
+    },
+    {
       "data": "2026-10-17",
       "locale": "Room 26",
       "titolo": "Special guest Lovra",
@@ -136,6 +142,11 @@
       }
     ],
     "Gus": [
+      {
+        "fino": "2026-10-17T06:00",
+        "stato": "open",
+        "etichetta": "Aperto venerdì"
+      },
       {
         "stato": "ask",
         "etichetta": "Chiedi disponibilità"
