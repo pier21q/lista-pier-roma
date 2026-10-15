@@ -1,51 +1,162 @@
 {
   "aggiornato": "2026-10-15",
   "serate": [
-    {"data": "2026-10-15", "locale": "Room 26", "titolo": "Milkshake Opening Party", "info": "Party anni 2000 · dalle 23 · omaggio in lista entro l'01:00"},
-    {"data": "2026-10-15", "locale": "Teatro Centrale", "titolo": "Side B - Thursday Global Sound", "info": "Ingresso libero · dalle 23:30"},
-    {"data": "2026-10-16", "locale": "Nice", "titolo": "Mamacita", "info": "Ingresso libero"},
-    {"data": "2026-10-16", "locale": "Room 26", "titolo": "Friday", "info": "Dalle 22 · biglietti su Tickly"},
-    {"data": "2026-10-16", "locale": "Teatro Centrale", "titolo": "18eSto! University Night", "info": "Dalle 23:30"},
-    {"data": "2026-10-16", "locale": "Art Café", "titolo": "Friday Night", "info": "Aperto il venerdì · info e tavoli via WhatsApp"},
-    {"data": "2026-10-17", "locale": "Room 26", "titolo": "Special guest Lovra", "info": "Dalle 22 · biglietti su Tickly"},
-    {"data": "2026-10-17", "locale": "Nice", "titolo": "Saturday Night", "info": "Commerciale, afro house, reggaeton · ingresso libero"},
-    {"data": "2026-10-17", "locale": "Teatro Centrale", "titolo": "Don't Tell Mama", "info": "Dalle 23:30"},
-    {"data": "2026-10-17", "locale": "Art Café", "titolo": "Saturday Night", "info": "Aperto il sabato · info e tavoli via WhatsApp"},
-    {"data": "2026-10-18", "locale": "Room 26", "titolo": "Bailamé Opening", "info": "Prima domenica della stagione · dalle 22"},
-    {"data": "2026-10-18", "locale": "Teatro Centrale", "titolo": "BeKind - Back to Sunday Night", "info": "Dalle 23:30"}
+    {
+      "data": "2026-10-15",
+      "locale": "Room 26",
+      "titolo": "Milkshake Opening Party",
+      "info": "Party anni 2000 · dalle 23 · omaggio in lista entro l'01:00"
+    },
+    {
+      "data": "2026-10-15",
+      "locale": "Teatro Centrale",
+      "titolo": "Side B - Thursday Global Sound",
+      "info": "Ingresso libero · dalle 23:30"
+    },
+    {
+      "data": "2026-10-16",
+      "locale": "Nice",
+      "titolo": "Mamacita",
+      "info": "Ingresso libero"
+    },
+    {
+      "data": "2026-10-16",
+      "locale": "Room 26",
+      "titolo": "Friday",
+      "info": "Dalle 22 · biglietti su Tickly"
+    },
+    {
+      "data": "2026-10-16",
+      "locale": "Teatro Centrale",
+      "titolo": "18eSto! University Night",
+      "info": "Dalle 23:30"
+    },
+    {
+      "data": "2026-10-16",
+      "locale": "Art Café",
+      "titolo": "Serata del venerdì",
+      "info": "Apertura confermata · info eventi +39 347 831 2563"
+    },
+    {
+      "data": "2026-10-17",
+      "locale": "Room 26",
+      "titolo": "Special guest Lovra",
+      "info": "Dalle 22 · biglietti su Tickly"
+    },
+    {
+      "data": "2026-10-17",
+      "locale": "Nice",
+      "titolo": "Saturday Night",
+      "info": "Commerciale, afro house, reggaeton · ingresso libero"
+    },
+    {
+      "data": "2026-10-17",
+      "locale": "Teatro Centrale",
+      "titolo": "Don't Tell Mama",
+      "info": "Dalle 23:30"
+    },
+    {
+      "data": "2026-10-17",
+      "locale": "Art Café",
+      "titolo": "Serata del sabato",
+      "info": "Apertura confermata · info eventi +39 347 831 2563"
+    },
+    {
+      "data": "2026-10-18",
+      "locale": "Room 26",
+      "titolo": "Bailamé Opening",
+      "info": "Prima domenica della stagione · dalle 22"
+    },
+    {
+      "data": "2026-10-18",
+      "locale": "Teatro Centrale",
+      "titolo": "BeKind - Back to Sunday Night",
+      "info": "Dalle 23:30"
+    }
   ],
   "inArrivo": [
-    {"data": "2026-10-24", "locale": "Room 26", "titolo": "Room 26 · special guest Henri Bergmann", "info": "Dalle 22"},
-    {"data": "2026-10-31", "locale": "Nice", "titolo": "Nice · Halloween Thriller", "info": "Info e tavoli nelle stories"},
-    {"data": "2026-10-31", "locale": "Room 26", "titolo": "Room 26 · Halloween Night", "info": "Dalle 22"}
+    {
+      "data": "2026-10-24",
+      "locale": "Room 26",
+      "titolo": "Room 26 · special guest Henri Bergmann",
+      "info": "Dalle 22"
+    },
+    {
+      "data": "2026-10-31",
+      "locale": "Nice",
+      "titolo": "Nice · Halloween Thriller",
+      "info": "Info e tavoli nelle stories"
+    },
+    {
+      "data": "2026-10-31",
+      "locale": "Room 26",
+      "titolo": "Room 26 · Halloween Night",
+      "info": "Dalle 22"
+    }
   ],
   "locali": {
     "Opus Club": [
-      {"fino": "2026-11-01T00:00", "stato": "soon", "etichetta": "Riapertura in arrivo"},
-      {"stato": "ask", "etichetta": "Chiedi disponibilità"}
+      {
+        "fino": "2026-11-01T00:00",
+        "stato": "soon",
+        "etichetta": "Riapertura in arrivo"
+      },
+      {
+        "stato": "ask",
+        "etichetta": "Chiedi disponibilità"
+      }
     ],
     "Art Café": [
-      {"stato": "open", "etichetta": "Aperto ven e sab"}
+      {
+        "stato": "open",
+        "etichetta": "Aperto ven e sab"
+      }
     ],
     "Room 26": [
-      {"fino": "2026-10-19T06:00", "stato": "open", "etichetta": "Aperto da giovedì a domenica"},
-      {"stato": "open", "etichetta": "Aperto ven e sab"}
+      {
+        "fino": "2026-10-19T06:00",
+        "stato": "open",
+        "etichetta": "Aperto da giovedì a domenica"
+      },
+      {
+        "stato": "open",
+        "etichetta": "Aperto ven e sab"
+      }
     ],
     "Teatro Centrale": [
-      {"stato": "open", "etichetta": "Aperto da giovedì a domenica"}
+      {
+        "stato": "open",
+        "etichetta": "Aperto da giovedì a domenica"
+      }
     ],
     "Villa Sublime": [
-      {"stato": "ask", "etichetta": "Chiedi disponibilità"}
+      {
+        "stato": "ask",
+        "etichetta": "Chiedi disponibilità"
+      }
     ],
     "Gus": [
-      {"stato": "ask", "etichetta": "Chiedi disponibilità"}
+      {
+        "stato": "ask",
+        "etichetta": "Chiedi disponibilità"
+      }
     ],
     "Nice": [
-      {"fino": "2026-11-01T06:00", "stato": "open", "etichetta": "Aperto ven e sab"},
-      {"stato": "ask", "etichetta": "Chiedi disponibilità"}
+      {
+        "fino": "2026-11-01T06:00",
+        "stato": "open",
+        "etichetta": "Aperto ven e sab"
+      },
+      {
+        "stato": "ask",
+        "etichetta": "Chiedi disponibilità"
+      }
     ],
     "Nimbus": [
-      {"stato": "off", "etichetta": "Stagione estiva conclusa"}
+      {
+        "stato": "off",
+        "etichetta": "Stagione estiva conclusa"
+      }
     ]
   }
 }
