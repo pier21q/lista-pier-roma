@@ -486,22 +486,110 @@ body.lb-open{overflow:hidden}
   .rescue{padding:16px}
 }
 
+/* ---------- HALLOWEEN: attivo fino al 1° novembre alle 6, poi il sito torna normale ---------- */
+html:not(.halloween) .hw-only{display:none!important}
+html.halloween .hw-hide{display:none!important}
+html.halloween{
+  --ground:#0B0710;
+  --neon:#FF6A00;
+  --neon-soft:#FF9A3C;
+  --cyan:#A6FF4D;
+}
+html.halloween .hero::before{
+  background:
+    radial-gradient(46% 42% at 22% 8%, rgba(255,106,0,.32), transparent 68%),
+    radial-gradient(40% 38% at 82% 18%, rgba(140,70,255,.24), transparent 70%);
+}
+html.halloween .phone{box-shadow:0 26px 70px rgba(0,0,0,.65), 0 0 0 1px rgba(255,106,0,.25)}
+html.halloween .btn-primary{color:#140700}
+html.halloween .btn-primary:hover{box-shadow:0 10px 34px rgba(255,106,0,.5)}
+html.halloween .night .t{text-shadow:0 0 18px rgba(255,106,0,.4)}
+html.halloween .btn-wa{border-color:rgba(166,255,77,.45)}
+html.halloween .venue.is-picked{box-shadow:0 0 0 1px var(--neon),0 18px 44px rgba(255,106,0,.2)}
+html.halloween .status[data-state="open"]{border-color:rgba(166,255,77,.4)}
+html.halloween .status[data-state="closing"]{border-color:rgba(255,106,0,.45)}
+html.halloween .gal-top .shot.big{border-color:rgba(255,154,60,.45)}
+html.halloween .rescue.flash{box-shadow:0 0 0 1px var(--neon),0 0 44px rgba(255,106,0,.28)}
+
+.bats{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.bat{position:absolute;width:56px;color:#1E1229;opacity:.95;filter:drop-shadow(0 0 6px rgba(255,106,0,.75)) drop-shadow(0 0 18px rgba(255,106,0,.35));animation:batfly 9s ease-in-out infinite}
+.bat svg{display:block;width:100%;height:auto;transform-origin:50% 40%;animation:flap .5s ease-in-out infinite alternate}
+.bat:nth-child(1){top:14%;left:52%;width:64px}
+.bat:nth-child(2){top:30%;left:70%;width:40px;animation-duration:11s;animation-delay:-3s}
+.bat:nth-child(3){top:9%;left:86%;width:32px;animation-duration:13s;animation-delay:-6s}
+.bat:nth-child(4){top:62%;left:46%;width:28px;animation-duration:10s;animation-delay:-2s;opacity:.6}
+@keyframes batfly{0%,100%{transform:translate(0,0) rotate(-4deg)}50%{transform:translate(-26px,-18px) rotate(5deg)}}
+@keyframes flap{from{transform:scaleY(1)}to{transform:scaleY(.55)}}
+
+.hw{position:relative;overflow:hidden;border-bottom:1px solid var(--line);padding:72px 0;
+  background:
+    radial-gradient(60% 70% at 12% 0%, rgba(255,106,0,.16), transparent 70%),
+    radial-gradient(50% 60% at 100% 100%, rgba(140,70,255,.16), transparent 70%),
+    var(--ground-2)}
+.hw .web{position:absolute;top:-2px;right:-2px;width:min(300px,52vw);height:auto;color:rgba(239,230,217,.13);pointer-events:none}
+.hw .wrap{position:relative;z-index:1}
+.hw .sec-head h2 em{font-style:italic;color:var(--neon);text-shadow:0 0 26px rgba(255,106,0,.45)}
+.hw-count{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);font-weight:700}
+.hw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:14px}
+.hw-card{
+  position:relative;display:flex;flex-direction:column;gap:8px;
+  padding:22px 22px 20px;border:1px solid var(--line);border-radius:var(--radius);
+  background:linear-gradient(180deg,rgba(255,106,0,.07),rgba(255,255,255,.015) 55%);
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.hw-card:hover{transform:translateY(-4px);border-color:rgba(255,106,0,.55);box-shadow:0 18px 44px rgba(255,106,0,.14)}
+.hw-card .zone{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.hw-card h3{font-size:30px;line-height:1.02;color:var(--neon-soft);text-shadow:0 0 18px rgba(255,106,0,.35)}
+.hw-card .v{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream);font-weight:700;line-height:1.35}
+.hw-card .i{font-size:13.5px;color:var(--body)}
+.hw-card .btn{align-self:flex-start;margin-top:auto}
+.hw-card .i + .btn,.hw-card .v + .btn{margin-top:8px}
+.hw-eve{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-top:14px;padding:14px 18px;border:1px dashed var(--line-strong);border-radius:var(--radius)}
+.hw-eve .when{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);font-weight:700}
+.hw-eve .t{font-family:'Bodoni Moda',serif;font-size:20px}
+.hw-eve .i{font-size:13.5px;color:var(--body)}
+@media (max-width:760px){
+  .hw{padding:52px 0}
+  .bat:nth-child(1){left:68%;top:6%;width:48px}
+  .bat:nth-child(2){left:84%;top:20%}
+  .bat:nth-child(3),.bat:nth-child(4){display:none}
+  .hw-card .btn,.hw-eve .btn{min-height:44px;width:100%}
+}
+
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
   html{scroll-behavior:auto}
 }
 </style>
+<script>
+/* Tema Halloween: si spegne da solo dopo la notte del 31 ottobre 2026 (ora di Roma). */
+(function(){
+  var now;
+  try { now = new Date().toLocaleString("sv-SE", {timeZone:"Europe/Rome"}).replace(" ", "T").slice(0,16); }
+  catch(e){ now = new Date().toISOString().slice(0,16); }
+  if(now < "2026-11-01T06:00"){ document.documentElement.classList.add("halloween"); }
+})();
+</script>
 </head>
 <body>
 
 <header class="hero">
+  <div class="bats hw-only" aria-hidden="true">
+    <span class="bat"><svg viewBox="0 0 64 24"><path fill="currentColor" d="M32 10c-2-4-4-5-5-5 1 2 1 4 0 5-3-3-9-6-17-5 3 1 5 3 6 6-3-1-6 0-8 2 4 0 7 2 8 5 2-2 5-3 8-2 2 1 4 4 5 6h6c1-2 3-5 5-6 3-1 6 0 8 2 1-3 4-5 8-5-2-2-5-3-8-2 1-3 3-5 6-6-8-1-14 2-17 5-1-1-1-3 0-5-1 0-3 1-5 5z"/></svg></span>
+    <span class="bat"><svg viewBox="0 0 64 24"><path fill="currentColor" d="M32 10c-2-4-4-5-5-5 1 2 1 4 0 5-3-3-9-6-17-5 3 1 5 3 6 6-3-1-6 0-8 2 4 0 7 2 8 5 2-2 5-3 8-2 2 1 4 4 5 6h6c1-2 3-5 5-6 3-1 6 0 8 2 1-3 4-5 8-5-2-2-5-3-8-2 1-3 3-5 6-6-8-1-14 2-17 5-1-1-1-3 0-5-1 0-3 1-5 5z"/></svg></span>
+    <span class="bat"><svg viewBox="0 0 64 24"><path fill="currentColor" d="M32 10c-2-4-4-5-5-5 1 2 1 4 0 5-3-3-9-6-17-5 3 1 5 3 6 6-3-1-6 0-8 2 4 0 7 2 8 5 2-2 5-3 8-2 2 1 4 4 5 6h6c1-2 3-5 5-6 3-1 6 0 8 2 1-3 4-5 8-5-2-2-5-3-8-2 1-3 3-5 6-6-8-1-14 2-17 5-1-1-1-3 0-5-1 0-3 1-5 5z"/></svg></span>
+    <span class="bat"><svg viewBox="0 0 64 24"><path fill="currentColor" d="M32 10c-2-4-4-5-5-5 1 2 1 4 0 5-3-3-9-6-17-5 3 1 5 3 6 6-3-1-6 0-8 2 4 0 7 2 8 5 2-2 5-3 8-2 2 1 4 4 5 6h6c1-2 3-5 5-6 3-1 6 0 8 2 1-3 4-5 8-5-2-2-5-3-8-2 1-3 3-5 6-6-8-1-14 2-17 5-1-1-1-3 0-5-1 0-3 1-5 5z"/></svg></span>
+  </div>
   <div class="wrap hero-inner">
     <div>
-      <span class="badge"><span class="dot"></span> Liste &amp; tavoli — Roma</span>
+      <span class="badge hw-hide"><span class="dot"></span> Liste &amp; tavoli — Roma</span>
+      <span class="badge hw-only"><span class="dot"></span> 🎃 Halloween — sabato 31 ottobre</span>
       <h1 class="title">Pier<br><em>PR Roma</em></h1>
       <p class="lede">Liste, ingressi ridotti e tavoli nei club di Roma. Scegli il locale, dimmi quante persone siete e ti confermo su WhatsApp, di solito in pochi minuti.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#weekend">Questo weekend</a>
+        <a class="btn btn-primary hw-only" href="#halloween">🎃 Halloween 31/10</a>
+        <a class="btn btn-primary hw-hide" href="#weekend">Questo weekend</a>
+        <a class="btn btn-ghost hw-only" href="#weekend">Questo weekend</a>
         <a class="btn btn-ghost" href="#prenota">Prenota</a>
       </div>
     </div>
@@ -517,6 +605,68 @@ body.lb-open{overflow:hidden}
     </div>
   </div>
 </header>
+
+<section class="hw hw-only" id="halloween" data-hw-date="2026-10-31">
+  <svg class="web" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.2"><path d="M200 0 L0 200M200 0 L60 200M200 0 L120 200M200 0 L0 140M200 0 L0 70M200 0 L200 200"/><path d="M168 0 Q176 14 200 32M132 0 Q146 32 200 62 M200 62 Q186 120 200 140M94 0 Q114 54 200 96M200 96 Q170 160 200 190M56 0 Q82 76 200 132M18 0 Q48 98 200 170"/><path d="M168 0 Q156 22 146 26 Q170 28 200 32M132 0 Q118 40 104 50 Q134 54 160 70M94 0 Q80 58 62 74 Q100 82 130 100M56 0 Q42 76 22 98 Q66 110 102 130"/></g><line x1="150" y1="0" x2="150" y2="58" stroke="currentColor" stroke-width="1"/><circle cx="150" cy="62" r="4" fill="currentColor"/></svg>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="row">
+        <div>
+          <span class="eyebrow">Sabato 31 ottobre</span>
+          <h2>La notte di <em>Halloween</em>.</h2>
+          <p>Le feste confermate per la notte più lunga dell'anno. Il 31 i tavoli finiscono prima del solito: prenota adesso e vieni travestito.</p>
+        </div>
+        <div class="wk-actions">
+          <span class="hw-count" id="hwcount"></span>
+          <a class="btn btn-ghost btn-small btn-wa" id="hwshare" href="https://wa.me/?text=https%3A%2F%2Fpier21q.github.io%2Flista-pier-roma%2F%23halloween" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4 5.2 5.2 0 0 0 3.2.7 2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>Condividi Halloween</a>
+        </div>
+      </div>
+    </div>
+    <div class="hw-grid" id="hwgrid">
+      <article class="hw-card" data-venue="Room 26" data-date="2026-10-31" data-title="Halloween Night">
+        <span class="zone">EUR</span>
+        <h3>Room 26</h3>
+        <span class="v">Halloween Night 🎃</span>
+        <span class="i">The Night of the Living Beats · reggaeton, urban e latin hits · dalle 22</span>
+        <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
+      </article>
+      <article class="hw-card" data-venue="Nice" data-date="2026-10-31" data-title="Halloween @Nice">
+        <span class="zone">Saxa Rubra</span>
+        <h3>Nice</h3>
+        <span class="v">Halloween @Nice 🦇</span>
+        <span class="i">Commerciale e reggaeton · dalle 23:30 · look curato o in maschera</span>
+        <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
+      </article>
+      <article class="hw-card" data-venue="Teatro Centrale" data-date="2026-10-31" data-title="Halloween Night">
+        <span class="zone">Centro</span>
+        <h3>Teatro Centrale</h3>
+        <span class="v">Halloween Night 💀</span>
+        <span class="i">Dalle 23:30</span>
+        <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
+      </article>
+      <article class="hw-card" data-venue="Gus" data-date="2026-10-31" data-title="Serata di Halloween">
+        <span class="zone">Prati</span>
+        <h3>Gus</h3>
+        <span class="v">Serata di Halloween 🕸️</span>
+        <span class="i">Cocktail, cucina e dj set · scrivimi per tavoli e orari</span>
+        <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
+      </article>
+      <article class="hw-card" data-venue="Art Café" data-date="2026-10-31" data-title="Serata del sabato">
+        <span class="zone">Villa Borghese</span>
+        <h3>Art Café</h3>
+        <span class="v">Serata del sabato 🖤</span>
+        <span class="i">Aperto il sabato a Villa Borghese</span>
+        <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
+      </article>
+    </div>
+    <div class="hw-eve" data-date="2026-10-30" data-venue="Room 26">
+      <span class="when">Il giorno prima · venerdì 30 ottobre</span>
+      <span class="t">Room 26 · AntiHalloween</span>
+      <span class="i">Dalle 22</span>
+      <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
+    </div>
+  </div>
+</section>
 
 <section class="weekend" id="weekend">
   <div class="wrap">
@@ -894,7 +1044,7 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
     }).join("");
     $("days").hidden = !order.length;
     $("weekendempty").hidden = !!order.length;
-    var coming = (p.inArrivo || []).filter(function(c){ return c && c.data && !nightOver(c.data, NOW); });
+    var coming = (p.inArrivo || []).filter(function(c){ return c && c.data && !nightOver(c.data, NOW) && !(HW_ON && c.data === HW_DATE); });
     $("coming").innerHTML = coming.map(function(c){
       var dt = new Date(c.data + "T12:00:00");
       return '<div class="coming" data-date="' + esc(c.data) + '" data-venue="' + esc(c.locale) + '">' +
@@ -910,6 +1060,21 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
     }
   }
   var SITE_URL = (document.querySelector('link[rel="canonical"]') || {}).href || (location.origin + location.pathname);
+
+  /* ---- sezione Halloween: conto alla rovescia, condivisione, si nasconde dopo la notte ---- */
+  var HW = $("halloween");
+  var HW_DATE = HW ? HW.dataset.hwDate : "";
+  var HW_ON = !!(HW && document.documentElement.classList.contains("halloween") && !nightOver(HW_DATE, NOW));
+  if(HW && !HW_ON){ HW.hidden = true; document.documentElement.classList.remove("halloween"); }
+  if(HW_ON){
+    Array.prototype.slice.call(HW.querySelectorAll(".hw-eve")).forEach(function(el){ if(nightOver(el.dataset.date, NOW)) el.hidden = true; });
+    var days = Math.round((new Date(HW_DATE + "T12:00:00") - new Date(NOW.slice(0,10) + "T12:00:00")) / 864e5);
+    $("hwcount").textContent = days > 1 ? "Mancano " + days + " giorni" : days === 1 ? "È domani" : "È stanotte";
+    var hl = ["Halloween a Roma 🎃 · sabato 31 ottobre", ""];
+    Array.prototype.slice.call(HW.querySelectorAll(".hw-card")).forEach(function(c){ hl.push("• " + c.dataset.venue + " – " + c.dataset.title); });
+    hl.push("", "Liste e tavoli con Pier: " + SITE_URL.split("#")[0] + "#halloween");
+    $("hwshare").href = "https://wa.me/?text=" + encodeURIComponent(hl.join("\n"));
+  }
   var GIORNI_BREVI = ["Dom","Lun","Mar","Mer","Gio","Ven","Sab"];
   function setShare(order, byDay){
     var l = [];
