@@ -614,7 +614,7 @@ html.halloween .rescue.flash{box-shadow:0 0 0 1px var(--neon),0 0 44px rgba(255,
         <div>
           <span class="eyebrow">Sabato 31 ottobre</span>
           <h2>La notte di <em>Halloween</em>.</h2>
-          <p>Le feste confermate per la notte più lunga dell'anno. Il 31 i tavoli finiscono prima del solito: prenota adesso e vieni travestito.</p>
+          <p>Le feste nei club più grandi di Roma per la notte più lunga dell'anno. Il 31 i tavoli finiscono prima del solito: prenota adesso e vieni travestito.</p>
         </div>
         <div class="wk-actions">
           <span class="hw-count" id="hwcount"></span>
@@ -637,11 +637,46 @@ html.halloween .rescue.flash{box-shadow:0 0 0 1px var(--neon),0 0 44px rgba(255,
         <span class="i">Commerciale e reggaeton · dalle 23:30 · look curato o in maschera</span>
         <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
       </article>
-      <article class="hw-card" data-venue="Teatro Centrale" data-date="2026-10-31" data-title="Halloween Night">
+      <article class="hw-card" data-venue="Opus Club" data-date="2026-10-31" data-title="Halloween all'Opus">
+        <span class="zone">Flaminio</span>
+        <h3>Opus Club</h3>
+        <span class="v">Halloween all'Opus 🕯️</span>
+        <span class="i">Hip hop e reggaeton nell'ex cinema Capitol · scrivimi per lista e privé</span>
+        <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
+      </article>
+      <article class="hw-card" data-venue="Teatro Centrale" data-date="2026-10-31" data-title="Maleficent · Il Teatro del Male">
         <span class="zone">Centro</span>
         <h3>Teatro Centrale</h3>
-        <span class="v">Halloween Night 💀</span>
-        <span class="i">Dalle 23:30</span>
+        <span class="v">Maleficent · Il Teatro del Male 💀</span>
+        <span class="i">Dalle 23:30 · cena su prenotazione</span>
+        <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
+      </article>
+      <article class="hw-card" data-venue="Piper" data-date="2026-10-31" data-title="Halloween al Piper">
+        <span class="zone">Trieste</span>
+        <h3>Piper</h3>
+        <span class="v">Halloween al Piper 👻</span>
+        <span class="i">Il club storico di via Tagliamento · dj set dalle 23 alle 5 · vieni in costume</span>
+        <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
+      </article>
+      <article class="hw-card" data-venue="Villa Sublime" data-date="2026-10-31" data-title="Halloween alla Villa">
+        <span class="zone">Fleming</span>
+        <h3>Villa Sublime</h3>
+        <span class="v">Halloween alla Villa 🧛</span>
+        <span class="i">Cena spettacolo e poi dj set fino a tardi · costume elegante</span>
+        <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
+      </article>
+      <article class="hw-card" data-venue="Eden" data-date="2026-10-31" data-title="Halloween Eden Experience">
+        <span class="zone">Stadio Olimpico</span>
+        <h3>Eden</h3>
+        <span class="v">Eden Experience 🎭</span>
+        <span class="i">Cena spettacolo dalle 20:30, poi party in maschera in nero e arancio</span>
+        <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
+      </article>
+      <article class="hw-card" data-venue="Rashõmon" data-date="2026-10-31" data-title="Disco InferNo">
+        <span class="zone">Ostiense</span>
+        <h3>Rashõmon</h3>
+        <span class="v">Disco InferNo 🔥</span>
+        <span class="i">Techno ed elettronica · dalle 23:30</span>
         <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
       </article>
       <article class="hw-card" data-venue="Gus" data-date="2026-10-31" data-title="Serata di Halloween">
@@ -1074,6 +1109,17 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
     Array.prototype.slice.call(HW.querySelectorAll(".hw-card")).forEach(function(c){ hl.push("• " + c.dataset.venue + " – " + c.dataset.title); });
     hl.push("", "Liste e tavoli con Pier: " + SITE_URL.split("#")[0] + "#halloween");
     $("hwshare").href = "https://wa.me/?text=" + encodeURIComponent(hl.join("\n"));
+    // I locali che ci sono solo per Halloween entrano nel menu del modulo finché la sezione è attiva.
+    var sel = $("locale"), tip = sel.querySelector('option[value="consiglio"]');
+    var known = Array.prototype.map.call(sel.options, function(o){ return o.value; });
+    Array.prototype.slice.call(HW.querySelectorAll("[data-venue]")).forEach(function(c){
+      var v = c.dataset.venue;
+      if(known.indexOf(v) >= 0) return;
+      var o = document.createElement("option");
+      o.value = o.textContent = v;
+      sel.insertBefore(o, tip);
+      known.push(v);
+    });
   }
   var GIORNI_BREVI = ["Dom","Lun","Mar","Mer","Gio","Ven","Sab"];
   function setShare(order, byDay){
