@@ -544,10 +544,16 @@ html.halloween .rescue.flash{box-shadow:0 0 0 1px var(--neon),0 0 44px rgba(255,
 .hw-card .i{font-size:13.5px;color:var(--body)}
 .hw-card .btn{align-self:flex-start;margin-top:auto}
 .hw-card .i + .btn,.hw-card .v + .btn{margin-top:8px}
+.hw-card .poster{display:block;width:100%;height:auto;margin-bottom:6px;border:1px solid var(--line);border-radius:var(--radius);background:#000}
+.hw-card .age{margin-top:auto}
+.hw-card .age + .btn{margin-top:6px}
+.age{align-self:flex-start;font-size:12px;line-height:1.35;font-weight:700;border:1px solid rgba(166,255,77,.4);border-radius:12px;padding:4px 10px;color:var(--cyan)}
+.age.ask{border-color:var(--line);color:var(--muted);font-weight:600}
 .hw-eve{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-top:14px;padding:14px 18px;border:1px dashed var(--line-strong);border-radius:var(--radius)}
 .hw-eve .when{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);font-weight:700}
 .hw-eve .t{font-family:'Bodoni Moda',serif;font-size:20px}
 .hw-eve .i{font-size:13.5px;color:var(--body)}
+.hw-eve .poster{width:64px;height:64px;object-fit:cover;border:1px solid var(--line);border-radius:var(--radius)}
 @media (max-width:760px){
   .hw{padding:52px 0}
   .bat:nth-child(1){left:68%;top:6%;width:48px}
@@ -623,60 +629,48 @@ html.halloween .rescue.flash{box-shadow:0 0 0 1px var(--neon),0 0 44px rgba(255,
       </div>
     </div>
     <div class="hw-grid" id="hwgrid">
+      <article class="hw-card" data-venue="Opus Club" data-date="2026-10-31" data-title="Halloween @Opus">
+        <img class="poster" src="media/halloween-opus.jpg" alt="Locandina di Halloween all'Opus Club, sabato 31 ottobre" width="720" height="720" loading="lazy">
+        <span class="zone">Flaminio</span>
+        <h3>Opus Club</h3>
+        <span class="v">Halloween @Opus 🕯️</span>
+        <span class="i">Riapre per Halloween · commerciale e reggaeton · dalle 23:30 · look curato o in maschera</span>
+        <span class="age">19+ ragazze · 21+ ragazzi</span>
+        <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
+      </article>
       <article class="hw-card" data-venue="Room 26" data-date="2026-10-31" data-title="Halloween Night">
+        <img class="poster" src="media/halloween-room26.jpg" alt="Locandina della Halloween Night al Room 26, sabato 31 ottobre" width="720" height="720" loading="lazy">
         <span class="zone">EUR</span>
         <h3>Room 26</h3>
         <span class="v">Halloween Night 🎃</span>
         <span class="i">The Night of the Living Beats · reggaeton, urban e latin hits · dalle 22</span>
+        <span class="age ask">Età minima: chiedimi</span>
         <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
       </article>
-      <article class="hw-card" data-venue="Nice" data-date="2026-10-31" data-title="Halloween @Nice">
+      <article class="hw-card" data-venue="Nice" data-date="2026-10-31" data-title="Halloween Thriller">
+        <img class="poster" src="media/halloween-nice.jpg" alt="Locandina di Thriller, Halloween al Nice, sabato 31 ottobre" width="720" height="720" loading="lazy">
         <span class="zone">Saxa Rubra</span>
         <h3>Nice</h3>
-        <span class="v">Halloween @Nice 🦇</span>
+        <span class="v">Halloween Thriller 🦇</span>
         <span class="i">Commerciale e reggaeton · dalle 23:30 · look curato o in maschera</span>
+        <span class="age">19+ ragazze · 21+ ragazzi</span>
         <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
       </article>
-      <article class="hw-card" data-venue="Opus Club" data-date="2026-10-31" data-title="Halloween all'Opus">
-        <span class="zone">Flaminio</span>
-        <h3>Opus Club</h3>
-        <span class="v">Halloween all'Opus 🕯️</span>
-        <span class="i">Hip hop e reggaeton nell'ex cinema Capitol · scrivimi per lista e privé</span>
-        <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
-      </article>
-      <article class="hw-card" data-venue="Teatro Centrale" data-date="2026-10-31" data-title="Maleficent · Il Teatro del Male">
+      <article class="hw-card" data-venue="Teatro Centrale" data-date="2026-10-31" data-title="Halloween Night">
+        <img class="poster" src="media/halloween-teatro-centrale.jpg" alt="Locandina della Halloween Night al Teatro Centrale, sabato 31 ottobre" width="720" height="405" loading="lazy">
         <span class="zone">Centro</span>
         <h3>Teatro Centrale</h3>
-        <span class="v">Maleficent · Il Teatro del Male 💀</span>
-        <span class="i">Dalle 23:30 · cena su prenotazione</span>
+        <span class="v">Halloween Night 💀</span>
+        <span class="i">Dalle 23:30 alle 4 · maschera gradita, non obbligatoria</span>
+        <span class="age">19+</span>
         <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
       </article>
-      <article class="hw-card" data-venue="Piper" data-date="2026-10-31" data-title="Halloween al Piper">
-        <span class="zone">Trieste</span>
-        <h3>Piper</h3>
-        <span class="v">Halloween al Piper 👻</span>
-        <span class="i">Il club storico di via Tagliamento · dj set dalle 23 alle 5 · vieni in costume</span>
-        <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
-      </article>
-      <article class="hw-card" data-venue="Villa Sublime" data-date="2026-10-31" data-title="Halloween alla Villa">
+      <article class="hw-card" data-venue="Villa Sublime" data-date="2026-10-31" data-title="Serata del sabato">
         <span class="zone">Fleming</span>
         <h3>Villa Sublime</h3>
-        <span class="v">Halloween alla Villa 🧛</span>
-        <span class="i">Cena spettacolo e poi dj set fino a tardi · costume elegante</span>
-        <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
-      </article>
-      <article class="hw-card" data-venue="Eden" data-date="2026-10-31" data-title="Halloween Eden Experience">
-        <span class="zone">Stadio Olimpico</span>
-        <h3>Eden</h3>
-        <span class="v">Eden Experience 🎭</span>
-        <span class="i">Cena spettacolo dalle 20:30, poi party in maschera in nero e arancio</span>
-        <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
-      </article>
-      <article class="hw-card" data-venue="Rashõmon" data-date="2026-10-31" data-title="Disco InferNo">
-        <span class="zone">Ostiense</span>
-        <h3>Rashõmon</h3>
-        <span class="v">Disco InferNo 🔥</span>
-        <span class="i">Techno ed elettronica · dalle 23:30</span>
+        <span class="v">Serata del sabato 🧛</span>
+        <span class="i">Cena e poi dj set in villa · scrivimi per la serata del 31</span>
+        <span class="age ask">Età minima: chiedimi</span>
         <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
       </article>
       <article class="hw-card" data-venue="Gus" data-date="2026-10-31" data-title="Serata di Halloween">
@@ -684,6 +678,7 @@ html.halloween .rescue.flash{box-shadow:0 0 0 1px var(--neon),0 0 44px rgba(255,
         <h3>Gus</h3>
         <span class="v">Serata di Halloween 🕸️</span>
         <span class="i">Cocktail, cucina e dj set · scrivimi per tavoli e orari</span>
+        <span class="age ask">Età minima: chiedimi</span>
         <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
       </article>
       <article class="hw-card" data-venue="Art Café" data-date="2026-10-31" data-title="Serata del sabato">
@@ -691,13 +686,16 @@ html.halloween .rescue.flash{box-shadow:0 0 0 1px var(--neon),0 0 44px rgba(255,
         <h3>Art Café</h3>
         <span class="v">Serata del sabato 🖤</span>
         <span class="i">Aperto il sabato a Villa Borghese</span>
+        <span class="age">19+ ragazze · 21+ ragazzi</span>
         <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
       </article>
     </div>
     <div class="hw-eve" data-date="2026-10-30" data-venue="Room 26">
+      <img class="poster" src="media/halloween-antihalloween.jpg" alt="Locandina dell'AntiHalloween al Room 26, venerdì 30 ottobre" width="64" height="64" loading="lazy">
       <span class="when">Il giorno prima · venerdì 30 ottobre</span>
       <span class="t">Room 26 · AntiHalloween</span>
-      <span class="i">Dalle 22</span>
+      <span class="i">Niente costumi, solo reggaeton e urban · dalle 22</span>
+      <span class="age ask">Età minima: chiedimi</span>
       <button type="button" class="btn btn-ghost btn-small book-it">Prenota</button>
     </div>
   </div>
