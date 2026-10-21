@@ -1,102 +1,120 @@
 {
-  "aggiornato": "2026-10-15",
+  "aggiornato": "2026-10-21",
   "serate": [
     {
-      "data": "2026-10-15",
+      "data": "2026-10-22",
       "locale": "Room 26",
-      "titolo": "Milkshake Opening Party",
-      "info": "Party anni 2000 · dalle 23 · omaggio in lista entro l'01:00"
+      "titolo": "Milkshake",
+      "info": "Party anni 2000 · dalle 22"
     },
     {
-      "data": "2026-10-15",
+      "data": "2026-10-22",
       "locale": "Teatro Centrale",
       "titolo": "Side B - Thursday Global Sound",
       "info": "Ingresso libero · dalle 23:30"
     },
     {
-      "data": "2026-10-16",
-      "locale": "Nice",
-      "titolo": "Mamacita",
-      "info": "Ingresso libero"
+      "data": "2026-10-23",
+      "locale": "Art Café",
+      "titolo": "Urban Rewind",
+      "info": ""
     },
     {
-      "data": "2026-10-16",
+      "data": "2026-10-23",
       "locale": "Room 26",
-      "titolo": "Friday",
+      "titolo": "Drip",
       "info": "Dalle 22"
     },
     {
-      "data": "2026-10-16",
+      "data": "2026-10-23",
+      "locale": "Nice",
+      "titolo": "Vibra",
+      "info": "Reggaeton · ingresso libero"
+    },
+    {
+      "data": "2026-10-23",
       "locale": "Teatro Centrale",
-      "titolo": "18eSto! University Night",
+      "titolo": "Riko - El Flow Mas Rico De La Noche",
       "info": "Dalle 23:30"
     },
     {
-      "data": "2026-10-16",
-      "locale": "Art Café",
-      "titolo": "Serata del venerdì",
-      "info": "Apertura confermata"
+      "data": "2026-10-23",
+      "locale": "Villa Sublime",
+      "titolo": "Zazà pianobar",
+      "info": "Cena dalle 21"
     },
     {
-      "data": "2026-10-16",
+      "data": "2026-10-23",
       "locale": "Gus",
       "titolo": "Serata del venerdì",
-      "info": "Apertura confermata"
+      "info": ""
     },
     {
-      "data": "2026-10-17",
+      "data": "2026-10-24",
+      "locale": "Art Café",
+      "titolo": "House of Dreams",
+      "info": ""
+    },
+    {
+      "data": "2026-10-24",
       "locale": "Room 26",
-      "titolo": "Special guest Lovra",
+      "titolo": "Special guest Henri Bergmann",
       "info": "Dalle 22"
     },
     {
-      "data": "2026-10-17",
+      "data": "2026-10-24",
       "locale": "Nice",
       "titolo": "Saturday Night",
       "info": "Commerciale, afro house, reggaeton · ingresso libero"
     },
     {
-      "data": "2026-10-17",
+      "data": "2026-10-24",
       "locale": "Teatro Centrale",
       "titolo": "Don't Tell Mama",
       "info": "Dalle 23:30"
     },
     {
-      "data": "2026-10-17",
-      "locale": "Art Café",
+      "data": "2026-10-24",
+      "locale": "Villa Sublime",
+      "titolo": "Zazà pianobar",
+      "info": "Cena dalle 21"
+    },
+    {
+      "data": "2026-10-24",
+      "locale": "Gus",
       "titolo": "Serata del sabato",
-      "info": "Apertura confermata"
+      "info": ""
     },
     {
-      "data": "2026-10-18",
-      "locale": "Room 26",
-      "titolo": "Bailamé Opening",
-      "info": "Prima domenica della stagione · dalle 22"
-    },
-    {
-      "data": "2026-10-18",
+      "data": "2026-10-25",
       "locale": "Teatro Centrale",
       "titolo": "BeKind - Back to Sunday Night",
       "info": "Dalle 23:30"
+    },
+    {
+      "data": "2026-10-25",
+      "locale": "Room 26",
+      "titolo": "Serata della domenica",
+      "info": ""
     }
   ],
   "inArrivo": [
     {
-      "data": "2026-10-24",
+      "data": "2026-10-30",
       "locale": "Room 26",
-      "titolo": "Room 26 · special guest Henri Bergmann",
+      "titolo": "Room 26 · AntiHalloween",
       "info": "Dalle 22"
     },
     {
       "data": "2026-10-31",
-      "locale": "Nice",
-      "titolo": "Nice · Halloween Thriller",
+      "locale": "Opus Club",
+      "titolo": "Opus Club · Halloween (riapertura)",
       "info": ""
     },
     {
-      "data": "2026-10-31",
+      "data": "2026-11-07",
       "locale": "Room 26",
-      "titolo": "Room 26 · Halloween Night",
+      "titolo": "Room 26 · special guest Nastia",
       "info": "Dalle 22"
     }
   ],
@@ -120,7 +138,7 @@
     ],
     "Room 26": [
       {
-        "fino": "2026-10-19T06:00",
+        "fino": "2026-10-26T06:00",
         "stato": "open",
         "etichetta": "Aperto da giovedì a domenica"
       },
@@ -137,19 +155,14 @@
     ],
     "Villa Sublime": [
       {
-        "stato": "ask",
-        "etichetta": "Chiedi disponibilità"
+        "stato": "open",
+        "etichetta": "Aperto ven e sab"
       }
     ],
     "Gus": [
       {
-        "fino": "2026-10-17T06:00",
         "stato": "open",
-        "etichetta": "Aperto venerdì"
-      },
-      {
-        "stato": "ask",
-        "etichetta": "Chiedi disponibilità"
+        "etichetta": "Aperto ven e sab"
       }
     ],
     "Nice": [
