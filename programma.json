@@ -167,13 +167,18 @@
     ],
     "Nice": [
       {
-        "fino": "2026-11-01T06:00",
+        "fino": "2026-10-30T06:00",
         "stato": "open",
         "etichetta": "Aperto ven e sab"
       },
       {
-        "stato": "ask",
-        "etichetta": "Chiedi disponibilità"
+        "fino": "2026-11-01T06:00",
+        "stato": "closing",
+        "etichetta": "Closing ven 30 · Halloween sab 31"
+      },
+      {
+        "stato": "off",
+        "etichetta": "Stagione conclusa"
       }
     ]
   }
