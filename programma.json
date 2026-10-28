@@ -1,185 +1,49 @@
 {
-  "aggiornato": "2026-10-21",
+  "aggiornato": "2026-10-28",
   "serate": [
-    {
-      "data": "2026-10-22",
-      "locale": "Room 26",
-      "titolo": "Milkshake",
-      "info": "Party anni 2000 · dalle 22"
-    },
-    {
-      "data": "2026-10-22",
-      "locale": "Teatro Centrale",
-      "titolo": "Side B - Thursday Global Sound",
-      "info": "Ingresso libero · dalle 23:30"
-    },
-    {
-      "data": "2026-10-23",
-      "locale": "Art Café",
-      "titolo": "Urban Rewind",
-      "info": ""
-    },
-    {
-      "data": "2026-10-23",
-      "locale": "Room 26",
-      "titolo": "Drip",
-      "info": "Dalle 22"
-    },
-    {
-      "data": "2026-10-23",
-      "locale": "Nice",
-      "titolo": "Vibra",
-      "info": "Reggaeton · ingresso libero"
-    },
-    {
-      "data": "2026-10-23",
-      "locale": "Teatro Centrale",
-      "titolo": "Riko - El Flow Mas Rico De La Noche",
-      "info": "Dalle 23:30"
-    },
-    {
-      "data": "2026-10-23",
-      "locale": "Villa Sublime",
-      "titolo": "Zazà pianobar",
-      "info": "Cena dalle 21"
-    },
-    {
-      "data": "2026-10-23",
-      "locale": "Gus",
-      "titolo": "Serata del venerdì",
-      "info": ""
-    },
-    {
-      "data": "2026-10-24",
-      "locale": "Art Café",
-      "titolo": "House of Dreams",
-      "info": ""
-    },
-    {
-      "data": "2026-10-24",
-      "locale": "Room 26",
-      "titolo": "Special guest Henri Bergmann",
-      "info": "Dalle 22"
-    },
-    {
-      "data": "2026-10-24",
-      "locale": "Nice",
-      "titolo": "Saturday Night",
-      "info": "Commerciale, afro house, reggaeton · ingresso libero"
-    },
-    {
-      "data": "2026-10-24",
-      "locale": "Teatro Centrale",
-      "titolo": "Don't Tell Mama",
-      "info": "Dalle 23:30"
-    },
-    {
-      "data": "2026-10-24",
-      "locale": "Villa Sublime",
-      "titolo": "Zazà pianobar",
-      "info": "Cena dalle 21"
-    },
-    {
-      "data": "2026-10-24",
-      "locale": "Gus",
-      "titolo": "Serata del sabato",
-      "info": ""
-    },
-    {
-      "data": "2026-10-25",
-      "locale": "Teatro Centrale",
-      "titolo": "BeKind - Back to Sunday Night",
-      "info": "Dalle 23:30"
-    },
-    {
-      "data": "2026-10-25",
-      "locale": "Room 26",
-      "titolo": "Serata della domenica",
-      "info": ""
-    }
+    {"data": "2026-10-29", "locale": "Room 26", "titolo": "Milkshake", "info": "Party anni 2000 · dalle 22"},
+    {"data": "2026-10-30", "locale": "Nice", "titolo": "Closing party · special guest Damante", "info": "Ingresso libero · 19+ donne, 21+ uomini"},
+    {"data": "2026-10-30", "locale": "Room 26", "titolo": "AntiHalloween", "info": "Dalle 22"},
+    {"data": "2026-10-30", "locale": "Teatro Centrale", "titolo": "Hustle x 18eSto! University Night", "info": "Dalle 23:30"},
+    {"data": "2026-10-30", "locale": "Villa Sublime", "titolo": "Tagomago - La Casita", "info": "Reggaeton · ingresso libero entro mezzanotte in accredito, poi 15€ con drink"},
+    {"data": "2026-10-30", "locale": "Gus", "titolo": "Serata del venerdì", "info": ""},
+    {"data": "2026-10-31", "locale": "Opus Club", "titolo": "Halloween · riapertura", "info": "19+ donne, 21+ uomini"},
+    {"data": "2026-10-31", "locale": "Nice", "titolo": "Halloween Thriller", "info": "19+ donne, 21+ uomini"},
+    {"data": "2026-10-31", "locale": "Room 26", "titolo": "Halloween Night", "info": "Dalle 22"},
+    {"data": "2026-10-31", "locale": "Teatro Centrale", "titolo": "Halloween Night", "info": "Dalle 23:30 · costumi graditi"},
+    {"data": "2026-10-31", "locale": "Art Café", "titolo": "Halloween Decadent Devils", "info": "Con Teatro Yūgen · performance, cena e musica dalle 21:30"},
+    {"data": "2026-10-31", "locale": "Villa Sublime", "titolo": "Halloween in villa", "info": "Con I Love Social Club · 19+ donne, 21+ uomini"},
+    {"data": "2026-10-31", "locale": "Gus", "titolo": "Serata del sabato", "info": ""}
   ],
   "inArrivo": [
-    {
-      "data": "2026-10-30",
-      "locale": "Room 26",
-      "titolo": "Room 26 · AntiHalloween",
-      "info": "Dalle 22"
-    },
-    {
-      "data": "2026-10-31",
-      "locale": "Opus Club",
-      "titolo": "Opus Club · Halloween (riapertura)",
-      "info": ""
-    },
-    {
-      "data": "2026-11-07",
-      "locale": "Room 26",
-      "titolo": "Room 26 · special guest Nastia",
-      "info": "Dalle 22"
-    }
+    {"data": "2026-11-07", "locale": "Room 26", "titolo": "Room 26 · special guest Nastia", "info": "Dalle 22"}
   ],
   "locali": {
     "Opus Club": [
-      {
-        "fino": "2026-11-01T06:00",
-        "stato": "soon",
-        "etichetta": "Riapre il 31 per Halloween"
-      },
-      {
-        "stato": "ask",
-        "etichetta": "Chiedi disponibilità"
-      }
+      {"fino": "2026-11-01T06:00", "stato": "open", "etichetta": "Riapre sab 31 per Halloween"},
+      {"stato": "ask", "etichetta": "Chiedi disponibilità"}
     ],
     "Art Café": [
-      {
-        "stato": "open",
-        "etichetta": "Aperto ven e sab"
-      }
+      {"fino": "2026-11-01T06:00", "stato": "open", "etichetta": "Aperto sab 31"},
+      {"stato": "open", "etichetta": "Aperto ven e sab"}
     ],
     "Room 26": [
-      {
-        "fino": "2026-10-26T06:00",
-        "stato": "open",
-        "etichetta": "Aperto da giovedì a domenica"
-      },
-      {
-        "stato": "open",
-        "etichetta": "Aperto ven e sab"
-      }
+      {"fino": "2026-11-01T06:00", "stato": "open", "etichetta": "Aperto da giovedì a sabato"},
+      {"stato": "open", "etichetta": "Aperto ven e sab"}
     ],
     "Teatro Centrale": [
-      {
-        "stato": "open",
-        "etichetta": "Aperto da giovedì a domenica"
-      }
+      {"fino": "2026-11-01T06:00", "stato": "open", "etichetta": "Aperto ven e sab"},
+      {"stato": "open", "etichetta": "Aperto da giovedì a domenica"}
     ],
     "Villa Sublime": [
-      {
-        "stato": "open",
-        "etichetta": "Aperto ven e sab"
-      }
+      {"stato": "open", "etichetta": "Aperto ven e sab"}
     ],
     "Gus": [
-      {
-        "stato": "open",
-        "etichetta": "Aperto ven e sab"
-      }
+      {"stato": "open", "etichetta": "Aperto ven e sab"}
     ],
     "Nice": [
-      {
-        "fino": "2026-10-30T06:00",
-        "stato": "open",
-        "etichetta": "Aperto ven e sab"
-      },
-      {
-        "fino": "2026-11-01T06:00",
-        "stato": "closing",
-        "etichetta": "Closing ven 30 · Halloween sab 31"
-      },
-      {
-        "stato": "off",
-        "etichetta": "Stagione conclusa"
-      }
+      {"fino": "2026-11-01T06:00", "stato": "closing", "etichetta": "Closing ven 30 · Halloween sab 31"},
+      {"stato": "off", "etichetta": "Stagione conclusa"}
     ]
   }
 }
