@@ -1,48 +1,50 @@
 {
-  "aggiornato": "2026-10-28",
+  "aggiornato": "2026-11-04",
   "serate": [
-    {"data": "2026-10-29", "locale": "Room 26", "titolo": "Milkshake", "info": "Party anni 2000 · dalle 22"},
-    {"data": "2026-10-30", "locale": "Nice", "titolo": "Closing party · special guest Damante", "info": "Ingresso libero · 19+ donne, 21+ uomini"},
-    {"data": "2026-10-30", "locale": "Room 26", "titolo": "AntiHalloween", "info": "Dalle 22"},
-    {"data": "2026-10-30", "locale": "Teatro Centrale", "titolo": "Hustle x 18eSto! University Night", "info": "Dalle 23:30"},
-    {"data": "2026-10-30", "locale": "Villa Sublime", "titolo": "Tagomago - La Casita", "info": "Reggaeton · ingresso libero entro mezzanotte in accredito, poi 15€ con drink"},
-    {"data": "2026-10-30", "locale": "Gus", "titolo": "Serata del venerdì", "info": ""},
-    {"data": "2026-10-31", "locale": "Opus Club", "titolo": "Halloween · riapertura", "info": "19+ donne, 21+ uomini"},
-    {"data": "2026-10-31", "locale": "Nice", "titolo": "Halloween Thriller", "info": "19+ donne, 21+ uomini"},
-    {"data": "2026-10-31", "locale": "Room 26", "titolo": "Halloween Night", "info": "Dalle 22"},
-    {"data": "2026-10-31", "locale": "Teatro Centrale", "titolo": "Halloween Night", "info": "Dalle 23:30 · costumi graditi"},
-    {"data": "2026-10-31", "locale": "Art Café", "titolo": "Halloween Decadent Devils", "info": "Con Teatro Yūgen · performance, cena e musica dalle 21:30"},
-    {"data": "2026-10-31", "locale": "Villa Sublime", "titolo": "Halloween in villa", "info": "Con I Love Social Club · 19+ donne, 21+ uomini"},
-    {"data": "2026-10-31", "locale": "Gus", "titolo": "Serata del sabato", "info": ""}
+    {"data": "2026-11-05", "locale": "Room 26", "titolo": "Milkshake", "info": "Hip-hop, R&B, dancehall, reggaeton · dalle 22"},
+    {"data": "2026-11-05", "locale": "Villa Sublime", "titolo": "Post Office", "info": "Live Andrea Cardillo · dj set Domenico Laddaga"},
+    {"data": "2026-11-05", "locale": "Gus", "titolo": "Backroom", "info": "Afrohouse, house, urban, baile funk, reggaeton · cena dalle 20:30, club dalle 23:30"},
+    {"data": "2026-11-06", "locale": "Opus Club", "titolo": "Mamacita", "info": "Reggaeton commerciale · dalle 23:30 · 20+ donne, 22+ uomini"},
+    {"data": "2026-11-06", "locale": "Room 26", "titolo": "Drip", "info": "Hip-hop, R&B, reggaeton, afrobeats · dalle 22"},
+    {"data": "2026-11-06", "locale": "Teatro Centrale", "titolo": "18eSto! University Night", "info": "Dalle 23:30"},
+    {"data": "2026-11-06", "locale": "Art Café", "titolo": "Serata del venerdì", "info": ""},
+    {"data": "2026-11-06", "locale": "Villa Sublime", "titolo": "Serata del venerdì", "info": ""},
+    {"data": "2026-11-06", "locale": "Gus", "titolo": "Post Uni", "info": "Latin house, reggaeton · cena dalle 20:30, club dalle 23:30"},
+    {"data": "2026-11-07", "locale": "Opus Club", "titolo": "Opening", "info": "Afrohouse, reggaeton · dalle 23:30 · 20+ donne, 22+ uomini"},
+    {"data": "2026-11-07", "locale": "Room 26", "titolo": "Special guest Nastia", "info": "Techno, elettronica · dalle 22"},
+    {"data": "2026-11-07", "locale": "Teatro Centrale", "titolo": "Don't Tell Mama", "info": "Dalle 23:30"},
+    {"data": "2026-11-07", "locale": "Art Café", "titolo": "Serata del sabato", "info": ""},
+    {"data": "2026-11-07", "locale": "Villa Sublime", "titolo": "Serata del sabato", "info": ""},
+    {"data": "2026-11-07", "locale": "Gus", "titolo": "The Box", "info": "Urban, pop, reggaeton, latin house, hits · cena dalle 20:30, club dalle 23:30"},
+    {"data": "2026-11-08", "locale": "Room 26", "titolo": "Bailamé", "info": "Hip-hop, R&B, reggaeton, afrobeats · dalle 22"},
+    {"data": "2026-11-08", "locale": "Teatro Centrale", "titolo": "BeKind · Back to Sunday Night con Black On", "info": "Dalle 23:30"},
+    {"data": "2026-11-08", "locale": "Gus", "titolo": "GSunday", "info": "Urban, baile funk, hip-hop, reggaeton, hits · cena dalle 20:30, club dalle 23:30"}
   ],
   "inArrivo": [
-    {"data": "2026-11-07", "locale": "Room 26", "titolo": "Room 26 · special guest Nastia", "info": "Dalle 22"}
+    {"data": "2026-11-14", "locale": "Room 26", "titolo": "Room 26 · special guest Leon", "info": "Dalle 22"},
+    {"data": "2026-11-21", "locale": "Room 26", "titolo": "Room 26 · special guest Wade", "info": "Dalle 22"},
+    {"data": "2026-11-28", "locale": "Room 26", "titolo": "Room 26 · special guest Ester Bronchal", "info": "Dalle 22"}
   ],
   "locali": {
     "Opus Club": [
-      {"fino": "2026-11-01T06:00", "stato": "open", "etichetta": "Riapre sab 31 per Halloween"},
-      {"stato": "ask", "etichetta": "Chiedi disponibilità"}
+      {"stato": "open", "etichetta": "Aperto ven e sab"}
     ],
     "Art Café": [
-      {"fino": "2026-11-01T06:00", "stato": "open", "etichetta": "Aperto sab 31"},
       {"stato": "open", "etichetta": "Aperto ven e sab"}
     ],
     "Room 26": [
-      {"fino": "2026-11-01T06:00", "stato": "open", "etichetta": "Aperto da giovedì a sabato"},
-      {"stato": "open", "etichetta": "Aperto ven e sab"}
-    ],
-    "Teatro Centrale": [
-      {"fino": "2026-11-01T06:00", "stato": "open", "etichetta": "Aperto ven e sab"},
       {"stato": "open", "etichetta": "Aperto da giovedì a domenica"}
     ],
+    "Teatro Centrale": [
+      {"stato": "open", "etichetta": "Aperto ven, sab e dom"}
+    ],
     "Villa Sublime": [
-      {"stato": "open", "etichetta": "Aperto ven e sab"}
+      {"stato": "open", "etichetta": "Aperto gio, ven e sab"}
     ],
     "Gus": [
-      {"stato": "open", "etichetta": "Aperto ven e sab"}
+      {"stato": "open", "etichetta": "Aperto da giovedì a domenica"}
     ],
     "Nice": [
-      {"fino": "2026-11-01T06:00", "stato": "closing", "etichetta": "Closing ven 30 · Halloween sab 31"},
       {"stato": "off", "etichetta": "Stagione conclusa"}
     ]
   }
