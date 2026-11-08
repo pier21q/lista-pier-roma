@@ -18,10 +18,17 @@
 <link rel="canonical" href="https://pier21q.github.io/lista-pier-roma/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0710'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-size='40' fill='%23FF2E88'%3EP%3C/text%3E%3C/svg%3E">
 <title>Lista Pier Roma</title>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,800;1,6..96,400&family=Archivo:wght@400;500;600;700&display=swap">
+<link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/bodoni-latin.woff2" as="font" type="font/woff2" crossorigin>
 
 <style>
+/* Font ospitati nel sito (licenza OFL, vedi fonts/), niente richieste a Google */
+@font-face{font-family:'Archivo';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/archivo-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/archivo-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400 800;font-display:swap;src:url(fonts/bodoni-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400 800;font-display:swap;src:url(fonts/bodoni-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/bodoni-italic-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/bodoni-italic-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 :root{
   color-scheme:dark;
   --ground:#0A0710;
@@ -280,6 +287,9 @@ section{padding:82px 0}
 }
 .venue:hover{transform:translateY(-4px);border-color:var(--line-strong);box-shadow:0 18px 44px rgba(0,0,0,.5)}
 .venue.is-picked{border-color:var(--neon);box-shadow:0 0 0 1px var(--neon),0 18px 44px rgba(255,46,136,.18)}
+.venue.is-off{opacity:.55;cursor:default}
+.venue.is-off:hover{transform:none;border-color:var(--line);box-shadow:none}
+.venue.is-off .pick{display:none}
 
 .status{
   align-self:flex-start;display:inline-flex;align-items:center;gap:8px;
@@ -606,8 +616,8 @@ html.halloween .rescue.flash{box-shadow:0 0 0 1px var(--neon),0 0 44px rgba(255,
   </div>
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span><b>Nice</b> — Saxa Rubra</span><span><b>Teatro Centrale</b> — Centro</span><span><b>Opus Club</b> — Flaminio</span><span><b>Art Café</b> — Villa Borghese</span><span><b>Room 26</b> — EUR</span><span><b>Villa Sublime</b> — Fleming</span><span><b>Gus</b> — Prati</span>
-      <span><b>Nice</b> — Saxa Rubra</span><span><b>Teatro Centrale</b> — Centro</span><span><b>Opus Club</b> — Flaminio</span><span><b>Art Café</b> — Villa Borghese</span><span><b>Room 26</b> — EUR</span><span><b>Villa Sublime</b> — Fleming</span><span><b>Gus</b> — Prati</span>
+      <span data-venue="Nice"><b>Nice</b> — Saxa Rubra</span><span data-venue="Teatro Centrale"><b>Teatro Centrale</b> — Centro</span><span data-venue="Opus Club"><b>Opus Club</b> — Flaminio</span><span data-venue="Art Café"><b>Art Café</b> — Villa Borghese</span><span data-venue="Room 26"><b>Room 26</b> — EUR</span><span data-venue="Villa Sublime"><b>Villa Sublime</b> — Fleming</span><span data-venue="Gus"><b>Gus</b> — Prati</span>
+      <span data-venue="Nice"><b>Nice</b> — Saxa Rubra</span><span data-venue="Teatro Centrale"><b>Teatro Centrale</b> — Centro</span><span data-venue="Opus Club"><b>Opus Club</b> — Flaminio</span><span data-venue="Art Café"><b>Art Café</b> — Villa Borghese</span><span data-venue="Room 26"><b>Room 26</b> — EUR</span><span data-venue="Villa Sublime"><b>Villa Sublime</b> — Fleming</span><span data-venue="Gus"><b>Gus</b> — Prati</span>
     </div>
   </div>
 </header>
@@ -732,7 +742,7 @@ html.halloween .rescue.flash{box-shadow:0 0 0 1px var(--neon),0 0 44px rgba(255,
 </section>
 
 <div class="strip">
-  <div><strong id="venuecount">8</strong><p>Locali seguiti in tutta Roma</p></div>
+  <div><strong id="venuecount">7</strong><p>Locali seguiti in tutta Roma</p></div>
   <div><strong>Ven / Sab</strong><p>Le serate principali, più aperture infrasettimanali</p></div>
   <div><strong>&lt; 10 min</strong><p>Tempo medio di risposta su WhatsApp</p></div>
 </div>
@@ -780,48 +790,48 @@ html.halloween .rescue.flash{box-shadow:0 0 0 1px var(--neon),0 0 44px rgba(255,
           <h2>Scegli dove passi<br>la serata.</h2>
           <p>Tocca una card per selezionarla: il locale finisce direttamente nel messaggio di prenotazione.</p>
         </div>
-        <span class="stamp">Stato verificato il 30 settembre</span>
+        <span class="stamp" id="venuestamp">Stato aggiornato ogni mercoledì</span>
       </div>
     </div>
 
     <div class="venues" id="venues">
 
       <article class="venue" data-venue="Nice">
-        <span class="status" data-state="open">Aperto ven e sab</span>
+        <span class="status" data-state="ask">Chiedi disponibilità</span>
         <div class="venue-top"><h3>Nice</h3><span class="zone">Saxa Rubra</span></div>
-        <p>Il club all'aperto di Roma Nord, a pochi minuti da Ponte Milvio. Il venerdì c'è Vibra con il reggaeton, il sabato commerciale, afro house e reggaeton. Dress code curato e selezione all'ingresso.</p>
-        <div class="chips"><span class="chip">Reggaeton</span><span class="chip">Commerciale / afro house</span><span class="chip">19+ ragazze · 21+ ragazzi</span></div>
+        <p>Il club estivo all'aperto di Roma Nord, a pochi minuti da Ponte Milvio: reggaeton, commerciale e afro house sotto le stelle. D'inverno la festa si sposta all'Opus. Dress code curato e selezione all'ingresso.</p>
+        <div class="chips"><span class="chip">Reggaeton</span><span class="chip">Commerciale / afro house</span><span class="chip">Età minima nella serata</span></div>
         <button type="button" class="pick" aria-pressed="false">Seleziona</button>
       </article>
 
       <article class="venue" data-venue="Teatro Centrale">
-        <span class="status" data-state="open">Aperto · nuova stagione</span>
+        <span class="status" data-state="ask">Chiedi disponibilità</span>
         <div class="venue-top"><h3>Teatro Centrale</h3><span class="zone">Centro storico</span></div>
-        <p>Un teatro d'epoca dietro Piazza del Gesù trasformato in club: affreschi, velluti e la pista dove c'era la platea. La stagione è ripartita il 26 settembre, con serate anche il lunedì e il mercoledì.</p>
-        <div class="chips"><span class="chip">Commerciale / reggaeton</span><span class="chip">Location storica</span><span class="chip">Anche lun e mer</span></div>
+        <p>Un teatro d'epoca dietro Piazza del Gesù trasformato in club: affreschi, velluti e la pista dove c'era la platea. Un posto unico nel centro di Roma, con le serate universitarie e i weekend più eleganti.</p>
+        <div class="chips"><span class="chip">Commerciale / reggaeton</span><span class="chip">Location storica</span><span class="chip">Pista in platea</span></div>
         <button type="button" class="pick" aria-pressed="false">Seleziona</button>
       </article>
 
       <article class="venue" data-venue="Opus Club">
-        <span class="status" data-state="soon">Riapre a ottobre</span>
+        <span class="status" data-state="ask">Chiedi disponibilità</span>
         <div class="venue-top"><h3>Opus Club</h3><span class="zone">Flaminio</span></div>
-        <p>L'ex cinema Capitol a Piazza Mancini, con i palchi affacciati sulla pista. Impianto pesante e privé lungo il perimetro. È la casa invernale del Nice e riapre a ottobre: scrivimi per l'opening.</p>
-        <div class="chips"><span class="chip">Hip hop / reggaeton</span><span class="chip">Tavoli &amp; privé</span><span class="chip">19+ ragazze · 21+ ragazzi</span></div>
+        <p>L'ex cinema Capitol a Piazza Mancini, con i palchi affacciati sulla pista. Impianto pesante e privé lungo il perimetro. È la casa invernale del Nice, da ottobre alla primavera.</p>
+        <div class="chips"><span class="chip">Hip hop / reggaeton</span><span class="chip">Tavoli &amp; privé</span><span class="chip">Età minima nella serata</span></div>
         <button type="button" class="pick" aria-pressed="false">Seleziona</button>
       </article>
 
       <article class="venue" data-venue="Art Café">
-        <span class="status" data-state="soon">Riapre a ottobre</span>
+        <span class="status" data-state="ask">Chiedi disponibilità</span>
         <div class="venue-top"><h3>Art Café</h3><span class="zone">Villa Borghese</span></div>
-        <p>A Villa Borghese dal 2001: il classico del centro che non delude mai. Pubblico misto e look richiesto. Aperto venerdì e sabato dalle 23:30, quest'anno festeggia 25 anni: per le serate più attese i tavoli vanno via in anticipo.</p>
+        <p>A Villa Borghese dal 2001: il classico del centro che non delude mai. Pubblico misto e look richiesto. Si entra dalle 23:30 e per le serate più attese i tavoli vanno via in anticipo.</p>
         <div class="chips"><span class="chip">Commerciale</span><span class="chip">House</span><span class="chip">Prenota in anticipo</span></div>
         <button type="button" class="pick" aria-pressed="false">Seleziona</button>
       </article>
 
       <article class="venue" data-venue="Room 26">
-        <span class="status" data-state="soon">Nuova stagione in arrivo</span>
+        <span class="status" data-state="ask">Chiedi disponibilità</span>
         <div class="venue-top"><h3>Room 26</h3><span class="zone">EUR · Piazza Marconi</span></div>
-        <p>Il club dell'EUR, sotto Spazio 900. Nuova stagione dal 9 ottobre: aperto venerdì e sabato, con un ospite internazionale ogni sabato.</p>
+        <p>Il club dell'EUR, sotto Spazio 900: hip hop, R&amp;B e reggaeton durante la settimana, il sabato un ospite internazionale in console.</p>
         <div class="chips"><span class="chip">Tech house</span><span class="chip">Urban / hip hop</span><span class="chip">Guest internazionali</span></div>
         <button type="button" class="pick" aria-pressed="false">Seleziona</button>
       </article>
@@ -987,7 +997,7 @@ html.halloween .rescue.flash{box-shadow:0 0 0 1px var(--neon),0 0 44px rgba(255,
       </div>
       <div><a id="footerwa" href="https://wa.me/393204226887" target="_blank" rel="noopener">WhatsApp +39 320 422 6887</a></div>
     </div>
-    <p class="disclaimer">Foto e video sono di serate reali seguite da me. Serate, generi musicali e condizioni d'ingresso cambiano di settimana in settimana: le descrizioni sono indicative e la conferma definitiva arriva sempre in chat. L'ingresso è riservato ai maggiorenni e ogni club ha le sue regole: al Nice e all'Opus, per esempio, servono 19 anni per le ragazze e 21 per i ragazzi, con documento originale. La selezione all'ingresso spetta alla direzione. Bevi responsabilmente.</p>
+    <p class="disclaimer">Foto e video sono di serate reali seguite da me. Serate, generi musicali e condizioni d'ingresso cambiano di settimana in settimana: le descrizioni sono indicative e la conferma definitiva arriva sempre in chat. L'ingresso è riservato ai maggiorenni e ogni club ha le sue regole: l'età minima è indicata nella serata, o te la confermo in chat, e serve il documento originale. La selezione all'ingresso spetta alla direzione. Bevi responsabilmente. Il sito conta le visite in forma anonima con GoatCounter, senza cookie e senza dati personali; i font sono ospitati qui, senza passare da Google.</p>
   </div>
 </footer>
 
@@ -1040,10 +1050,22 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
     return now >= isoDate(d) + "T06:00";
   }
   var NOW = romeNow();
+  // Le date di programma.json sono scritte a mano: si scartano quelle non nel formato AAAA-MM-GG.
+  function validDate(v){
+    return typeof v === "string" && /^\d{4}-\d{2}-\d{2}$/.test(v) && !isNaN(new Date(v + "T12:00:00"));
+  }
 
   /* ---- stato dei locali e programma del weekend: arrivano da programma.json ---- */
   var cards = Array.prototype.slice.call(document.querySelectorAll(".venue"));
-  $("venuecount").textContent = String(cards.length);
+  // Il menu del modulo: aggiunge un locale che non c'è ancora, prima di "consigliami tu".
+  function ensureOption(v){
+    var sel = $("locale");
+    if(!v) return;
+    for(var i=0;i<sel.options.length;i++){ if(sel.options[i].value === v){ sel.options[i].disabled = false; return; } }
+    var o = document.createElement("option");
+    o.value = o.textContent = v;
+    sel.insertBefore(o, sel.querySelector('option[value="consiglio"]'));
+  }
   var RANK = {open:0, closing:1, ask:2, soon:3, off:4};
   var MESI = ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"];
   var GIORNI = ["Domenica","Lunedì","Martedì","Mercoledì","Giovedì","Venerdì","Sabato"];
@@ -1064,7 +1086,17 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
         pill.textContent = s.etichetta;
       }
       card.style.order = String((RANK[pill.dataset.state] || 0) * 20 + i);
+      // Un locale chiuso ("off") resta in pagina ma non si prenota e sparisce dalla scritta in alto.
+      var off = pill.dataset.state === "off";
+      card.classList.toggle("is-off", off);
+      card.setAttribute("aria-disabled", off ? "true" : "false");
+      Array.prototype.forEach.call($("locale").options, function(o){ if(o.value === card.dataset.venue) o.disabled = off; });
+      Array.prototype.forEach.call(document.querySelectorAll('.marquee span[data-venue]'), function(m){
+        if(m.dataset.venue === card.dataset.venue) m.hidden = off;
+      });
+      if(off && $("locale").value === card.dataset.venue){ $("locale").value = ""; update(); }
     });
+    $("venuecount").textContent = String(cards.filter(function(c){ return !c.classList.contains("is-off"); }).length);
   }
   function nightHtml(s){
     return '<div class="night" data-venue="' + esc(s.locale) + '"><span class="t">' + esc(s.locale) + '</span>' +
@@ -1074,7 +1106,7 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
   function renderWeekend(p){
     var byDay = {}, order = [];
     (p.serate || []).forEach(function(s){
-      if(!s || !s.data || nightOver(s.data, NOW)) return;
+      if(!s || !validDate(s.data) || nightOver(s.data, NOW)) return;
       if(!byDay[s.data]){ byDay[s.data] = []; order.push(s.data); }
       byDay[s.data].push(s);
     });
@@ -1086,7 +1118,7 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
     }).join("");
     $("days").hidden = !order.length;
     $("weekendempty").hidden = !!order.length;
-    var coming = (p.inArrivo || []).filter(function(c){ return c && c.data && !nightOver(c.data, NOW) && !(HW_ON && c.data === HW_DATE); });
+    var coming = (p.inArrivo || []).filter(function(c){ return c && validDate(c.data) && !nightOver(c.data, NOW) && !(HW_ON && c.data === HW_DATE); });
     $("coming").innerHTML = coming.map(function(c){
       var dt = new Date(c.data + "T12:00:00");
       return '<div class="coming" data-date="' + esc(c.data) + '" data-venue="' + esc(c.locale) + '">' +
@@ -1095,10 +1127,11 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
         '<button type="button" class="btn btn-ghost btn-small book-it">Prenota</button></div>';
     }).join("");
     setShare(order, byDay);
-    if(p.aggiornato){
+    if(validDate(p.aggiornato)){
       var up = new Date(p.aggiornato + "T12:00:00");
       $("weekendstamp").textContent = "Aggiornato il " + up.getDate() + " " + MESI[up.getMonth()];
       $("weekendstamp").hidden = false;
+      $("venuestamp").textContent = "Stato verificato il " + up.getDate() + " " + MESI[up.getMonth()];
     }
   }
   var SITE_URL = (document.querySelector('link[rel="canonical"]') || {}).href || (location.origin + location.pathname);
@@ -1117,16 +1150,7 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
     hl.push("", "Liste e tavoli con Pier: " + SITE_URL.split("#")[0] + "#halloween");
     $("hwshare").href = "https://wa.me/?text=" + encodeURIComponent(hl.join("\n"));
     // I locali che ci sono solo per Halloween entrano nel menu del modulo finché la sezione è attiva.
-    var sel = $("locale"), tip = sel.querySelector('option[value="consiglio"]');
-    var known = Array.prototype.map.call(sel.options, function(o){ return o.value; });
-    Array.prototype.slice.call(HW.querySelectorAll("[data-venue]")).forEach(function(c){
-      var v = c.dataset.venue;
-      if(known.indexOf(v) >= 0) return;
-      var o = document.createElement("option");
-      o.value = o.textContent = v;
-      sel.insertBefore(o, tip);
-      known.push(v);
-    });
+    Array.prototype.slice.call(HW.querySelectorAll("[data-venue]")).forEach(function(c){ ensureOption(c.dataset.venue); });
   }
   var GIORNI_BREVI = ["Dom","Lun","Mar","Mer","Gio","Ven","Sab"];
   function setShare(order, byDay){
@@ -1154,6 +1178,7 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
 
   /* ---- selezione del locale ---- */
   function pickVenue(name){
+    ensureOption(name);
     $("locale").value = name;
     update();
   }
@@ -1174,6 +1199,7 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
   });
   cards.forEach(function(card){
     card.addEventListener("click", function(){
+      if(card.classList.contains("is-off")) return;
       track("scheda-" + slug(card.dataset.venue));
       pickVenue(card.dataset.venue);
       goToForm();
@@ -1371,7 +1397,10 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
   var today = new Date(NOW.slice(0,10) + "T12:00:00");
   var sat = new Date(today);
   sat.setDate(sat.getDate() + ((6 - sat.getDay() + 7) % 7));
-  $("data").min = isoDate(today);
+  // Fino alle 6 del mattino la serata di ieri è ancora in corso: deve restare selezionabile.
+  var minDay = new Date(today);
+  if(NOW.slice(11) < "06:00") minDay.setDate(minDay.getDate() - 1);
+  $("data").min = isoDate(minDay);
   if(!$("data").value) $("data").value = isoDate(sat);
 
   update();
