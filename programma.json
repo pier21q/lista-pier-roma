@@ -1,29 +1,29 @@
 {
-  "aggiornato": "2026-11-04",
+  "aggiornato": "2026-11-11",
   "serate": [
-    {"data": "2026-11-05", "locale": "Room 26", "titolo": "Milkshake", "info": "Hip-hop, R&B, dancehall, reggaeton · dalle 22"},
-    {"data": "2026-11-05", "locale": "Villa Sublime", "titolo": "Post Office", "info": "Live Andrea Cardillo · dj set Domenico Laddaga"},
-    {"data": "2026-11-05", "locale": "Gus", "titolo": "Backroom", "info": "Afrohouse, house, urban, baile funk, reggaeton · cena dalle 20:30, club dalle 23:30"},
-    {"data": "2026-11-06", "locale": "Opus Club", "titolo": "Mamacita", "info": "Reggaeton commerciale · dalle 23:30 · 20+ donne, 22+ uomini"},
-    {"data": "2026-11-06", "locale": "Room 26", "titolo": "Drip", "info": "Hip-hop, R&B, reggaeton, afrobeats · dalle 22"},
-    {"data": "2026-11-06", "locale": "Teatro Centrale", "titolo": "18eSto! University Night", "info": "Dalle 23:30"},
-    {"data": "2026-11-06", "locale": "Art Café", "titolo": "Serata del venerdì", "info": ""},
-    {"data": "2026-11-06", "locale": "Villa Sublime", "titolo": "Serata del venerdì", "info": ""},
-    {"data": "2026-11-06", "locale": "Gus", "titolo": "Post Uni", "info": "Latin house, reggaeton · cena dalle 20:30, club dalle 23:30"},
-    {"data": "2026-11-07", "locale": "Opus Club", "titolo": "Opening", "info": "Afrohouse, reggaeton · dalle 23:30 · 20+ donne, 22+ uomini"},
-    {"data": "2026-11-07", "locale": "Room 26", "titolo": "Special guest Nastia", "info": "Techno, elettronica · dalle 22"},
-    {"data": "2026-11-07", "locale": "Teatro Centrale", "titolo": "Don't Tell Mama", "info": "Dalle 23:30"},
-    {"data": "2026-11-07", "locale": "Art Café", "titolo": "Serata del sabato", "info": ""},
-    {"data": "2026-11-07", "locale": "Villa Sublime", "titolo": "Serata del sabato", "info": ""},
-    {"data": "2026-11-07", "locale": "Gus", "titolo": "The Box", "info": "Urban, pop, reggaeton, latin house, hits · cena dalle 20:30, club dalle 23:30"},
-    {"data": "2026-11-08", "locale": "Room 26", "titolo": "Bailamé", "info": "Hip-hop, R&B, reggaeton, afrobeats · dalle 22"},
-    {"data": "2026-11-08", "locale": "Teatro Centrale", "titolo": "BeKind · Back to Sunday Night con Black On", "info": "Dalle 23:30"},
-    {"data": "2026-11-08", "locale": "Gus", "titolo": "GSunday", "info": "Urban, baile funk, hip-hop, reggaeton, hits · cena dalle 20:30, club dalle 23:30"}
+    {"data": "2026-11-12", "locale": "Room 26", "titolo": "Milkshake", "info": "Dalle 22"},
+    {"data": "2026-11-12", "locale": "Teatro Centrale", "titolo": "FOMO Night · 18 years of ACE", "info": "Dalle 23:30"},
+    {"data": "2026-11-12", "locale": "Gus", "titolo": "Backroom", "info": "Afrohouse, house, urban, baile funk, reggaeton, hip-hop · cena dalle 20:30, club dalle 23:30"},
+    {"data": "2026-11-13", "locale": "Opus Club", "titolo": "Vibra", "info": "Reggaeton · 20+ donne, 22+ uomini"},
+    {"data": "2026-11-13", "locale": "Room 26", "titolo": "Drip", "info": "Dalle 22"},
+    {"data": "2026-11-13", "locale": "Teatro Centrale", "titolo": "18eSto! & La Folie · University Night", "info": "Dalle 23:30"},
+    {"data": "2026-11-13", "locale": "Art Café", "titolo": "Serata del venerdì", "info": ""},
+    {"data": "2026-11-13", "locale": "Villa Sublime", "titolo": "La Casita", "info": "Reggaeton"},
+    {"data": "2026-11-13", "locale": "Gus", "titolo": "Post Uni", "info": "Latin house, reggaeton · cena dalle 20:30, club dalle 23:30"},
+    {"data": "2026-11-14", "locale": "Opus Club", "titolo": "Saturday Night", "info": "20+ donne, 22+ uomini"},
+    {"data": "2026-11-14", "locale": "Room 26", "titolo": "Special guest Leon", "info": "Dalle 22"},
+    {"data": "2026-11-14", "locale": "Teatro Centrale", "titolo": "Don't Tell Mama", "info": "Dalle 23:30"},
+    {"data": "2026-11-14", "locale": "Art Café", "titolo": "Serata del sabato", "info": ""},
+    {"data": "2026-11-14", "locale": "Villa Sublime", "titolo": "Ritmo", "info": "Reggaeton"},
+    {"data": "2026-11-14", "locale": "Gus", "titolo": "The Box", "info": "Urban, pop, reggaeton, latin house, hits · cena dalle 20:30, club dalle 23:30"},
+    {"data": "2026-11-15", "locale": "Room 26", "titolo": "Bailamé", "info": "Reggaeton, latin, urban"},
+    {"data": "2026-11-15", "locale": "Teatro Centrale", "titolo": "BeKind · Back to Sunday Night", "info": "Dalle 23:30"},
+    {"data": "2026-11-15", "locale": "Gus", "titolo": "GSunday", "info": "Urban, baile funk, hip-hop, reggaeton, hits · cena dalle 20:30, club dalle 23:30"}
   ],
   "inArrivo": [
-    {"data": "2026-11-14", "locale": "Room 26", "titolo": "Room 26 · special guest Leon", "info": "Dalle 22"},
     {"data": "2026-11-21", "locale": "Room 26", "titolo": "Room 26 · special guest Wade", "info": "Dalle 22"},
-    {"data": "2026-11-28", "locale": "Room 26", "titolo": "Room 26 · special guest Ester Bronchal", "info": "Dalle 22"}
+    {"data": "2026-11-28", "locale": "Room 26", "titolo": "Room 26 · special guest Ester Bronchal", "info": "Dalle 22"},
+    {"data": "2026-12-05", "locale": "Room 26", "titolo": "Room 26 · special guest Marco Faraone", "info": "Dalle 22"}
   ],
   "locali": {
     "Opus Club": [
@@ -36,10 +36,10 @@
       {"stato": "open", "etichetta": "Aperto da giovedì a domenica"}
     ],
     "Teatro Centrale": [
-      {"stato": "open", "etichetta": "Aperto ven, sab e dom"}
+      {"stato": "open", "etichetta": "Aperto da giovedì a domenica"}
     ],
     "Villa Sublime": [
-      {"stato": "open", "etichetta": "Aperto gio, ven e sab"}
+      {"stato": "open", "etichetta": "Aperto ven e sab"}
     ],
     "Gus": [
       {"stato": "open", "etichetta": "Aperto da giovedì a domenica"}
