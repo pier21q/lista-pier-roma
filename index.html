@@ -504,6 +504,74 @@ body.lb-open{overflow:hidden}
   .rescue{padding:16px}
 }
 
+/* ---------- NATALE ----------
+   Tema di stagione: si accende da solo dal 25 novembre alle 06:00 del 7 gennaio, ora di Roma (script nel <head>),
+   e torna ogni anno. .xm-only si vede solo a Natale, .xm-hide solo fuori stagione.
+   Per provarlo: ?natale=1 lo forza, ?natale=0 lo spegne. I temi degli eventi (html.tema-…) vanno scritti dopo questo blocco. */
+html:not(.natale) .xm-only{display:none!important}
+html.natale .xm-hide{display:none!important}
+html.natale{
+  --neon:#FF3B4E;
+  --neon-soft:#F4CB7C;
+  --cyan:#5BE0A3;
+}
+html.natale .hero::before{
+  background:
+    radial-gradient(46% 42% at 22% 8%, rgba(255,59,78,.32), transparent 68%),
+    radial-gradient(40% 38% at 82% 18%, rgba(244,203,124,.16), transparent 70%);
+}
+html.natale .phone{box-shadow:0 26px 70px rgba(0,0,0,.65), 0 0 0 1px rgba(244,203,124,.22)}
+html.natale .btn-primary:hover{box-shadow:0 10px 34px rgba(255,59,78,.45)}
+html.natale .btn-wa{border-color:rgba(91,224,163,.45)}
+html.natale .night .t{text-shadow:0 0 18px rgba(244,203,124,.3)}
+html.natale .venue.is-picked{box-shadow:0 0 0 1px var(--neon),0 18px 44px rgba(255,59,78,.18)}
+html.natale .status[data-state="open"]{border-color:rgba(91,224,163,.4)}
+html.natale .status[data-state="closing"]{color:#FF8C8C;border-color:rgba(255,59,78,.5)}
+html.natale .rescue.flash{box-shadow:0 0 0 1px var(--neon),0 0 44px rgba(255,59,78,.25)}
+html.natale .gal-top .shot.big{border-color:rgba(244,203,124,.45)}
+/* "PR Roma" in foglia d'oro, con un riflesso che scorre */
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  html.natale h1.title em{
+    padding-right:.08em;
+    background:linear-gradient(100deg,#D9A856 0%,#F4CB7C 30%,#FFF6E0 48%,#F4CB7C 62%,#C9973F 100%);
+    background-size:240% 100%;
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:transparent;
+    animation:foglia 7s ease-in-out infinite;
+  }
+}
+@keyframes foglia{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+/* la ghirlanda di luci: il filo che fa le onde e quattro colori che si accendono uno dopo l'altro */
+.luci{
+  position:absolute;top:0;left:0;right:0;height:34px;z-index:1;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='34'%3E%3Cpath d='M0 2Q80 22 160 2' fill='none' stroke='%23493768' stroke-width='1'/%3E%3C/svg%3E") repeat-x 0 0/160px 34px;
+}
+.luci i{position:absolute;inset:0;background-repeat:repeat-x;background-size:160px 34px;animation:luci 3.2s ease-in-out infinite}
+.luci i:nth-child(1){background-image:radial-gradient(circle at 20px 10px, #fff 0 .8px, #FF3B4E 1.4px 2.6px, rgba(255,59,78,.4) 3.6px, transparent 12px)}
+.luci i:nth-child(2){animation-delay:-2.4s;background-image:radial-gradient(circle at 60px 15px, #fff 0 .8px, #F4CB7C 1.4px 2.6px, rgba(244,203,124,.4) 3.6px, transparent 12px)}
+.luci i:nth-child(3){animation-delay:-1.6s;background-image:radial-gradient(circle at 100px 15px, #fff 0 .8px, #5BE0A3 1.4px 2.6px, rgba(91,224,163,.35) 3.6px, transparent 12px)}
+.luci i:nth-child(4){animation-delay:-.8s;background-image:radial-gradient(circle at 140px 10px, #fff 0 .8px, #EFE6D9 1.4px 2.6px, rgba(239,230,217,.35) 3.6px, transparent 12px)}
+@keyframes luci{0%,100%{opacity:.28}40%,60%{opacity:1}}
+/* la neve nell'hero, dietro al testo: fiocchi e scintille li disegna lo script su <canvas>;
+   i due strati di puntini <i> restano di riserva (senza script, o fermi con "riduci movimento") */
+.neve{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.neve canvas{position:absolute;inset:0;width:100%;height:100%}
+.neve-js i{display:none}
+.neve i{position:absolute;left:0;right:0;top:-360px;bottom:0;background-size:360px 360px;will-change:transform;animation:neve 16s linear infinite}
+.neve i:first-child{background-image:
+  radial-gradient(circle at 34px 46px, rgba(255,255,255,.8) 0 1.2px, transparent 2.2px),
+  radial-gradient(circle at 142px 118px, rgba(255,255,255,.65) 0 1px, transparent 2px),
+  radial-gradient(circle at 268px 62px, rgba(255,255,255,.75) 0 1.3px, transparent 2.3px),
+  radial-gradient(circle at 96px 236px, rgba(255,255,255,.6) 0 1px, transparent 2px),
+  radial-gradient(circle at 214px 302px, rgba(255,255,255,.8) 0 1.2px, transparent 2.2px),
+  radial-gradient(circle at 326px 208px, rgba(255,255,255,.6) 0 1px, transparent 2px)}
+.neve i:last-child{opacity:.55;animation-duration:27s;background-image:
+  radial-gradient(circle at 70px 150px, rgba(255,255,255,.7) 0 2px, transparent 4.5px),
+  radial-gradient(circle at 196px 28px, rgba(255,255,255,.6) 0 2.4px, transparent 5px),
+  radial-gradient(circle at 300px 268px, rgba(255,255,255,.65) 0 2px, transparent 4.5px),
+  radial-gradient(circle at 168px 196px, rgba(255,255,255,.5) 0 1.8px, transparent 4px)}
+@keyframes neve{to{transform:translate3d(0,360px,0)}}
+
 /* ---------- EVENTO SPECIALE (Halloween, Capodanno…) ----------
    Si accende con data-evento sul tag <html> e si spegne da solo (vedi lo script nel <head>).
    Un tema di colori per l'evento si scrive come html.tema-<nome>{--neon:…} e si attiva con data-evento-tema. */
@@ -545,6 +613,18 @@ html.evento .ev-hide{display:none!important}
   .ev-card .btn,.ev-eve .btn{min-height:44px;width:100%}
 }
 
+/* ---------- ANIMAZIONI D'INGRESSO ----------
+   L'hero sale in scena al caricamento; le sezioni sotto compaiono quando entrano nello schermo
+   (lo script mette .rv solo a ciò che è fuori vista e la toglie all'arrivo: senza script si vede tutto). */
+.hero-inner > div:first-child > *{animation:sali .9s cubic-bezier(.2,.7,.2,1) both}
+.hero-inner > div:first-child > h1{animation-delay:.08s}
+.hero-inner > div:first-child > .lede{animation-delay:.18s}
+.hero-inner > div:first-child > .hero-actions{animation-delay:.28s}
+.phone{animation:sali 1.1s .35s cubic-bezier(.2,.7,.2,1) both}
+@keyframes sali{from{opacity:0;transform:translateY(22px)}}
+.rv{opacity:0!important;transform:translateY(26px)!important}
+.rv-in{transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)!important;transition-delay:var(--rv-d,0s)!important}
+
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
   html{scroll-behavior:auto}
@@ -555,10 +635,13 @@ html.evento .ev-hide{display:none!important}
    (oppure fino a data-evento-fine="AAAA-MM-GGTHH:MM"). Senza data-evento il sito resta normale. */
 (function(){
   var h = document.documentElement, d = h.dataset, p = function(n){ return (n<10?"0":"")+n; };
-  if(!/^\d{4}-\d{2}-\d{2}$/.test(d.evento || "")) return;
   var now;
   try { now = new Date().toLocaleString("sv-SE", {timeZone:"Europe/Rome"}).replace(" ", "T").slice(0,16); }
   catch(e){ now = new Date().toISOString().slice(0,16); }
+  /* Natale: html.natale dal 25 novembre alle 06:00 del 7 gennaio, ogni anno. ?natale=1 lo forza, ?natale=0 lo spegne. */
+  var md = now.slice(5), q = location.search;
+  if(/[?&]natale=1\b/.test(q) || (!/[?&]natale=0\b/.test(q) && (md >= "11-25" || md < "01-07T06:00"))) h.classList.add("natale");
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(d.evento || "")) return;
   if(!d.eventoFine){ var x = new Date(d.evento + "T12:00:00"); x.setDate(x.getDate() + 1); d.eventoFine = x.getFullYear()+"-"+p(x.getMonth()+1)+"-"+p(x.getDate())+"T06:00"; }
   if(now < d.eventoFine){ h.classList.add("evento"); if(d.eventoTema){ h.classList.add("tema-" + d.eventoTema); } }
 })();
@@ -570,9 +653,12 @@ html.evento .ev-hide{display:none!important}
 <body>
 
 <header class="hero">
+  <div class="luci xm-only" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="neve xm-only" aria-hidden="true"><i></i><i></i></div>
   <div class="wrap hero-inner">
     <div>
-      <span class="badge ev-hide"><span class="dot"></span> Liste &amp; tavoli — Roma</span>
+      <span class="badge ev-hide xm-hide"><span class="dot"></span> Liste &amp; tavoli — Roma</span>
+      <span class="badge ev-hide xm-only"><span class="dot"></span> Liste &amp; tavoli — Natale a Roma</span>
       <span class="badge ev-only"><span class="dot"></span> <span data-ev="titolo"></span></span>
       <h1 class="title">Pier<br><em>PR Roma</em></h1>
       <p class="lede">Liste, ingressi ridotti e tavoli nei club di Roma. Scegli il locale, dimmi quante persone siete e ti confermo su WhatsApp, di solito in pochi minuti.</p>
@@ -676,10 +762,14 @@ html.evento .ev-hide{display:none!important}
 
 <div class="banner">
   <img src="media/banner.jpg" alt="Insegna al neon in discoteca: Fate loves the fearless">
+  <div class="luci xm-only" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
   <div class="wrap">
-    <span class="eyebrow">Fate loves the fearless</span>
-    <h2>La lista si chiude presto.</h2>
-    <p>Il venerdì e il sabato i posti migliori vanno via nel pomeriggio. Scrivimi prima, non all'ingresso.</p>
+    <span class="eyebrow xm-hide">Fate loves the fearless</span>
+    <h2 class="xm-hide">La lista si chiude presto.</h2>
+    <p class="xm-hide">Il venerdì e il sabato i posti migliori vanno via nel pomeriggio. Scrivimi prima, non all'ingresso.</p>
+    <span class="eyebrow xm-only">Le feste a Roma</span>
+    <h2 class="xm-only">Sotto le feste si prenota prima.</h2>
+    <p class="xm-only">Tra Natale e Capodanno i tavoli vanno via con giorni di anticipo. Le serate delle feste arrivano qui appena i locali le confermano: intanto scrivimi.</p>
     <div style="margin-top:26px"><a class="btn btn-primary" href="#prenota">Mettimi in lista</a></div>
   </div>
 </div>
@@ -897,6 +987,7 @@ html.evento .ev-hide{display:none!important}
       <div>
         <strong class="brand">Pier — PR Roma</strong>
         <div style="margin-top:6px">Liste, tavoli e privé nei club di Roma.</div>
+        <div class="xm-only" style="margin-top:6px;color:var(--neon-soft)">Buone feste, ci vediamo in pista.</div>
       </div>
       <div><a id="footerwa" href="https://wa.me/393204226887" target="_blank" rel="noopener">WhatsApp +39 320 422 6887</a></div>
     </div>
@@ -1045,6 +1136,112 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
   }
   var SITE_URL = (document.querySelector('link[rel="canonical"]') || {}).href || (location.origin + location.pathname);
 
+  /* ---- comparsa delle sezioni allo scroll: solo ciò che è ancora sotto lo schermo, mai con "riduci movimento" ---- */
+  var revealer = null;
+  if("IntersectionObserver" in window && !reduceMotion){
+    revealer = new IntersectionObserver(function(entries){
+      var n = 0;
+      entries.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var el = e.target;
+        revealer.unobserve(el);
+        el.style.setProperty("--rv-d", Math.min(n++, 5) * 70 + "ms");
+        el.classList.add("rv-in");
+        el.classList.remove("rv");
+        setTimeout(function(){ el.classList.remove("rv-in"); el.style.removeProperty("--rv-d"); }, 1400);
+      });
+    }, {rootMargin:"0px 0px -6% 0px"});
+  }
+  function reveal(sel){
+    if(!revealer) return;
+    Array.prototype.forEach.call(document.querySelectorAll(sel), function(el){
+      if(el.classList.contains("rv") || el.getBoundingClientRect().top < window.innerHeight) return;
+      el.classList.add("rv");
+      revealer.observe(el);
+    });
+  }
+  reveal(".sec-head, .strip div, .banner .wrap, .venue, .shot, .step, .form-grid, .preview, .send-row, .rescue");
+
+  /* ---- Natale: neve e scintille dorate nell'hero, disegnate su canvas; ferme quando l'hero non si vede ---- */
+  (function(){
+    var box = document.querySelector(".neve");
+    if(!box || reduceMotion || !document.documentElement.classList.contains("natale")) return;
+    var cv = document.createElement("canvas"), ctx = cv.getContext && cv.getContext("2d");
+    if(!ctx) return;
+    box.appendChild(cv);
+    box.classList.add("neve-js");
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var W = 0, H = 0, flakes = [], sparks = [], raf = 0, on = false, seen = true, last = 0, t = 0, wind = 0, windTo = 0;
+    // Il fiocco è un pallino sfumato disegnato una volta sola e poi ricopiato.
+    var dot = document.createElement("canvas"); dot.width = dot.height = 32;
+    var dg = dot.getContext("2d"), g = dg.createRadialGradient(16,16,0,16,16,16);
+    g.addColorStop(0, "rgba(255,255,255,1)"); g.addColorStop(.35, "rgba(255,255,255,.55)"); g.addColorStop(1, "rgba(255,255,255,0)");
+    dg.fillStyle = g; dg.fillRect(0,0,32,32);
+    function rnd(a,b){ return a + Math.random() * (b - a); }
+    // z è la profondità: i fiocchi vicini sono più grandi, più veloci e più chiari.
+    function flake(fromTop){
+      var z = Math.random();
+      return {x:rnd(0,W), y:fromTop ? rnd(-40,-6) : rnd(0,H), z:z, r:1.2 + z*z*4.2, v:14 + z*46, a:.22 + z*.6, ph:rnd(0,6.28), sw:rnd(.4,1.1)};
+    }
+    function spark(){ return {x:rnd(0,W), y:rnd(30,H*.85), s:rnd(4,9), life:0, dur:rnd(1.6,3.2), wait:rnd(0,6)}; }
+    function size(){
+      var r = box.getBoundingClientRect();
+      if(Math.abs(r.width - W) < 1 && Math.abs(r.height - H) < 1) return;
+      W = r.width; H = r.height;
+      cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      var n = Math.round(Math.min(110, Math.max(28, W * H / 11000)));
+      flakes = []; for(var i=0;i<n;i++) flakes.push(flake(false));
+      sparks = []; for(var k=0;k<Math.max(3, Math.round(n/9));k++) sparks.push(spark());
+    }
+    function frame(now){
+      raf = requestAnimationFrame(frame);
+      var dt = Math.min(.05, Math.max(0, (now - last) / 1000)); last = now; t += dt;
+      if(Math.random() < .004) windTo = rnd(-18,18);   // ogni tanto il vento cambia
+      wind += (windTo - wind) * dt * .4;
+      ctx.clearRect(0,0,W,H);
+      for(var i=0;i<flakes.length;i++){
+        var f = flakes[i];
+        f.y += f.v * dt;
+        f.x += (wind * (.3 + f.z) + Math.sin(t * f.sw + f.ph) * 10 * f.z) * dt;
+        if(f.y > H + 8){ f = flakes[i] = flake(true); }
+        if(f.x < -8) f.x = W + 8; else if(f.x > W + 8) f.x = -8;
+        ctx.globalAlpha = f.a;
+        ctx.drawImage(dot, f.x - f.r, f.y - f.r, f.r * 2, f.r * 2);
+      }
+      ctx.fillStyle = "#F4CB7C";
+      for(var k=0;k<sparks.length;k++){
+        var s = sparks[k];
+        if(s.wait > 0){ s.wait -= dt; continue; }
+        s.life += dt;
+        var p = s.life / s.dur;
+        if(p >= 1){ sparks[k] = spark(); continue; }
+        var a = Math.sin(p * Math.PI), L = s.s * (.55 + .45 * a);
+        ctx.globalAlpha = a * .5;
+        ctx.drawImage(dot, s.x - L, s.y - L, L * 2, L * 2);
+        ctx.globalAlpha = a * .9;   // la stella a quattro punte
+        ctx.beginPath();
+        ctx.moveTo(s.x, s.y - L);
+        ctx.quadraticCurveTo(s.x, s.y, s.x + L, s.y);
+        ctx.quadraticCurveTo(s.x, s.y, s.x, s.y + L);
+        ctx.quadraticCurveTo(s.x, s.y, s.x - L, s.y);
+        ctx.quadraticCurveTo(s.x, s.y, s.x, s.y - L);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    }
+    function start(){ if(on || !seen || document.hidden) return; on = true; last = performance.now(); raf = requestAnimationFrame(frame); }
+    function stop(){ on = false; cancelAnimationFrame(raf); }
+    size();
+    var rt = null;
+    window.addEventListener("resize", function(){ clearTimeout(rt); rt = setTimeout(size, 200); });
+    if("IntersectionObserver" in window){
+      new IntersectionObserver(function(e){ seen = e[e.length-1].isIntersecting; if(seen) start(); else stop(); }).observe(box);
+    }
+    document.addEventListener("visibilitychange", function(){ if(document.hidden) stop(); else start(); });
+    start();
+  })();
+
   /* ---- evento speciale: testi, conto alla rovescia, condivisione; si spegne dopo la notte ---- */
   var EVD = document.documentElement.dataset;
   var EV = $("evento");
@@ -1072,7 +1269,7 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
   function setShare(order, byDay){
     var l = [];
     if(order && order.length){
-      l.push("Il programma del weekend a Roma 🎟️", "");
+      l.push("Il programma del weekend a Roma " + (document.documentElement.classList.contains("natale") ? "🎄" : "🎟️"), "");
       order.forEach(function(d){
         var dt = new Date(d + "T12:00:00");
         l.push(GIORNI_BREVI[dt.getDay()] + " " + dt.getDate() + "/" + (dt.getMonth()+1));
@@ -1089,7 +1286,7 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
   applyStatus(null);
   fetch("programma.json?v=" + Date.now(), {cache:"no-store"})
     .then(function(r){ if(!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
-    .then(function(p){ applyStatus(p.locali); renderWeekend(p); })
+    .then(function(p){ applyStatus(p.locali); renderWeekend(p); reveal("#days .day, #coming .coming"); })
     .catch(function(){ $("days").hidden = true; $("weekendempty").hidden = false; });
 
   /* ---- selezione del locale ---- */
