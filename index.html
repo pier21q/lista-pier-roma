@@ -261,6 +261,54 @@ section{padding:82px 0}
 
 .reel-hint{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
 
+/* ---------- CAMPAGNA TAVOLI ---------- */
+.camp{
+  border-bottom:1px solid var(--line);
+  background:radial-gradient(50% 60% at 100% 0%, color-mix(in srgb,var(--neon) 9%,transparent), transparent 70%), var(--ground-2);
+}
+.camp .sec-head h2 em{font-style:italic;color:var(--neon-soft)}
+.camp-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter)}
+.camp-card{
+  display:flex;flex-direction:column;min-width:0;
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);overflow:hidden;
+  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
+}
+.camp-card:hover{transform:translateY(-5px);border-color:var(--line-strong);box-shadow:0 22px 50px rgba(0,0,0,.55)}
+.camp-img{position:relative;aspect-ratio:4/5;overflow:hidden;background:#000}
+/* la foto respira piano (zoom lento) e al passaggio del mouse ci scorre sopra un riflesso */
+.camp-img img{width:100%;height:100%;object-fit:cover;display:block;animation:lento 18s ease-in-out infinite alternate}
+.camp-card:nth-child(2) .camp-img img{animation-delay:-6s}
+.camp-card:nth-child(3) .camp-img img{animation-delay:-12s}
+@keyframes lento{from{transform:scale(1)}to{transform:scale(1.08)}}
+.camp-img::before{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.16) 50%,transparent 60%);
+  transform:translateX(-120%);transition:transform .9s ease;
+}
+.camp-card:hover .camp-img::before{transform:translateX(120%)}
+.camp-img::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(10,7,16,.45),transparent 26%,transparent 72%,rgba(21,16,34,.92))}
+.camp-tag{
+  position:absolute;left:14px;top:14px;z-index:2;
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;
+  background:rgba(10,7,16,.72);border:1px solid rgba(255,255,255,.16);
+  padding:5px 10px;border-radius:100px;backdrop-filter:blur(6px);
+}
+.camp-n{position:absolute;right:14px;bottom:8px;z-index:2;font-family:'Bodoni Moda',serif;font-style:italic;font-size:44px;line-height:1;color:var(--cream)}
+.camp-body{display:flex;flex-direction:column;gap:10px;flex:1;padding:20px 22px 22px}
+.camp-body h3{font-size:27px;line-height:1.05}
+.camp-body p{margin:0;font-size:14.5px;color:var(--body)}
+.camp-body .btn{align-self:flex-start;margin-top:auto}
+.camp-body p + .btn{margin-top:auto}
+@media (max-width:760px){
+  /* sul telefono le tre schede scorrono di lato, con la successiva che spunta */
+  .camp-row{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:6px;scrollbar-width:none}
+  .camp-row::-webkit-scrollbar{display:none}
+  .camp-card{flex:0 0 80%;scroll-snap-align:center}
+  .camp-body{padding:16px 16px 18px}
+  .camp-body h3{font-size:24px}
+  .camp-body .btn{min-height:44px;width:100%}
+}
+
 /* ---------- BANNER ---------- */
 .banner{
   position:relative;margin:0;overflow:hidden;
@@ -736,6 +784,54 @@ html.evento .ev-hide{display:none!important}
   <div><strong>&lt; 10 min</strong><p>Tempo medio di risposta su WhatsApp</p></div>
 </div>
 
+<!-- CAMPAGNA TAVOLI: tre foto ritoccate (media/tavolo-*.jpg, 720×900). "Prenota il tavolo" è un .book-it:
+     mette nel modulo il tipo (data-tipo) e, se c'è, il locale (data-venue). Niente prezzi: il preventivo arriva in chat. -->
+<section class="camp" id="tavoli">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow xm-hide">I tavoli</span>
+      <span class="eyebrow xm-only">I tavoli delle feste</span>
+      <h2>Arrivi, ed è <em>già tutto pronto</em>.</h2>
+      <p>Bottiglie in ghiaccio, bicchieri e mixer sul tavolo prima che tu entri. Dimmi quanti siete e che serata volete: il preventivo ti arriva su WhatsApp.</p>
+    </div>
+  </div>
+  <div class="camp-row">
+    <article class="camp-card" data-camp="champagne" data-tipo="Tavolo" data-venue="Opus Club">
+      <div class="camp-img">
+        <img src="media/tavolo-moet.jpg" width="720" height="900" alt="Una bottiglia di Moët &amp; Chandon Ice Impérial Rosé sopra il secchiello del ghiaccio con i calici dell'Opus Club" loading="lazy">
+        <span class="camp-tag">Opus Club</span><span class="camp-n">01</span>
+      </div>
+      <div class="camp-body">
+        <h3>Champagne in ghiaccio.</h3>
+        <p>Moët Ice Impérial Rosé, calici e ghiaccio: il brindisi parte appena vi sedete.</p>
+        <button type="button" class="btn btn-primary btn-small book-it">Prenota il tavolo</button>
+      </div>
+    </article>
+    <article class="camp-card" data-camp="vodka-gin" data-tipo="Tavolo">
+      <div class="camp-img">
+        <img src="media/tavolo-vodka-gin.jpg" width="720" height="900" alt="Due bottiglie di Grey Goose e una di Bombay Sapphire con i bicchieri, su un tavolo illuminato di blu" loading="lazy">
+        <span class="camp-tag">Vodka &amp; gin</span><span class="camp-n">02</span>
+      </div>
+      <div class="camp-body">
+        <h3>Due Grey Goose, un Bombay.</h3>
+        <p>Bottiglie, bicchieri e mixer già in fila. Cosa mettere sul tavolo lo scegliete voi.</p>
+        <button type="button" class="btn btn-primary btn-small book-it">Prenota il tavolo</button>
+      </div>
+    </article>
+    <article class="camp-card" data-camp="neon" data-tipo="Tavolo">
+      <div class="camp-img">
+        <img src="media/tavolo-neon.jpg" width="720" height="900" alt="Un tavolo con il bordo al neon blu: bottiglie, bicchieri e lattine di tonica nel ghiaccio" loading="lazy">
+        <span class="camp-tag">Tavolo riservato</span><span class="camp-n">03</span>
+      </div>
+      <div class="camp-body">
+        <h3>Il tuo tavolo, acceso.</h3>
+        <p>Luci basse, ghiaccio e lattine in fresco. Voi pensate solo a chi invitare.</p>
+        <button type="button" class="btn btn-primary btn-small book-it">Prenota il tavolo</button>
+      </div>
+    </article>
+  </div>
+</section>
+
 <section id="spot" style="padding-bottom:56px">
   <div class="wrap">
     <div class="sec-head">
@@ -1160,7 +1256,7 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
       revealer.observe(el);
     });
   }
-  reveal(".sec-head, .strip div, .banner .wrap, .venue, .shot, .step, .form-grid, .preview, .send-row, .rescue");
+  reveal(".sec-head, .strip div, .camp-card, .banner .wrap, .venue, .shot, .step, .form-grid, .preview, .send-row, .rescue");
 
   /* ---- Natale: neve e scintille dorate nell'hero, disegnate su canvas; ferme quando l'hero non si vede ---- */
   (function(){
@@ -1324,7 +1420,14 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
     if(!b) return;
     var night = b.closest("[data-venue]");
     var holder = b.closest("[data-date]");
-    if(night) track("prenota-programma-" + slug(night.dataset.venue));
+    // Le schede della campagna tavoli hanno data-tipo: mettono "Tavolo" nel modulo e non riaprono un locale chiuso.
+    var camp = b.closest("[data-tipo]");
+    if(camp){
+      $("tipo").value = camp.dataset.tipo;
+      track("campagna-tavolo-" + slug(camp.dataset.camp));
+      var opt = night && $("locale").querySelector('option[value="' + night.dataset.venue + '"]');
+      if(opt && opt.disabled) night = null;
+    } else if(night){ track("prenota-programma-" + slug(night.dataset.venue)); }
     if(night) pickVenue(night.dataset.venue);
     if(holder){ $("data").value = holder.dataset.date; }
     update();
