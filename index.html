@@ -378,6 +378,73 @@ section{padding:82px 0}
 }
 .pick[aria-pressed="true"]::before{content:"✓ "}
 
+/* ---------- LISTINI ----------
+   "Consulta il listino": la fascia in fondo alla scheda la crea lo script, solo per i locali che hanno un listino
+   in listini.json. Il pannello #listino è uno solo e si riempie al momento. */
+.lst-open{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  margin:6px -26px -22px;padding:14px 26px;min-height:50px;
+  background:rgba(255,255,255,.025);border:0;border-top:1px solid var(--line);
+  font:inherit;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-align:left;
+  color:var(--cream);cursor:pointer;
+  transition:background .2s ease,color .2s ease;
+}
+.lst-open:hover{background:color-mix(in srgb,var(--neon) 10%,transparent);color:#fff}
+.lst-open:focus-visible{outline-offset:-3px}
+.lst-open span{color:var(--neon-soft);font-size:16px;letter-spacing:0;transition:transform .2s ease}
+.lst-open:hover span{transform:translateX(4px)}
+
+.lst{
+  position:fixed;inset:auto 0 0 0;margin:0;padding:0;
+  width:100%;max-width:none;max-height:88vh;max-height:88dvh;
+  border:0;border-top:2px solid var(--neon);
+  background:var(--surface);color:var(--cream);overflow:hidden;
+}
+.lst[open]{display:flex;flex-direction:column;animation:lst-su .32s cubic-bezier(.2,.7,.2,1)}
+.lst::backdrop{background:rgba(6,4,10,.82);backdrop-filter:blur(6px)}
+@keyframes lst-su{from{opacity:0;transform:translateY(28px)}}
+.lst-head,.lst-nav,.lst-foot{flex:0 0 auto}
+.lst-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:20px 20px 14px}
+.lst-head h3{font-size:30px;line-height:1.05;margin-top:6px}
+.lst-x{
+  flex:0 0 auto;width:42px;height:42px;border-radius:50%;cursor:pointer;font-size:17px;line-height:1;
+  background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--cream);
+}
+.lst-x:hover{border-color:var(--neon)}
+.lst-nav{display:flex;gap:7px;overflow-x:auto;padding:0 20px 14px;border-bottom:1px solid var(--line);scrollbar-width:none}
+.lst-nav::-webkit-scrollbar{display:none}
+.lst-nav button{
+  flex:0 0 auto;font:inherit;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;white-space:nowrap;
+  background:none;border:1px solid var(--line);border-radius:100px;padding:8px 13px;color:var(--soft);cursor:pointer;
+}
+.lst-nav button:hover{border-color:var(--neon-soft);color:#fff}
+.lst-body{position:relative;flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:0 20px 6px}
+.lst-body h4{
+  position:sticky;top:0;z-index:1;margin:0;padding:16px 0 12px;
+  font-family:'Bodoni Moda',serif;font-weight:400;font-style:italic;font-size:22px;line-height:29px;
+  color:var(--neon-soft);background:var(--surface);border-bottom:1px solid var(--line-strong);
+}
+.lst-body h4::after{content:"";position:absolute;left:0;right:0;top:100%;margin-top:1px;height:12px;background:linear-gradient(var(--surface),transparent);pointer-events:none}
+.lst-body ul{list-style:none;margin:0;padding:0}
+.lst-body li{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid var(--line)}
+.lst-body li:last-child{border-bottom:0}
+.lst-body .n{font-size:14.5px;line-height:1.35;color:var(--cream);font-weight:500}
+.lst-body .n small{margin-left:5px;font-size:12px;font-weight:400;color:var(--muted);white-space:nowrap}
+.lst-body li b{flex:0 0 auto;font-size:15px;font-weight:700;color:var(--cream);font-variant-numeric:tabular-nums;white-space:nowrap}
+.lst-note{margin:14px 0 12px;font-size:12.5px;line-height:1.5;color:var(--muted)}
+.lst-foot{padding:12px 20px calc(12px + env(safe-area-inset-bottom, 0px));border-top:1px solid var(--line);background:var(--ground-2)}
+.lst-foot .btn{width:100%}
+@media (min-width:761px){
+  .lst{inset:0;margin:auto;width:min(580px,92vw);height:fit-content;max-height:min(86vh,860px);border:1px solid var(--line-strong);border-top:2px solid var(--neon)}
+  .lst-head{padding:24px 28px 16px}
+  .lst-nav{padding:0 28px 16px}
+  .lst-body{padding:0 28px 6px}
+  .lst-foot{padding:14px 28px}
+}
+@media (max-width:760px){
+  .lst-open{margin:4px -20px -18px;padding:14px 20px}
+}
+
 /* ---------- GALLERY ---------- */
 .gal-top{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .gal-top .shot{aspect-ratio:4/5}
@@ -1099,6 +1166,17 @@ html.evento .ev-hide{display:none!important}
   <video id="lbvideo" controls loop playsinline></video>
 </div>
 
+<!-- Listino delle bottiglie: un pannello solo, riempito da listini.json quando si tocca "Consulta il listino". -->
+<dialog class="lst" id="listino" aria-labelledby="lst-title">
+  <div class="lst-head">
+    <div><span class="eyebrow">Listino bottiglie</span><h3 id="lst-title"></h3></div>
+    <button class="lst-x" id="lst-x" type="button" aria-label="Chiudi il listino">✕</button>
+  </div>
+  <div class="lst-nav" id="lst-nav" role="group" aria-label="Vai alla categoria"></div>
+  <div class="lst-body" id="lst-body" tabindex="-1"></div>
+  <div class="lst-foot" id="lst-foot"><button class="btn btn-primary" id="lst-book" type="button">Prenota un tavolo</button></div>
+</dialog>
+
 <script>
 var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"media/v4.mp4","v5":"media/v5.mp4","v6":"media/v6.mp4","v7":"media/v7.mp4","v8":"media/v8.mp4"};
 (function(){
@@ -1415,6 +1493,75 @@ var MEDIA = {"v1":"media/v1.mp4","v2":"media/v2.mp4","v3":"media/v3.mp4","v4":"m
       goToForm();
     });
   });
+  /* ---- listini delle bottiglie: arrivano da listini.json ---- */
+  // "locali" dice quale listino ha ogni locale (Opus Club e Nice hanno lo stesso); chi non c'è non ha il pulsante.
+  // Ogni voce è [nome, formato, prezzo in euro]: vanno copiati dal listino del locale, senza ritocchi.
+  var lst = $("listino"), LISTINI = null, lstVenue = "";
+  function euro(n){ return String(n).replace(/\B(?=(\d{3})+$)/g, ".") + " €"; }
+  function closeListino(){
+    document.body.classList.remove("lb-open");
+    if(lst.open) lst.close();
+  }
+  function openListino(name){
+    var sez = LISTINI && LISTINI.listini[LISTINI.locali[name]];
+    if(!sez) return;
+    lstVenue = name;
+    $("lst-title").textContent = name;
+    $("lst-nav").innerHTML = sez.map(function(s, i){
+      return '<button type="button" data-i="' + i + '">' + esc(s.titolo) + '</button>';
+    }).join("");
+    $("lst-nav").hidden = sez.length < 2;
+    $("lst-body").innerHTML = sez.map(function(s, i){
+      return '<div id="lst-s' + i + '"><h4>' + esc(s.titolo) + '</h4><ul>' + s.voci.map(function(v){
+        return '<li><span class="n">' + esc(v[0]) + (v[1] ? ' <small>' + esc(v[1]) + '</small>' : '') + '</span><b>' + euro(v[2]) + '</b></li>';
+      }).join("") + '</ul></div>';
+    }).join("") + '<p class="lst-note">Prezzi in euro, indicati dal locale: possono cambiare. Chiedi conferma a Pier quando prenoti.</p>';
+    // Un locale chiuso ("off") si può consultare ma non prenotare.
+    var off = false;
+    Array.prototype.forEach.call($("locale").options, function(o){ if(o.value === name && o.disabled) off = true; });
+    $("lst-foot").hidden = off;
+    lst.showModal();
+    $("lst-body").scrollTop = 0;
+    document.body.classList.add("lb-open");
+    track("listino-" + slug(name));
+  }
+  if(lst && lst.showModal){
+    $("lst-x").addEventListener("click", closeListino);
+    lst.addEventListener("click", function(e){ if(e.target === lst) closeListino(); });
+    lst.addEventListener("close", function(){ document.body.classList.remove("lb-open"); });
+    $("lst-nav").addEventListener("click", function(e){
+      var b = e.target.closest ? e.target.closest("button[data-i]") : null;
+      var s = b && $("lst-s" + b.dataset.i);
+      if(!s) return;
+      try { $("lst-body").scrollTo({top:s.offsetTop, behavior: reduceMotion ? "auto" : "smooth"}); } catch(err){ $("lst-body").scrollTop = s.offsetTop; }
+    });
+    $("lst-book").addEventListener("click", function(){
+      var name = lstVenue;
+      closeListino();
+      $("tipo").value = "Tavolo";
+      track("listino-prenota-" + slug(name));
+      pickVenue(name);
+      goToForm();
+    });
+    fetch("listini.json?v=" + Date.now(), {cache:"no-store"})
+      .then(function(r){ if(!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function(d){
+        if(!d || !d.locali || !d.listini) return;
+        LISTINI = d;
+        cards.forEach(function(card){
+          if(!d.listini[d.locali[card.dataset.venue]]) return;
+          var b = document.createElement("button");
+          b.type = "button";
+          b.className = "lst-open";
+          b.innerHTML = 'Consulta il listino <span aria-hidden="true">→</span>';
+          // La scheda intera seleziona il locale: il tocco sul listino non deve arrivarle.
+          b.addEventListener("click", function(e){ e.stopPropagation(); openListino(card.dataset.venue); });
+          card.appendChild(b);
+        });
+      })
+      .catch(function(){});
+  }
+
   // I pulsanti Prenota del programma vengono creati dopo: un solo ascoltatore per tutti.
   document.addEventListener("click", function(e){
     var b = e.target && e.target.closest ? e.target.closest(".book-it") : null;

@@ -1,0 +1,250 @@
+{
+  "locali": {
+    "Opus Club": "opus-nice",
+    "Nice": "opus-nice",
+    "Art Café": "art-cafe",
+    "Room 26": "room-26"
+  },
+  "listini": {
+    "opus-nice": [
+      {
+        "titolo": "Spirits",
+        "voci": [
+          ["Grey Goose Vodka", "70 cl", 300],
+          ["Grey Goose Magnum Vodka", "1,5 l", 700],
+          ["Grey Goose Jeroboam Vodka", "3 l", 1500],
+          ["Grey Goose Mathusalem Vodka", "6 l", 3000],
+          ["Gin Bombay Sapphire", "70 cl", 300],
+          ["Gin Bombay Sapphire Magnum", "1,75 l", 750],
+          ["Gin Bombay Premier Cru", "70 cl", 350],
+          ["Gin Hendrick’s", "70 cl", 400],
+          ["Gin Mare", "70 cl", 400],
+          ["Rum Eminente", "70 cl", 300],
+          ["Tequila Casamigos Blanco", "70 cl", 300],
+          ["Tequila Don Julio Blanco", "70 cl", 300],
+          ["Tequila Don Julio Añejo", "70 cl", 350],
+          ["Tequila Don Julio Reposado", "70 cl", 400],
+          ["Tequila Don Julio 1942", "70 cl", 750],
+          ["Tequila Don Julio 1942 Magnum", "1,75 l", 2000],
+          ["Tequila Clase Azul", "70 cl", 1200],
+          ["Whisky Johnnie Walker Black Label", "70 cl", 300],
+          ["Whisky Jack Daniel’s", "70 cl", 300],
+          ["Aberfeldy 12YO Single Malt Scotch", "70 cl", 350]
+        ]
+      },
+      {
+        "titolo": "Bollicine",
+        "voci": [
+          ["Prosecco Leonia Brut Frescobaldi", "75 cl", 150],
+          ["Prosecco Mood", "75 cl", 150]
+        ]
+      },
+      {
+        "titolo": "Champagne",
+        "voci": [
+          ["Moët & Chandon Imperial Brut", "75 cl", 250],
+          ["Moët Ice Imperial / Ice Imperial Rosé", "75 cl", 300],
+          ["Moët & Chandon Imperial Brut Rosé", "75 cl", 300],
+          ["Moët Nectar Imperial Rosé NIR", "75 cl", 350],
+          ["Moët & Chandon Imperial Magnum Brut", "1,5 l", 500],
+          ["Moët & Chandon Imperial Brut Rosé Magnum", "1,5 l", 600],
+          ["Moët & Chandon Light Up", "1,5 l", 650],
+          ["Moët & Chandon Ice Imperial / Ice Rosé Magnum", "1,5 l", 700],
+          ["Moët Nectar Imperial Rosé NIR Magnum", "1,5 l", 750],
+          ["Moët & Chandon Imperial Bright Magnum", "1,5 l", 800],
+          ["Moët & Chandon Imperial Jeroboam Brut", "3 l", 1200],
+          ["Moët & Chandon Light Up Jeroboam", "3 l", 1600],
+          ["Moët & Chandon Ice Imperial Jeroboam", "3 l", 1600],
+          ["Moët & Chandon NIR Jeroboam", "3 l", 2000],
+          ["Moët & Chandon Bright Jeroboam", "3 l", 2000],
+          ["Moët & Chandon Imperial Mathusalem Brut", "6 l", 3000],
+          ["Moët & Chandon NIR Rosé Mathusalem", "6 l", 4500]
+        ]
+      },
+      {
+        "titolo": "Reserve – Millesimé Champagne",
+        "voci": [
+          ["Dom Pérignon", "75 cl", 650],
+          ["Dom Pérignon Luminous", "75 cl", 750],
+          ["Dom Pérignon Magnum", "1,5 l", 1700],
+          ["Dom Pérignon Magnum Luminous", "1,5 l", 1800],
+          ["Dom Pérignon Jeroboam", "3 l", 6000],
+          ["Dom Pérignon Rosé Luminous", "75 cl", 1200],
+          ["Dom Pérignon Rosé Magnum", "1,5 l", 3000],
+          ["Armand de Brignac Brut Gold", "75 cl", 600],
+          ["Armand de Brignac Brut Gold Magnum", "1,5 l", 1800],
+          ["Armand de Brignac Red Demi Sec / Green", "75 cl", 1000],
+          ["Armand de Brignac Brut Rosé", "75 cl", 1300],
+          ["Armand de Brignac Magnum Rosé", "1,5 l", 3000],
+          ["Armand de Brignac Brut Blanc de Blanc", "75 cl", 2000]
+        ]
+      }
+    ],
+    "art-cafe": [
+      {
+        "titolo": "Vini e champagne",
+        "voci": [
+          ["Lamborghini Gold", "", 200],
+          ["Lamborghini Gold", "Magnum 1,5 l", 400],
+          ["Lamborghini Gold", "Jeroboam 3 l", 800],
+          ["G.H. Mumm", "", 200],
+          ["G.H. Mumm Ice", "", 250],
+          ["Moët & Chandon Brut", "", 300],
+          ["Moët & Chandon Brut", "Magnum 1,5 l", 600],
+          ["Moët & Chandon", "Mathusalem 6 l", 2500],
+          ["Moët & Chandon Rosé", "", 350],
+          ["Moët & Chandon Ice", "", 350],
+          ["Moët & Chandon Ice", "Magnum 1,5 l", 700],
+          ["Moët & Chandon Ice Rosé", "", 400],
+          ["Moët & Chandon Ice Rosé", "Magnum 1,5 l", 800],
+          ["Moët & Chandon N.I.R.", "", 400],
+          ["Moët & Chandon N.I.R.", "Magnum 1,5 l", 900],
+          ["Dom Pérignon", "", 750],
+          ["Dom Pérignon", "Magnum 1,5 l", 2100],
+          ["Dom Pérignon Rosé", "", 1000],
+          ["Cristal", "", 700],
+          ["Cristal", "Magnum 1,5 l", 1500],
+          ["Cristal", "Jeroboam 3 l", 6500],
+          ["Armand de Brignac Gold", "", 800],
+          ["Armand de Brignac Gold", "Magnum 1,5 l", 1800],
+          ["Armand de Brignac Rosé", "", 1200],
+          ["Armand de Brignac", "Nabucodonosor 15 l", 55000]
+        ]
+      },
+      {
+        "titolo": "Vodka",
+        "voci": [
+          ["42 Below", "", 250],
+          ["Beluga", "1 l", 400],
+          ["Grey Goose", "", 300],
+          ["Grey Goose", "Magnum 1,5 l", 600],
+          ["Grey Goose", "Jeroboam 3 l", 1200],
+          ["Grey Goose", "Mathusalem 6 l", 2400],
+          ["Au Vodka", "", 300],
+          ["Au Vodka", "Magnum 1,5 l", 600],
+          ["Au Vodka", "Jeroboam 3 l", 1500]
+        ]
+      },
+      {
+        "titolo": "Gin",
+        "voci": [
+          ["Bombay Sapphire", "", 250],
+          ["Bombay Premier Cru", "", 300],
+          ["Bombay", "“More Than Magnum” 1,75 l", 600],
+          ["Tanqueray", "", 300],
+          ["Tanqueray Nº. Ten", "", 350],
+          ["Hendricks", "", 300],
+          ["Mare", "", 300],
+          ["Mare", "“More Than Magnum” 1,75 l", 600]
+        ]
+      },
+      {
+        "titolo": "Rhum",
+        "voci": [
+          ["Pampero", "", 200],
+          ["Bacardi Reserva Ocho", "", 300],
+          ["Diplomático Reserva Exclusiva", "", 300],
+          ["Zacapa", "", 350]
+        ]
+      },
+      {
+        "titolo": "Tequila",
+        "voci": [
+          ["Casamigos", "", 250],
+          ["Patrón Silver", "", 250],
+          ["Patrón Reposado", "", 250],
+          ["Don Julio Blanco", "", 250],
+          ["Don Julio Reposado", "", 300],
+          ["Don Julio 1942", "", 800],
+          ["Clase Azul", "", 1000]
+        ]
+      },
+      {
+        "titolo": "Whiskey",
+        "voci": [
+          ["Jack Daniel’s", "", 200],
+          ["Talisker Skye", "", 300],
+          ["Oban 14", "", 350],
+          ["Glenmorangie", "Extremely Rare 18 Y.O.", 600],
+          ["Johnnie Walker Blue Label", "", 900]
+        ]
+      },
+      {
+        "titolo": "Soft drinks & drinks",
+        "voci": [
+          ["Acqua Sanpellegrino", "0,25 l", 5],
+          ["Shot", "", 5],
+          ["Analcolico", "", 10],
+          ["Prosecco", "", 10],
+          ["Drink", "", 15],
+          ["Drink Premium", "", 20]
+        ]
+      }
+    ],
+    "room-26": [
+      {
+        "titolo": "Distillati",
+        "voci": [
+          ["Vodka 42Below", "70 cl", 180],
+          ["Vodka Belvedere", "70 cl", 230],
+          ["Vodka Belvedere Black", "70 cl", 280],
+          ["Vodka Belvedere Ten", "70 cl", 430],
+          ["Vodka Belvedere Magnum", "1,70 l", 500],
+          ["Vodka Belvedere Chrome Edition Magnum", "1,75 l", 630],
+          ["Vodka Belvedere Jéroboam", "3 l", 1000],
+          ["Vodka Belvedere Mathusalem", "6 l", 2400],
+          ["Tequila Patrón Silver", "70 cl", 250],
+          ["Tequila Don Julio Reposado", "70 cl", 280],
+          ["Tequila Reposado Clase Azul", "70 cl", 680],
+          ["Tequila Casamigos Reposado", "70 cl", 250],
+          ["Tequila Don Julio 1942", "", 750],
+          ["Rum Havana Club Añejo 7yo", "70 cl", 180],
+          ["Gin Bombay Sapphire", "70 cl", 180],
+          ["Gin Bombay Sapphire Magnum", "1,70 l", 400],
+          ["Gin Bombay Premium", "70 cl", 200],
+          ["Gin Tanqueray Ten London Dry", "70 cl", 180],
+          ["Gin Tanqueray Ten London Dry", "1,75 l", 400],
+          ["Gin Mare", "70 cl", 250],
+          ["Gin Hendrick’s 1886", "70 cl", 250],
+          ["Whiskey Jack Daniels", "70 cl", 180]
+        ]
+      },
+      {
+        "titolo": "Champagne",
+        "voci": [
+          ["Veuve Clicquot San Pietroburgo", "75 cl", 180],
+          ["Moët & Chandon Imperial", "75 cl", 180],
+          ["Moët & Chandon Imperial Magnum", "1,5 l", 380],
+          ["Moët & Chandon Imperial Magnum Bright Night", "1,5 l", 550],
+          ["Moët & Chandon Ice Imperial", "75 cl", 230],
+          ["Moët & Chandon Ice Imperial Magnum", "1,5 l", 480],
+          ["Moët & Chandon Ice Rosé Imperial", "75 cl", 250],
+          ["Moët & Chandon Ice Rosé Imperial Magnum", "1,5 l", 500],
+          ["Moët & Chandon N.I.R.", "75 cl", 280],
+          ["Moët & Chandon N.I.R. Magnum", "1,5 l", 550],
+          ["Dom Pérignon Vintage", "75 cl", 480],
+          ["Dom Pérignon Vintage Magnum", "1,5 l", 850],
+          ["Dom Pérignon Luminous", "75 cl", 550],
+          ["Dom Pérignon Luminous Magnum", "1,5 l", 1100],
+          ["Armand de Brignac Gold", "75 cl", 500],
+          ["Armand de Brignac Golfer’s", "75 cl", 600],
+          ["Armand de Brignac Rosé", "75 cl", 700]
+        ]
+      },
+      {
+        "titolo": "Prosecco",
+        "voci": [
+          ["Prosecco Follador Valbon DOC Treviso brut", "", 100],
+          ["Moët Garden Spritz", "", 100]
+        ]
+      },
+      {
+        "titolo": "Altro",
+        "voci": [
+          ["Red Bull", "", 5],
+          ["Vodka Red Bull", "", 10]
+        ]
+      }
+    ]
+  }
+}
