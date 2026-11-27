@@ -390,6 +390,8 @@ section{padding:82px 0}
 .gal-more .shot{aspect-ratio:1/1;opacity:.72;filter:saturate(.85)}
 .gal-more .shot:hover{opacity:1;filter:none}
 .gal-more figcaption{font-size:14px}
+.gal-more.due{grid-template-columns:repeat(2,1fr)}
+.gal-more.due .shot{aspect-ratio:2/1}
 
 .shot{
   margin:0;max-width:100%;
@@ -497,6 +499,7 @@ body.lb-open{overflow:hidden}
   .hero-inner{grid-template-columns:1fr;gap:34px}
   .phone{margin:0 auto;max-width:240px}
   .gal-more{grid-template-columns:repeat(2,1fr)}
+  .gal-more.due .shot{aspect-ratio:1/1}
   .day{border-right:0;border-bottom:1px solid var(--line)}
   .day:last-child{border-bottom:0}
 }
@@ -784,7 +787,7 @@ html.evento .ev-hide{display:none!important}
   <div><strong>&lt; 10 min</strong><p>Tempo medio di risposta su WhatsApp</p></div>
 </div>
 
-<!-- CAMPAGNA TAVOLI: tre foto ritoccate (media/tavolo-*.jpg, 720×900). "Prenota il tavolo" è un .book-it:
+<!-- CAMPAGNA TAVOLI: tre foto diverse tra loro (media/tavolo-*.jpg, 720×900), mai le stesse della galleria. "Prenota il tavolo" è un .book-it:
      mette nel modulo il tipo (data-tipo) e, se c'è, il locale (data-venue). Niente prezzi: il preventivo arriva in chat. -->
 <section class="camp" id="tavoli">
   <div class="wrap">
@@ -807,25 +810,25 @@ html.evento .ev-hide{display:none!important}
         <button type="button" class="btn btn-primary btn-small book-it">Prenota il tavolo</button>
       </div>
     </article>
-    <article class="camp-card" data-camp="vodka-gin" data-tipo="Tavolo">
+    <article class="camp-card" data-camp="mix" data-tipo="Tavolo">
       <div class="camp-img">
-        <img src="media/tavolo-vodka-gin.jpg" width="720" height="900" alt="Due bottiglie di Grey Goose e una di Bombay Sapphire con i bicchieri, su un tavolo illuminato di blu" loading="lazy">
-        <span class="camp-tag">Vodka &amp; gin</span><span class="camp-n">02</span>
+        <img src="media/tavolo-mix.jpg" width="720" height="900" alt="Una bottiglia di Moët &amp; Chandon, una di Johnnie Walker Red Label e una Grey Goose da 1,5 litri nello stesso secchiello" loading="lazy">
+        <span class="camp-tag">Il mix</span><span class="camp-n">02</span>
       </div>
       <div class="camp-body">
-        <h3>Due Grey Goose, un Bombay.</h3>
-        <p>Bottiglie, bicchieri e mixer già in fila. Cosa mettere sul tavolo lo scegliete voi.</p>
+        <h3>Champagne, whisky e vodka.</h3>
+        <p>Tre bottiglie nello stesso secchiello. Cosa mettere sul tavolo lo scegliete voi.</p>
         <button type="button" class="btn btn-primary btn-small book-it">Prenota il tavolo</button>
       </div>
     </article>
-    <article class="camp-card" data-camp="neon" data-tipo="Tavolo">
+    <article class="camp-card" data-camp="gruppo" data-tipo="Tavolo">
       <div class="camp-img">
-        <img src="media/tavolo-neon.jpg" width="720" height="900" alt="Un tavolo con il bordo al neon blu: bottiglie, bicchieri e lattine di tonica nel ghiaccio" loading="lazy">
-        <span class="camp-tag">Tavolo riservato</span><span class="camp-n">03</span>
+        <img src="media/tavolo-gruppo.jpg" width="720" height="900" alt="Tre bottiglie di Moët &amp; Chandon e due di Beluga nel ghiaccio" loading="lazy">
+        <span class="camp-tag">Tavolo grande</span><span class="camp-n">03</span>
       </div>
       <div class="camp-body">
-        <h3>Il tuo tavolo, acceso.</h3>
-        <p>Luci basse, ghiaccio e lattine in fresco. Voi pensate solo a chi invitare.</p>
+        <h3>Bollicine o vodka, scegli tu.</h3>
+        <p>Più bottiglie in ghiaccio quando il gruppo è numeroso. Voi pensate solo a chi invitare.</p>
         <button type="button" class="btn btn-primary btn-small book-it">Prenota il tavolo</button>
       </div>
     </article>
@@ -954,18 +957,16 @@ html.evento .ev-hide{display:none!important}
     </div>
 
     <div class="gal-top">
-      <figure class="shot big"><img src="media/foto-7.jpg" alt="Tre bottiglie di Moët &amp; Chandon e due di Beluga nel ghiaccio" loading="lazy"><figcaption>Bollicine o vodka, scegli tu.</figcaption></figure>
-      <figure class="shot"><img src="media/foto-6.jpg" alt="Moët &amp; Chandon, Johnnie Walker Red Label e Grey Goose da 1,5 litri in un secchiello" loading="lazy"><figcaption>Tre bottiglie, dodici persone.</figcaption></figure>
+      <figure class="shot big"><img src="media/foto-2.jpg" alt="Sala di una discoteca illuminata di rosso" style="object-position:center 35%" loading="lazy"><figcaption>Arrivi e il posto è già acceso.</figcaption></figure>
       <figure class="shot"><img src="media/foto-8.jpg" alt="Grey Goose da 1,5 litri e Bombay Sapphire da 1,75 litri nel ghiaccio con i mixer" style="object-position:center 12%" loading="lazy"><figcaption>Vodka e gin, formato grande.</figcaption></figure>
-      <figure class="shot"><img src="media/foto-2.jpg" alt="Sala di una discoteca illuminata di rosso" style="object-position:center 35%" loading="lazy"><figcaption>Arrivi e il posto è già acceso.</figcaption></figure>
       <figure class="shot"><img src="media/foto-5.jpg" alt="Secchiello del ghiaccio illuminato con bottiglie e mixer" loading="lazy"><figcaption>Ghiaccio e mixer, inclusi.</figcaption></figure>
+      <figure class="shot"><img src="media/foto-1.jpg" alt="Bottiglie di Bombay Sapphire illuminate di blu al tavolo" loading="lazy"><figcaption>Mezzanotte, luce blu, primo giro.</figcaption></figure>
+      <figure class="shot"><img src="media/foto-4.jpg" alt="Tavolo riservato in discoteca con cartellino nominativo" style="object-position:center 30%" loading="lazy"><figcaption>Il tavolo col tuo nome sopra.</figcaption></figure>
     </div>
 
-    <div class="gal-more">
-      <figure class="shot"><img src="media/foto-1.jpg" alt="Bottiglie di Bombay Sapphire illuminate di blu al tavolo" loading="lazy"><figcaption>Mezzanotte, luce blu, primo giro.</figcaption></figure>
+    <div class="gal-more due">
       <figure class="shot"><img src="media/foto-3.jpg" alt="Interno dell'Art Café con divani e luci blu" loading="lazy"><figcaption>Art Café, quando chiama il centro.</figcaption></figure>
       <figure class="shot"><img src="media/foto-9.jpg" alt="Il lampadario rosso dell'Opus Club" loading="lazy"><figcaption>Opus Club, sotto il lampadario.</figcaption></figure>
-      <figure class="shot"><img src="media/foto-4.jpg" alt="Tavolo riservato in discoteca con cartellino nominativo" style="object-position:center 30%" loading="lazy"><figcaption>Il tavolo col tuo nome sopra.</figcaption></figure>
     </div>
   </div>
 </section>
